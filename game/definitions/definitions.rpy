@@ -1190,6 +1190,10 @@ image monika 4o = im.Composite((960, 960), (0, 0), "monika/2l.png", (0, 0), "mon
 image monika 4p = im.Composite((960, 960), (0, 0), "monika/2l.png", (0, 0), "monika/2r.png", (0, 0), "monika/p.png")
 image monika 4q = im.Composite((960, 960), (0, 0), "monika/2l.png", (0, 0), "monika/2r.png", (0, 0), "monika/q.png")
 image monika 4r = im.Composite((960, 960), (0, 0), "monika/2l.png", (0, 0), "monika/2r.png", (0, 0), "monika/r.png")
+image ironmouse 1l = im.Composite((960, 960), (0, 0), "mod_assets/Ironmouse/1l", (0, 0), "mod_assets/Ironmouse/1r.png", (0, 0), "monika/n.png")
+image ironmouse 1r = im.Composite((960, 960), (0, 0), "mod_assets/Ironmouse/1r.png", (0, 0), "monika/1r.png", (0, 0), "mod_assets/Ironmouse/n.png")
+image ironmouse 2full = im.Composite((960, 960), (0, 0), "mod_assets/Ironmouse/2full.png", (0, 0), "mod_assets/Ironmouse/2full.png", (0, 0), "mod_assets/Ironmouse/n.png")
+
 
 image monika 5a = im.Composite((960, 960), (0, 0), "monika/3a.png")
 image monika 5b = im.Composite((960, 960), (0, 0), "monika/3b.png")
@@ -1239,6 +1243,8 @@ image monika g2:
             pause 0.2
     repeat
 
+
+
 ## Character Variables
 # This is where the characters are declared in the mod.
 # To define a new character with assets, declare a character variable like in this example:
@@ -1247,12 +1253,12 @@ image monika g2:
 #   define en = Character('Eileen & Nat', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 
 define narrator = Character(ctc="ctc", ctc_position="fixed")
-define mc = DynamicCharacter('player', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
-define s = DynamicCharacter('s_name', image='sayori', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
-define m = DynamicCharacter('m_name', image='monika', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
-define n = DynamicCharacter('n_name', image='natsuki', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
-define y = DynamicCharacter('y_name', image='yuri', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
-define i = DynamicCharacter("i_name", image = 'ironmouse', what_prefix = '"', what_suffix = '"', ctc= "ctc", ctc_position = "fixed")
+define mc = DynamicCharacter('player', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed", window_background=Image("mod_assets/gui/textbox.png", xalign=0.5, yalign=1.0), who_outlines=[(3, "#686362")])
+define s = DynamicCharacter('s_name', image='sayori', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed", window_background=Image("mod_assets/gui/textbox.png", xalign=0.5, yalign=1.0), who_outlines=[(3, "#686362")])
+define m = DynamicCharacter('m_name', image='monika', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed", window_background=Image("mod_assets/gui/textbox.png", xalign=0.5, yalign=1.0), who_outlines=[(3, "#686362")])
+define n = DynamicCharacter('n_name', image='natsuki', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed", window_background=Image("mod_assets/gui/textbox.png", xalign=0.5, yalign=1.0), who_outlines=[(3, "#686362")])
+define y = DynamicCharacter('y_name', image='yuri', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed", window_background=Image("mod_assets/gui/textbox.png", xalign=0.5, yalign=1.0), who_outlines=[(3, "#686362")])
+define i = DynamicCharacter("i_name", image = 'ironmouse', what_prefix = '"', what_suffix = '"', ctc= "ctc", ctc_position = "fixed", window_background=Image("mod_assets/gui/textbox.png", xalign=0.5, yalign=1.0), who_outlines=[(3, "#686362")])
 # This variable determines whether to allow the player to dismiss pauses.
 # By default this is set by config.developer which is normally set to false
 # once you packaged your mod.

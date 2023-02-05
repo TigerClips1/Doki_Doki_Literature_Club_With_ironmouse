@@ -210,7 +210,7 @@ style window:
     yalign gui.textbox_yalign
     ysize gui.textbox_height
 
-    background Transform("gui/textbox.png", xalign=0.5, yalign=1.0)
+    background Transform("mod_assets/gui/textbox.png", xalign=0.5, yalign=1.0)
 
 style window_monika is window:
     background Transform("gui/textbox_monika.png", xalign=0.5, yalign=1.0)
@@ -1225,19 +1225,6 @@ screen extra_options():
                     ok_action=Hide("dialog")
                 )])
 
-        label _("Discord RPC")
-
-        python:
-            connect_status = "Disconnected"
-            if RPC.rpc_connected:
-                connect_status = "Connected"
-
-        textbutton "Enable" action [ToggleField(persistent, "enable_discord"), 
-            If(persistent.enable_discord, Function(RPC.close), Function(RPC.connect, reset=True))]
-        
-        text "Status: [connect_status]" style "main_menu_version" xalign 0.0
-
-        #if persistent.enable_discord and not RPC.rpc_connected:
             #textbutton "Reconnect" action Function(RPC.connect, reset=True) style "viewframe_button"
 
         label _("Player Name")
