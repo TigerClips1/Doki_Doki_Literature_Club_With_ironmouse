@@ -26,6 +26,7 @@ label start:
     $ m_name = "Girl 3"
     $ n_name = "Girl 2"
     $ y_name = "Girl 1"
+    $ i_name = "Girl 4"
 
     # This variable controls whether the quick menu in the textbox is enabled.
     $ quick_menu = True

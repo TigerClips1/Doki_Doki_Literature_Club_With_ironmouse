@@ -19,7 +19,7 @@
 ##     show screen bsod("DOKI_DOKI", "renpy32.dll", False) 
 ##     show screen bsod("EILEEN_EXCEPTION_NOT_HANDLED", rsod=True) 
 
-init python:
+'''init python:
     cursor = 0
 
     def fakePercent(st, at, winver):
@@ -289,4 +289,4 @@ transform bsod_transition:
     yoffset 750
 
 transform bsod_qrcode(x):
-    xysize(x,x)
+    xysize(x,x) '''

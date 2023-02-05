@@ -90,7 +90,7 @@ define config.window_icon = "mod_assets/logo.png"
 define config.allow_skipping = True
 
 # This controls whether your mod saves automatically.
-define config.has_autosave = False
+define config.has_autosave = True
 
 # This controls whether you mod saves automatically when quitting the game.
 define config.autosave_on_quit = False
