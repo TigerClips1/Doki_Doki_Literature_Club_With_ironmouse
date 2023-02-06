@@ -384,12 +384,7 @@ label splashscreen:
         ## This if statement checks if we are running any common streaming/recording 
         ## software so the game can enable Let's Play Mode automatically and notify
         ## the user about it if extra settings are enabled.
-        if extra_settings:
-            if process_check(["obs32.exe", "obs64.exe", "obs.exe", "xsplit.core.exe", "livehime.exe", "pandatool.exe", "yymixer.exe", "douyutool.exe", "huomaotool.exe"]):
-                $ persistent.lets_play = True
-                call screen dialog("Let's Play Mode has been enabled automatically.\nThis mode allows you to skip content that\ncontains sensitive information or apply alternative\nstory options.\n\nThis setting will be dependent on the modder\nif they programmed these checks in their story.\n\n To turn off Let's Play Mode, visit Settings and\nuncheck Let's Play Mode.", 
-                    [Hide("dialog"), Return()])
-        scene white
+      
 
     ## This python statement controls whether the Sayori Kill Early screen shows 
     ## in-game. This feature has been commented out for mod safety reasons but can 
