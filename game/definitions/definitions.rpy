@@ -1363,6 +1363,7 @@ image monika 4r = im.Composite((960, 960), (0, 0), "monika/2l.png", (0, 0), "mon
 
 image monika 5a = im.Composite((960, 960), (0, 0), "monika/3a.png")
 image monika 5b = im.Composite((960, 960), (0, 0), "monika/3b.png")
+#ToDo  add ironmouse sprint to definitions.rpy add ore anmieation orgnaze the folder and add 3 Chapter
 
 # This image transform shows a glitched Monika during a special poem.
 image monika g1:
