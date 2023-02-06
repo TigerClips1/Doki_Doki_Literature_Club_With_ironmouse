@@ -10,16 +10,18 @@
 # Images are defined after the main poem game loop.
 
 init python: # This whole block runs when DDLC is started (as opposed to when the poem minigame is called)
-    poem_txt = "poem_game/poemwords.txt"
+    poem_txt = "mod_assets/poemwords.txt"
 
     # This class holds a word, and point values for each of the four heroines
     class PoemWord:
-        def __init__(self, word, sPoint, nPoint, yPoint, glitch=False):
+        def __init__(self, word, sPoint, nPoint, yPoint, iPoint, glitch=False):
             self.word = word
             self.sPoint = sPoint
             self.nPoint = nPoint
             self.yPoint = yPoint
+            self.iPoint = iPoint
             self.glitch = glitch
+            
 
     # Static variables for characters' poem appeal: Dislike, Neutral, Like
     POEM_DISLIKE_THRESHOLD = 29
@@ -36,25 +38,29 @@ init python: # This whole block runs when DDLC is started (as opposed to when th
 
             # File format: word,sPoint,nPoint,yPoint
             x = line.split(',')
-            full_wordlist.append(PoemWord(x[0], float(x[1]), float(x[2]), float(x[3])))
+            full_wordlist.append(PoemWord(x[0], float(x[1]), float(x[2]), float(x[3]), float(x[4])))
 
     seen_eyes_this_chapter = False
     sayoriTime = renpy.random.random() * 4 + 4
     natsukiTime = renpy.random.random() * 4 + 4
     yuriTime = renpy.random.random() * 4 + 4
     monikaTime = renpy.random.random() * 4 + 4
+    ironmouseTime = renpy.random.random() * 4 + 4
     sayoriPos = 0
     natsukiPos = 0
     yuriPos = 0
     monikaPos = 0
+    ironmousePos = 0
     sayoriOffset = 0
     natsukiOffset = 0
     yuriOffset = 0
     monikaOffset = 0
+    ironmouseOffset = 0
     sayoriZoom = 1
     natsukiZoom = 1
     yuriZoom = 1
     monikaZoom = 1
+    ironmouseZoom = 1
 ##################################################################################
 #These functions define random pause lengths for each of the stickers' movements.
 #renpy.random.random() returns a random floating point number between 0 and 1
@@ -86,6 +92,12 @@ init python: # This whole block runs when DDLC is started (as opposed to when th
         global monikaTime
         if st > monikaTime:
             monikaTime = renpy.random.random() * 4 + 4
+            return None
+        return 0
+    def randomPauseIronmouse(trans, st, at):
+        global ironmouseTime
+        if st > ironmouseTime:
+            ironmouseTime = renpy.random.random() * 4 + 4
             return None
         return 0
 
@@ -177,6 +189,27 @@ init python: # This whole block runs when DDLC is started (as opposed to when th
         monikaOffset = trans.xoffset
         monikaZoom = trans.xzoom
         return 0
+    def randomMoveIronmouse(trans, st, at):
+        global ironmousePos
+        global ironmouseOffset
+        global ironmouseZoom
+        if st > .16:
+            if ironmousePos > 0:
+                ironmousePos = renpy.random.randint(-1,0)
+            elif ironmousePos < 0:
+                ironmousePos = renpy.random.randint(0,1)
+            else:
+                ironmousePos = renpy.random.randint(-1,1)
+            if trans.xoffset * ironmousePos > 5: ironmousePos *= -1
+            return None
+        if ironmousePos > 0:
+            trans.xzoom = -1
+        elif ironmousePos < 0:
+            trans.xzoom = 1
+        trans.xoffset += .16 * 10 * ironmousePos
+        ironmouseOffset = trans.xoffset
+        ironmouseZoom = trans.xzoom
+        return 0
 
 ##################################################################################
 label poem(transition=True):
@@ -196,8 +229,7 @@ label poem(transition=True):
             show y_sticker_cut at sticker_right #Replace Yuri's sticker with the "cut arms" sticker..
         else:
             show y_sticker at sticker_right #Yuri's sticker
-        if persistent.playthrough == 2 and chapter == 2:
-            show m_sticker at sticker_m_glitch #Monika's sticker
+            show i_sticker at sticker_left2 zorder 1
     if transition:
         with dissolve_scene_full #Gives the dissolve transition if the minigame isn't called with False.
     if persistent.playthrough == 3:
@@ -217,20 +249,25 @@ label poem(transition=True):
         sPointTotal = 0
         nPointTotal = 0
         yPointTotal = 0
+        iPointTotal = 0
         wordlist = list(full_wordlist)
 
         sayoriTime = renpy.random.random() * 4 + 4
         natsukiTime = renpy.random.random() * 4 + 4
         yuriTime = renpy.random.random() * 4 + 4
+        ironmouseTime = renpy.random.random() * 4 + 4
         sayoriPos = renpy.random.randint(-1,1)
         natsukiPos = renpy.random.randint(-1,1)
         yuriPos = renpy.random.randint(-1,1)
+        ironmousePos = renpy.random.randint(-1,1)
         sayoriOffset = 0
         natsukiOffset = 0
+        ironmouseOffset = 0
         yuriOffset = 0
         sayoriZoom = 1
         natsukiZoom = 1
         yuriZoom = 1
+        ironmouseZoom = 1
 
 
 
@@ -264,8 +301,8 @@ label poem(transition=True):
                     elif persistent.playthrough == 2 and not poemgame_glitch and chapter >= 1 and progress < numWords and random.randint(0, 400) == 0:
                         word = PoemWord(glitchtext(80), 0, 0, 0, True) #This gives a chance for a random word in Act 2 to be the glitched word.
                     else: #Normal circumstances
-                        word = random.choice(wordlist) #Pick a random word out the wordlist
-                        wordlist.remove(word) #Remove the word from the list. This prevents a word from being on the screen twice.
+                            word = random.choice(wordlist) #Pick a random word out the wordlist
+                            wordlist.remove(word) #Remove the word from the list. This prevents a word from being on the screen twice.
                     ui.textbutton(word.word, clicked=ui.returns(word), text_style="poemgame_text", xpos=x, ypos=i * 56 + ystart)
                 ui.close() #Closes the vbox from above
 ##################This block controls what happens when words are selected.############################
@@ -287,6 +324,8 @@ label poem(transition=True):
                             renpy.show("n_sticker hop")
                         if t.yPoint >= 3:
                             renpy.show("y_sticker hop")
+                        if t.iPoint >= 3:
+                            renpy.show("i_sticker hop")
                     else: #Act 2
                         if persistent.playthrough == 2 and chapter == 2 and random.randint(0,10) == 0: renpy.show("m_sticker hop") #1/10 chance for Monika's sticker to show.
                         elif t.nPoint > t.yPoint: renpy.show("n_sticker hop") #Since there's just Yuri and Natsuki in Act 2, whoever has the higher value for the word hops.
@@ -305,6 +344,7 @@ label poem(transition=True):
             sPointTotal += t.sPoint
             nPointTotal += t.nPoint
             yPointTotal += t.yPoint
+            iPointTotal += t.iPoint
             progress += 1
             if progress > numWords: #This stops the minigame once we've picked all the words.
                 break
@@ -315,7 +355,7 @@ label poem(transition=True):
             if chapter == 1:
                 exec(ch1_choice[0] + "PointTotal += 5")
             # Logic for taking point totals and assigning poem appeal, scene order, etc.
-            unsorted_pointlist = {"sayori": sPointTotal, "natsuki": nPointTotal, "yuri": yPointTotal}
+            unsorted_pointlist = {"sayori": sPointTotal, "natsuki": nPointTotal, "yuri": yPointTotal, "ironmouse": iPointTotal}
             pointlist = sorted(unsorted_pointlist, key=unsorted_pointlist.get)
 
             # Set poemwinner to the highest scorer
@@ -334,6 +374,8 @@ label poem(transition=True):
         elif nPointTotal > POEM_LIKE_THRESHOLD: n_poemappeal[chapter] = 1
         if yPointTotal < POEM_DISLIKE_THRESHOLD: y_poemappeal[chapter] = -1
         elif yPointTotal > POEM_LIKE_THRESHOLD: y_poemappeal[chapter] = 1
+        if iPointTotal < POEM_DISLIKE_THRESHOLD: i_poemappeal[chapter] = -1
+        elif iPointTotal > POEM_LIKE_THRESHOLD: i_poemappeal[chapter] = 1
 
         # Poem winner always has appeal 1 (loves poem)
         exec(poemwinner[chapter][0] + "_poemappeal[chapter] = 1")
@@ -437,6 +479,16 @@ image m_sticker:
         parallel:
             function randomMoveMonika
         repeat
+image i_sticker:
+    "mod_assets/i_sticker_1.png"
+    xoffset ironmouseOffset xzoom ironmouseZoom
+    block:
+        function randomPauseIronmouse
+        parallel:
+            sticker_move_n
+        parallel:
+            function randomMoveIronmouse
+        repeat
 
 image s_sticker hop:
     "gui/poemgame/s_sticker_2.png"
@@ -479,6 +531,12 @@ image m_sticker hop:
     sticker_hop
     xoffset 0 xzoom 1
     "m_sticker"
+image i_sticker hop:
+    "mod_assets/i_sticker_2.png"
+    xoffset ironmouseOffset xzoom ironmouseZoom
+    sticker_hop
+    xoffset 0 xzoom 1
+    "i_sticker"
 
 image y_sticker glitch:
     "gui/poemgame/y_sticker_1_broken.png"
@@ -492,13 +550,15 @@ image y_sticker glitch:
         repeat
 
 transform sticker_left:
-    xcenter 100 yalign 0.9 subpixel True
+    xcenter 150 yalign 0.9 subpixel True
+transform sticker_left2:
+    xcenter 75 yalign 0.9 subpixel True
 
 transform sticker_mid:
-    xcenter 220 yalign 0.9 subpixel True
+    xcenter 225 yalign 0.9 subpixel True
 
 transform sticker_right:
-    xcenter 340 yalign 0.9 subpixel True
+    xcenter 320 yalign 0.9 subpixel True
 
 transform sticker_glitch:
     xcenter 50 yalign 1.8 subpixel True

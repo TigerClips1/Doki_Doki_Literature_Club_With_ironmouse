@@ -12,6 +12,7 @@ define persistent.steam = ("steamapps" in config.basedir.lower())
 # This variable declares whether Developer Mode is on or off in the mod.
 define config.developer = True
 define config.autoreload = True
+
 # This python statement starts singleton to make sure only one copy of the mod
 # is running.
 python early:
@@ -89,9 +90,9 @@ init python:
 
     def restore_all_characters():
         if persistent.playthrough == 0:
-            restore_character(["monika", "sayori", "natsuki", "yuri"])
+            restore_character(["monika", "sayori", "natsuki", "yuri", "ironmouse"])
         elif persistent.playthrough == 1 or persistent.playthrough == 2:
-            restore_character(["monika", "natsuki", "yuri"])
+            restore_character(["monika", "natsuki", "yuri", "ironmouse"])
         elif persistent.playthrough == 3:
             restore_character(["monika"])
         else:
@@ -215,8 +216,93 @@ image bg sayori_bedroom = "bg/sayori_bedroom.png" # Sayori's Room BG
 image bg house = "bg/house.png" # Sayori's House BG
 image bg kitchen = "bg/kitchen.png" # MC's Kitchen BG
 
+image bg notebook = "bg/notebook.png" # Poem Game Notebook Scene
+image bg notebook-glitch = "bg/notebook-glitch.png" # Glitched Poem Game BG
 
+# This image shows a glitched screen during Act 2 poem sharing with Yuri.
+image bg glitch = LiveTile("bg/glitch.jpg")
 
+# This image transform shows a glitched scene effect
+# during Act 3 when we delete Monika.
+image glitch_color:
+    ytile 3
+    zoom 2.5
+    parallel:
+        "bg/glitch-red.png"
+        0.1
+        "bg/glitch-green.png"
+        0.1
+        "bg/glitch-blue.png"
+        0.1
+        repeat
+    parallel:
+        yoffset 720
+        linear 0.5 yoffset 0
+        repeat
+    parallel:
+        choice:
+            xoffset 0
+        choice:
+            xoffset 10
+        choice:
+            xoffset 20
+        choice:
+            xoffset 35
+        choice:
+            xoffset -10
+        choice:
+            xoffset -20
+        choice:
+            xoffset -30
+        0.01
+        repeat
+    parallel:
+        alpha 0.6
+        linear 0.15 alpha 0.1
+        0.2
+        alpha 0.6
+        linear 0.15 alpha 0.1
+        0.2
+        alpha 0.7
+        linear 0.45 alpha 0
+
+# This image transform shows another glitched scene effect
+# during Act 3 when we delete Monika.
+image glitch_color2:
+    ytile 3
+    zoom 2.5
+    parallel:
+        "bg/glitch-red.png"
+        0.1
+        "bg/glitch-green.png"
+        0.1
+        "bg/glitch-blue.png"
+        0.1
+        repeat
+    parallel:
+        yoffset 720
+        linear 0.5 yoffset 0
+        repeat
+    parallel:
+        choice:
+            xoffset 0
+        choice:
+            xoffset 10
+        choice:
+            xoffset 20
+        choice:
+            xoffset 35
+        choice:
+            xoffset -10
+        choice:
+            xoffset -20
+        choice:
+            xoffset -30
+        0.01
+        repeat
+    parallel:
+        alpha 0.7
+        linear 0.45 alpha 0
 
 # Characters
 # This is where the characters bodies and faces are defined in the mod.
@@ -445,12 +531,12 @@ image sayori 4bx = im.Composite((960, 960), (0, 0), "sayori/2bl.png", (0, 0), "s
 image sayori 4by = im.Composite((960, 960), (0, 0), "sayori/2bl.png", (0, 0), "sayori/2br.png", (0, 0), "sayori/y.png")
 
 # This image shows a glitched Sayori sprite during Act 2.
-#image sayori glitch:
-    #"sayori/glitch1.png"
-    #pause 0.01666
-    #"sayori/glitch2.png"
-    #pause 0.01666
-    #repeat
+image sayori glitch:
+    "sayori/glitch1.png"
+    pause 0.01666
+    "sayori/glitch2.png"
+    pause 0.01666
+    repeat
 
 # Natsuki's Character Definitions
 image natsuki 11 = im.Composite((960, 960), (0, 0), "natsuki/1l.png", (0, 0), "natsuki/1r.png", (0, 0), "natsuki/1t.png")
@@ -779,27 +865,111 @@ image natsuki 3 = im.Composite((960, 960), (0, 0), "natsuki/2l.png", (0, 0), "na
 image natsuki 4 = im.Composite((960, 960), (0, 0), "natsuki/2l.png", (0, 0), "natsuki/2r.png", (0, 0), "natsuki/1t.png")
 image natsuki 5 = im.Composite((960, 960), (18, 22), "natsuki/1t.png", (0, 0), "natsuki/3.png")
 
+# This image shows the realistic mouth on Natsuki on a random playthrough
+# of Act 2.
+image natsuki mouth = im.Composite((960, 960), (0, 0), "natsuki/0.png", (390, 340), "n_rects_mouth", (480, 334), "n_rects_mouth")
+
+# This image shows black rectangles on Natsuki on a random playthrough
+# of Act 2.
+image n_rects_mouth:
+    RectCluster(Solid("#000"), 4, 15, 5).sm
+    size (20, 25)
+
+# This image transform makes the realistic mouth move on Natsuki's face
+# on a random playthrough of Act 2.
+image n_moving_mouth:
+    "images/natsuki/mouth.png"
+    pos (615, 305)
+    xanchor 0.5 yanchor 0.5
+    parallel:
+        choice:
+            ease 0.10 yzoom 0.2
+        choice:
+            ease 0.05 yzoom 0.2
+        choice:
+            ease 0.075 yzoom 0.2
+        pass
+        choice:
+            0.02
+        choice:
+            0.04
+        choice:
+            0.06
+        choice:
+            0.08
+        pass
+        choice:
+            ease 0.10 yzoom 1
+        choice:
+            ease 0.05 yzoom 1
+        choice:
+            ease 0.075 yzoom 1
+        pass
+        choice:
+            0.02
+        choice:
+            0.04
+        choice:
+            0.06
+        choice:
+            0.08
+        repeat
+    parallel:
+        choice:
+            0.2
+        choice:
+            0.4
+        choice:
+            0.6
+        ease 0.2 xzoom 0.4
+        ease 0.2 xzoom 0.8
+        repeat
+
+# These images show the Natsuki ghost sprite shown in the poemgame of 
+# Act 2.
+image natsuki_ghost_blood:
+    "#00000000"
+    "natsuki/ghost_blood.png" with ImageDissolve("images/menu/wipedown.png", 80.0, ramplen=4, alpha=True)
+    pos (620,320) zoom 0.80
+
+image natsuki ghost_base:
+    "natsuki/ghost1.png"
+image natsuki ghost1:
+    "natsuki 11"
+    "natsuki ghost_base" with Dissolve(20.0, alpha=True)
+image natsuki ghost2 = Image("natsuki/ghost2.png")
+image natsuki ghost3 = Image("natsuki/ghost3.png")
+image natsuki ghost4:
+    "natsuki ghost3"
+    parallel:
+        easeout 0.25 zoom 4.5 yoffset 1200
+    parallel:
+        ease 0.025 xoffset -20
+        ease 0.025 xoffset 20
+        repeat
+    0.25
+    "black"
 
 # This image makes Natsuki's sprite glitch up for a bit before
 # returning to normal.
-#image natsuki glitch1:
-    #"natsuki/glitch1.png"
-    #zoom 1.25
-    #block:
-            #  yoffset 300 xoffset 100 ytile 2
-        #   linear 0.15 yoffset 200
-    #    repeat
-    # time 0.75
-    #  yoffset 0 zoom 1 xoffset 0 ytile 1
-    #   "natsuki 4e"
+image natsuki glitch1:
+    "natsuki/glitch1.png"
+    zoom 1.25
+    block:
+        yoffset 300 xoffset 100 ytile 2
+        linear 0.15 yoffset 200
+        repeat
+    time 0.75
+    yoffset 0 zoom 1 xoffset 0 ytile 1
+    "natsuki 4e"
 
-#image natsuki scream = im.Composite((960, 960), (0, 0), "natsuki/1l.png", (0, 0), "natsuki/1r.png", (0, 0), "natsuki/scream.png")
-#image natsuki vomit = "natsuki/vomit.png"
+image natsuki scream = im.Composite((960, 960), (0, 0), "natsuki/1l.png", (0, 0), "natsuki/1r.png", (0, 0), "natsuki/scream.png")
+image natsuki vomit = "natsuki/vomit.png"
 
 # These images declare alterative eyes for Natsuki on a random playthrough of
 # Act 2.
-#image n_blackeyes = "images/natsuki/blackeyes.png"
-#image n_eye = "images/natsuki/eye.png"
+image n_blackeyes = "images/natsuki/blackeyes.png"
+image n_eye = "images/natsuki/eye.png"
 
 # Yuri's Character Definitions
 # Note: Sprites with a 'y' in the middle are Yuri's Yandere Sprites.
@@ -990,123 +1160,123 @@ image yuri 4bd = im.Composite((960, 960), (0, 0), "yuri/d2.png", (0, 0), "yuri/3
 image yuri 4be = im.Composite((960, 960), (0, 0), "yuri/e2.png", (0, 0), "yuri/3b.png")
 
 # This image shows the looping Yuri glitched head in Act 2.
-#image y_glitch_head:
-    #   "images/yuri/za.png"
-    #  0.15
-    # "images/yuri/zb.png"
-    #0.15
-    #"images/yuri/zc.png"
-    #0.15
-    #"images/yuri/zd.png"
-    #0.15
-    #repeat
+image y_glitch_head:
+    "images/yuri/za.png"
+    0.15
+    "images/yuri/zb.png"
+    0.15
+    "images/yuri/zc.png"
+    0.15
+    "images/yuri/zd.png"
+    0.15
+    repeat
 
 # These images shows Yuri stabbing herself at the end of Act 2 in six stages.
-#image yuri stab_1 = "yuri/stab/1.png"
-#image yuri stab_2 = "yuri/stab/2.png"
-#image yuri stab_3 = "yuri/stab/3.png"
-#image yuri stab_4 = "yuri/stab/4.png"
-#image yuri stab_5 = "yuri/stab/5.png"
-#image yuri stab_6 = im.Composite((960,960), (0, 0), "yuri/stab/6-mask.png", (0, 0), "yuri stab_6_eyes", (0, 0), "yuri/stab/6.png")
+image yuri stab_1 = "yuri/stab/1.png"
+image yuri stab_2 = "yuri/stab/2.png"
+image yuri stab_3 = "yuri/stab/3.png"
+image yuri stab_4 = "yuri/stab/4.png"
+image yuri stab_5 = "yuri/stab/5.png"
+image yuri stab_6 = im.Composite((960,960), (0, 0), "yuri/stab/6-mask.png", (0, 0), "yuri stab_6_eyes", (0, 0), "yuri/stab/6.png")
 
 # This image transform animates Yuri's eyes on her 6th stabbing in Act 2.
-#image yuri stab_6_eyes:
-    #"yuri/stab/6-eyes.png"
-    #subpixel True
-    #parallel:
-        #choice:
-            #   xoffset 0.5
-        #choice:
-            #xoffset 0
-        #choice:
-            #   xoffset -0.5
-        #0.2
-        #repeat
-    #parallel:
-        #choice:
-            #yoffset 0.5
-        #choice:
-            # yoffset 0
-        #choice:
-            # yoffset -0.5
-        #0.2
-        #repeat
-    #parallel:
-        #2.05
-        #easeout 1.0 yoffset -15
-        #linear 10 yoffset -15
+image yuri stab_6_eyes:
+    "yuri/stab/6-eyes.png"
+    subpixel True
+    parallel:
+        choice:
+            xoffset 0.5
+        choice:
+            xoffset 0
+        choice:
+            xoffset -0.5
+        0.2
+        repeat
+    parallel:
+        choice:
+            yoffset 0.5
+        choice:
+            yoffset 0
+        choice:
+            yoffset -0.5
+        0.2
+        repeat
+    parallel:
+        2.05
+        easeout 1.0 yoffset -15
+        linear 10 yoffset -15
 
 # These images shows Yuri with a offcenter right eye moving slowing away
 # from her face.
-#image yuri oneeye = im.Composite((960, 960), (0, 0), "yuri/1l.png", (0, 0), "yuri/1r.png", (0, 0), "yuri/oneeye.png", (0, 0), "yuri oneeye2")
-#image yuri oneeye2:
-    #"yuri/oneeye2.png"
-    #subpixel True
-    #pause 5.0
-    #linear 60 xoffset -50 yoffset 20
+image yuri oneeye = im.Composite((960, 960), (0, 0), "yuri/1l.png", (0, 0), "yuri/1r.png", (0, 0), "yuri/oneeye.png", (0, 0), "yuri oneeye2")
+image yuri oneeye2:
+    "yuri/oneeye2.png"
+    subpixel True
+    pause 5.0
+    linear 60 xoffset -50 yoffset 20
 
 # These images show a glitched Yuri during Act 2.
-#image yuri glitch:
-    #"yuri/glitch1.png"
-    #pause 0.1
-    #"yuri/glitch2.png"
-    #pause 0.1
-    #"yuri/glitch3.png"
-    #pause 0.1
-    #"yuri/glitch4.png"
-    #pause 0.1
-    #"yuri/glitch5.png"
-    #pause 0.1
-    #repeat
-#image yuri glitch2:
-    #"yuri/0a.png"
-    #pause 0.1
-    #"yuri/0b.png"
-    #pause 0.5
-    #"yuri/0a.png"
-    #pause 0.3
-    # "yuri/0b.png"
-    #  pause 0.3
-    #    "yuri 1"
+image yuri glitch:
+    "yuri/glitch1.png"
+    pause 0.1
+    "yuri/glitch2.png"
+    pause 0.1
+    "yuri/glitch3.png"
+    pause 0.1
+    "yuri/glitch4.png"
+    pause 0.1
+    "yuri/glitch5.png"
+    pause 0.1
+    repeat
+image yuri glitch2:
+    "yuri/0a.png"
+    pause 0.1
+    "yuri/0b.png"
+    pause 0.5
+    "yuri/0a.png"
+    pause 0.3
+    "yuri/0b.png"
+    pause 0.3
+    "yuri 1"
 
 # These image declarations show Yuri's moving eyes in Act 2.
-#image yuri eyes = im.Composite((1280, 720), (0, 0), "yuri/eyes1.png", (0, 0), "yuripupils")
+image yuri eyes = im.Composite((1280, 720), (0, 0), "yuri/eyes1.png", (0, 0), "yuripupils")
 
 # This image shows the base of Yuri's sprite as her eyes move.
-#image yuri eyes_base = "yuri/eyes1.png"
+image yuri eyes_base = "yuri/eyes1.png"
 
 # This image shows Yuri's realistic moving eyes during Act 2.
-#image yuripupils:
-        #  "yuri/eyes2.png"
-    #   yuripupils_move
+image yuripupils:
+    "yuri/eyes2.png"
+    yuripupils_move
 
-#image yuri cuts = "yuri/cuts.png"
+image yuri cuts = "yuri/cuts.png"
 
 # This image shows another glitched Yuri from Act 2. 
-#image yuri dragon:
-    #"yuri 3"
-    #0.25
-    #parallel:
-        #"yuri/dragon1.png"
-        #0.01
-        # "yuri/dragon2.png"
-        #  0.01
-        #   repeat
-    #parallel:
-        #0.01
-        #choice:
-            #xoffset -1
-            #xoffset -2
-            #xoffset -5
-            # xoffset -6
-            #  xoffset -9
-            #   xoffset -10
-        #0.01
-        #xoffset 0
-        #repeat
-    #time 0.55
-    #xoffset 0
-    #"yuri 3"
+image yuri dragon:
+    "yuri 3"
+    0.25
+    parallel:
+        "yuri/dragon1.png"
+        0.01
+        "yuri/dragon2.png"
+        0.01
+        repeat
+    parallel:
+        0.01
+        choice:
+            xoffset -1
+            xoffset -2
+            xoffset -5
+            xoffset -6
+            xoffset -9
+            xoffset -10
+        0.01
+        xoffset 0
+        repeat
+    time 0.55
+    xoffset 0
+    "yuri 3"
 
 # Monika's Character Definitions
 image monika 1 = im.Composite((960, 960), (0, 0), "monika/1l.png", (0, 0), "monika/1r.png", (0, 0), "monika/a.png")
@@ -1190,10 +1360,6 @@ image monika 4o = im.Composite((960, 960), (0, 0), "monika/2l.png", (0, 0), "mon
 image monika 4p = im.Composite((960, 960), (0, 0), "monika/2l.png", (0, 0), "monika/2r.png", (0, 0), "monika/p.png")
 image monika 4q = im.Composite((960, 960), (0, 0), "monika/2l.png", (0, 0), "monika/2r.png", (0, 0), "monika/q.png")
 image monika 4r = im.Composite((960, 960), (0, 0), "monika/2l.png", (0, 0), "monika/2r.png", (0, 0), "monika/r.png")
-image ironmouse 1l = im.Composite((960, 960), (0, 0), "mod_assets/Ironmouse/1l", (0, 0), "mod_assets/Ironmouse/1r.png", (0, 0), "monika/n.png")
-image ironmouse 1r = im.Composite((960, 960), (0, 0), "mod_assets/Ironmouse/1r.png", (0, 0), "monika/1r.png", (0, 0), "mod_assets/Ironmouse/n.png")
-image ironmouse 2full = im.Composite((960, 960), (0, 0), "mod_assets/Ironmouse/2full.png", (0, 0), "mod_assets/Ironmouse/2full.png", (0, 0), "mod_assets/Ironmouse/n.png")
-
 
 image monika 5a = im.Composite((960, 960), (0, 0), "monika/3a.png")
 image monika 5b = im.Composite((960, 960), (0, 0), "monika/3b.png")
@@ -1243,8 +1409,6 @@ image monika g2:
             pause 0.2
     repeat
 
-
-
 ## Character Variables
 # This is where the characters are declared in the mod.
 # To define a new character with assets, declare a character variable like in this example:
@@ -1252,13 +1416,14 @@ image monika g2:
 # To define a new character without assets, declare a character variable like this instead:
 #   define en = Character('Eileen & Nat', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 
-define narrator = Character(ctc="ctc", ctc_position="fixed")
-define mc = DynamicCharacter('player', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed", window_background=Image("mod_assets/gui/textbox.png", xalign=0.5, yalign=1.0), who_outlines=[(3, "#686362")])
-define s = DynamicCharacter('s_name', image='sayori', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed", window_background=Image("mod_assets/gui/textbox.png", xalign=0.5, yalign=1.0), who_outlines=[(3, "#686362")])
-define m = DynamicCharacter('m_name', image='monika', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed", window_background=Image("mod_assets/gui/textbox.png", xalign=0.5, yalign=1.0), who_outlines=[(3, "#686362")])
-define n = DynamicCharacter('n_name', image='natsuki', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed", window_background=Image("mod_assets/gui/textbox.png", xalign=0.5, yalign=1.0), who_outlines=[(3, "#686362")])
-define y = DynamicCharacter('y_name', image='yuri', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed", window_background=Image("mod_assets/gui/textbox.png", xalign=0.5, yalign=1.0), who_outlines=[(3, "#686362")])
-define i = DynamicCharacter("i_name", image = 'ironmouse', what_prefix = '"', what_suffix = '"', ctc= "ctc", ctc_position = "fixed", window_background=Image("mod_assets/gui/textbox.png", xalign=0.5, yalign=1.0), who_outlines=[(3, "#686362")])
+define narrator = Character(ctc="ctc", ctc_position="fixed", window_background=Image("mod_assets/gui/textbox/textbox.png", xalign=0.5, yalign=1.0), who_outlines=[ (3, "#686362") ])
+define mc = DynamicCharacter('player', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed", window_background=Image("mod_assets/gui/textbox/textbox.png", xalign=0.5, yalign=1.0), who_outlines=[ (3, "#686362") ])
+define s = DynamicCharacter('s_name', image='sayori', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed", window_background=Image("mod_assets/gui/textbox/textbox.png", xalign=0.5, yalign=1.0), who_outlines=[ (3, "#686362") ])
+define m = DynamicCharacter('m_name', image='monika', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed", window_background=Image("mod_assets/gui/textbox/textbox.png", xalign=0.5, yalign=1.0), who_outlines=[ (3, "#686362") ])
+define n = DynamicCharacter('n_name', image='natsuki', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed", window_background=Image("mod_assets/gui/textbox/textbox.png", xalign=0.5, yalign=1.0), who_outlines=[ (3, "#686362") ])
+define y = DynamicCharacter('y_name', image='yuri', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed", window_background=Image("mod_assets/gui/textbox/textbox.png", xalign=0.5, yalign=1.0), who_outlines=[ (3, "#686362") ])
+define i = Character('i_name', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed", window_background=Image("mod_assets/gui/textbox/textbox.png", xalign=0.5, yalign=1.0), who_outlines=[ (3, "#686362") ])
+
 # This variable determines whether to allow the player to dismiss pauses.
 # By default this is set by config.developer which is normally set to false
 # once you packaged your mod.
@@ -1333,6 +1498,7 @@ default m_name = "Monika"
 default n_name = "Natsuki"
 default y_name = "Yuri"
 default i_name = "ironmouse"
+
 # Poem Variables
 # This section records how much each character likes your poem in-game.
 # Syntax:
@@ -1356,6 +1522,7 @@ default n_readpoem = False
 default y_readpoem = False
 default m_readpoem = False
 default i_readpoem = False
+
 # This variable keeps track on how many people have read your poem.
 default poemsread = 0
 
@@ -1364,7 +1531,8 @@ default n_appeal = 0
 default s_appeal = 0
 default y_appeal = 0
 default m_appeal = 0
-default i_appeal = 0 
+default i_appeal = 0
+
 # These variables control if we have seen Natsuki's or Yuri's exclusive scenes
 default n_exclusivewatched = False
 default y_exclusivewatched = False

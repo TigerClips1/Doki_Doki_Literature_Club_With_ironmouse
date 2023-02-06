@@ -23,14 +23,14 @@ init -100 python:
 init python:
     # This variable is the default splash message that people will see when
     # the game launches.
-    splash_message_default = "This game is an unofficial fan game that is unaffiliated with Team Salvato."
-    splash_message_default = "This Model and story is unaofficial just vtuber fan game for Ironmouse. "
+    splash_message_default = "This game is an unofficial fan game that is unaffiliated with Team Salvato and This Model and story is unaofficial just vtuber fan game for Ironmouse."
     # This array variable stores different kinds of splash messages you can use
     # to show to the player on startup.
     splash_messages = [
         "Please support Doki Doki Literature Club.",
         "Please support ironmouse Youtube. ",
         "Monika is watching you code."
+
     ]
 
     ### New in 3.0.0
@@ -115,13 +115,6 @@ image menu_art_s:
     zoom 0.68
     menu_art_move(0.68, 510, 0.68)
 
-#image menu_art_m:
-    #subpixel True
-    #"gui/menu_art_m.png"
-    #xcenter 1000
-    #ycenter 640
-    #zoom 1.00
-    #menu_art_move(1.00, 1000, 1.00)
 image menu_art_m:
     subpixel True
     "mod_assets/menu_art_m.png"
@@ -132,46 +125,46 @@ image menu_art_m:
 
 # These images are the same as above but ghost themed for the secret ghost menu
 # that appears rarely in-game .
-#image menu_art_y_ghost:
-    #   subpixel True
-    #  "gui/menu_art_y_ghost.png"
-    # xcenter 600
-    #ycenter 335
-    #zoom 0.60
-    #menu_art_move(0.54, 600, 0.60)
+image menu_art_y_ghost:
+    subpixel True
+    "gui/menu_art_y_ghost.png"
+    xcenter 600
+    ycenter 335
+    zoom 0.60
+    menu_art_move(0.54, 600, 0.60)
 
-#image menu_art_n_ghost:
-    #   subpixel True
-    #  "gui/menu_art_n_ghost.png"
-    # xcenter 750
-    #ycenter 385
-    #zoom 0.58
-    #menu_art_move(0.58, 750, 0.58)
+image menu_art_n_ghost:
+    subpixel True
+    "gui/menu_art_n_ghost.png"
+    xcenter 750
+    ycenter 385
+    zoom 0.58
+    menu_art_move(0.58, 750, 0.58)
 
-#image menu_art_s_ghost:
-    #   subpixel True
-    #  "gui/menu_art_s_ghost.png"
-    # xcenter 510
-    #ycenter 500
-    #oom 0.68
-    #menu_art_move(0.68, 510, 0.68)
+image menu_art_s_ghost:
+    subpixel True
+    "gui/menu_art_s_ghost.png"
+    xcenter 510
+    ycenter 500
+    zoom 0.68
+    menu_art_move(0.68, 510, 0.68)
 
-#image menu_art_m_ghost:
-    #   subpixel True
-    #  "gui/menu_art_m_ghost.png"
-    # xcenter 1000
-    #ycenter 640
-    #zoom 1.00
-    #menu_art_move(1.00, 1000, 1.00)
+image menu_art_m_ghost:
+    subpixel True
+    "gui/menu_art_m_ghost.png"
+    xcenter 1000
+    ycenter 640
+    zoom 1.00
+    menu_art_move(1.00, 1000, 1.00)
 
 # This image sprite shows a glitched Sayori menu sprite after Act 1 finishes.
-#image menu_art_s_glitch:
-    #   subpixel True
-    #  "gui/menu_art_s_break.png"
-    # xcenter 470
-    #ycenter 600
-    #zoom 0.68
-    #menu_art_move(.8, 470, .8)
+image menu_art_s_glitch:
+    subpixel True
+    "gui/menu_art_s_break.png"
+    xcenter 470
+    ycenter 600
+    zoom 0.68
+    menu_art_move(.8, 470, .8)
 
 # This image shows the main menu screen in the main/pause menu.
 image menu_nav:
@@ -373,10 +366,10 @@ label splashscreen:
         ## unaffiliated with Team Salvato, requires that the player must 
         ## finish DDLC before playing, has spoilers for DDLC, and where to 
         ## get DDLC's files."
-        "[config.name] is a Doki Doki Literature Club fan mod that is not affiliated in anyway with Team Salvato, ironmouse."
-        "It is designed to be played only after the official game has been completed, and contains spoilers for the official game."
+        "[config.name]It is designed to be played only after the official game has been completed, and contains spoilers for the official game."
         "Game files for Doki Doki Literature Club are required to play this mod and can be downloaded for free at: https://ddlc.moe or on Steam."
         "check out ironmouse youtube https://www.youtube.com/@IronMouseParty "
+
 
         menu:
             "By playing [config.name] you agree that you have completed Doki Doki Literature Club and accept any spoilers contained within."
@@ -681,11 +674,11 @@ label before_main_menu:
 
 ## This label is a left-over from DDLC's development that quits the game but shows
 ## a close-up Monika face before doing so.
-#label quit:
-    #if persistent.ghost_menu:
-        #   hide screen main_menu
-        #  scene white
-        # show expression "gui/menu_art_m_ghost.png":
-        #    xpos -100 ypos -100 zoom 3.5
-        #pause 0.01
-    #return
+label quit:
+    if persistent.ghost_menu:
+        hide screen main_menu
+        scene white
+        show expression "gui/menu_art_m_ghost.png":
+            xpos -100 ypos -100 zoom 3.5
+        pause 0.01
+    return

@@ -48,7 +48,7 @@ label start:
     # 'persistent.playthrough' controls the playthrough number the player is on i.e (Act 1, 2, 3, 4)
     
     # REMOVE THIS LINE WHEN YOU HAVE MADE A STORY SCRIPT FILE AND CALLED IT HERE
-    call ch1
+    call story
 
     ## Example on calling scripts from DDLC.
     # if persistent.playthrough == 0:

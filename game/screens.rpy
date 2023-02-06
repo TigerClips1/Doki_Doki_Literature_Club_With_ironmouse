@@ -210,7 +210,7 @@ style window:
     yalign gui.textbox_yalign
     ysize gui.textbox_height
 
-    background Transform("mod_assets/gui/textbox.png", xalign=0.5, yalign=1.0)
+    background Transform("mod_assets/gui/textbox/textbox.png", xalign=0.5, yalign=1.0)
 
 style window_monika is window:
     background Transform("gui/textbox_monika.png", xalign=0.5, yalign=1.0)
@@ -511,8 +511,7 @@ screen navigation():
 
             if renpy.variant("pc"):
 
-                ## Help isn't necessary or relevant to mobile devices.
-               
+                
 
                 ## The quit button is banned on iOS and unnecessary on Android.
                 textbutton _("Quit") action Quit(confirm=not main_menu)
@@ -1012,21 +1011,23 @@ style viewframe_text is confirm_prompt_text:
 ## Windowed Resolutions
 ## Windowed Resolutions allow players to scale the game to different resolutions.
 ## Uncomment the below #'s to enable this.
-    #screen confirm_res(old_res):
+# screen confirm_res(old_res):
     
-        Ensure other screens do not get input while this screen is displayed.
-        modal True
+#     ## Ensure other screens do not get input while this screen is displayed.
+#     modal True
 
-        zorder 200
-        style_prefix "confirm"
+#     zorder 200
 
-        add "gui/overlay/confirm.png"
-        frame:
+#     style_prefix "confirm"
 
-            vbox:
-                xalign .5
-                yalign .5
-                spacing 30
+#     add "gui/overlay/confirm.png"
+
+#     frame:
+
+#         vbox:
+#             xalign .5
+#             yalign .5
+#             spacing 30
 
 #             ## This if-else statement either shows a normal textbox or
 #             ## glitched textbox if you are in Sayori's Death Scene and are
@@ -1225,7 +1226,20 @@ screen extra_options():
                     ok_action=Hide("dialog")
                 )])
 
-            #textbutton "Reconnect" action Function(RPC.connect, reset=True) style "viewframe_button"
+        label _("Discord RPC")
+
+        python:
+            connect_status = "Disconnected"
+            if RPC.rpc_connected:
+                connect_status = "Connected"
+
+        textbutton "Enable" action [ToggleField(persistent, "enable_discord"), 
+            If(persistent.enable_discord, Function(RPC.close), Function(RPC.connect, reset=True))]
+        
+        text "Status: [connect_status]" style "main_menu_version" xalign 0.0
+
+        if persistent.enable_discord and not RPC.rpc_connected:
+            textbutton "Reconnect" action Function(RPC.connect, reset=True) style "viewframe_button"
 
         label _("Player Name")
         vbox:

@@ -301,7 +301,19 @@ image s_kill2:
 ## Yuri Stab CG
 # This image condition displays certain images of Yuri's
 # stab CG given how much time has passed in-game.
+image y_kill = ConditionSwitch(
+    "persistent.yuri_kill >= 1380", "images/cg/y_kill/3a.png",
+    "persistent.yuri_kill >= 1180", "images/cg/y_kill/3c.png",
+    "persistent.yuri_kill >= 1120", "images/cg/y_kill/3b.png",
+    "persistent.yuri_kill >= 920", "images/cg/y_kill/3a.png",
+    "persistent.yuri_kill >= 720", "images/cg/y_kill/2c.png",
+    "persistent.yuri_kill >= 660", "images/cg/y_kill/2b.png",
+    "persistent.yuri_kill >= 460", "images/cg/y_kill/2a.png",
+    "persistent.yuri_kill >= 260", "images/cg/y_kill/1c.png",
+    "persistent.yuri_kill >= 200", "images/cg/y_kill/1b.png",
+    "True", "images/cg/y_kill/1a.png",
 
+    )
 
 # This transform starts off the animation for the background in Sayori's 
 # hanging CG.
@@ -312,7 +324,17 @@ transform s_kill_bg_start:
 
 # This transform starts off the animation for Sayori's hanging sprite in 
 # Sayori's hanging CG.
+transform s_kill_start:
+    truecenter
+    xalign 0.3 yalign 0.25 zoom 0.8
+    linear 4 zoom 0.75 xalign 0.315 yoffset 10
 
+# This image transform zooms in on the background in Sayori's hanging CG.
+image s_kill_bg_zoom:
+    contains:
+        "s_kill_bg"
+        xalign 0.2 yalign 0.3 zoom 2.0
+    dizzy(0.25, 1.0)
 
 # This transform makes the image or sprite shake as if the player was dizzy.
 transform dizzy(m, t, subpixel=True):
@@ -337,10 +359,52 @@ transform dizzy(m, t, subpixel=True):
 
 # This image transform zooms in on Sayori's hanging sprite in Sayori's hanging
 # CG.
-
+image s_kill_zoom:
+    contains:
+        "s_kill"
+        truecenter
+        zoom 2.0 xalign 0.5 yalign 0.05
+    dizzy(1, 1.0)
 
 # This image transform zooms in on the glitched background in Sayori's hanging
 # CG.
+image s_kill_bg2_zoom:
+    contains:
+        "s_kill_bg2"
+        xalign 0.2 yalign 0.3 zoom 2.0
+    parallel:
+        dizzy(0.25, 1.0)
+    parallel:
+        alpha 0.2
+        linear 0.25 alpha 0.2
+        linear 0.25 alpha 0.25
+        linear 0.25 alpha 0.2
+        linear 0.25 alpha 0.3
+        linear 0.25 alpha 0.25
+        linear 0.25 alpha 0.35
+        linear 0.25 alpha 0.3
+        linear 0.25 alpha 0.35
+        linear 0.25 alpha 0.2
+        repeat
 
 # This image transform zooms in on the glitched Sayori hanging sprite in 
 # Sayori's hanging CG.
+image s_kill2_zoom:
+    contains:
+        "s_kill2"
+        truecenter
+        zoom 2.0 xalign 0.5 yalign 0.05
+    parallel:
+        dizzy(1, 1.0)
+    parallel:
+        alpha 0.3
+        linear 0.25 alpha 0.3
+        linear 0.25 alpha 0.4
+        linear 0.25 alpha 0.3
+        linear 0.25 alpha 0.5
+        linear 0.25 alpha 0.4
+        linear 0.25 alpha 0.6
+        linear 0.25 alpha 0.5
+        linear 0.25 alpha 0.6
+        linear 0.25 alpha 0.4
+        repeat

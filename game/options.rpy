@@ -13,7 +13,7 @@ define config.name = "Doki_Doki_Literature_Club_With_ironmouse"
 define gui.show_name = True
 
 # This controls the version number of your mod.
-define config.version = "v1.0"
+define config.version = "V 1.0"
 
 # This adds information about your mod in the About screen.
 # DDLC does not have a 'About' screen so you can leave this blank.
@@ -24,7 +24,7 @@ define gui.about = _("This Fan mod call Doki Doki Literature Club With Ironmouse
 # Note:
 #   The build name is ASCII only so no numbers, spaces, or semicolons.
 #   Example: Doki Doki Yuri Time to DokiDokiYuriTime
-define build.name = "Doki_Doki_Literature_Club_With_ironmouse"
+define build.name = "DDLCWITHRIONMOUSE"
 
 # This configures whether your mod has sound effects.
 define config.has_sound = True
@@ -81,7 +81,7 @@ default preferences.sfx_volume = 0.75
 #   Windows: %AppData%/RenPy/
 #   macOS: $HOME/Library/RenPy/ (Un-hide the Library Folder)
 #   Linux: $HOME/.renpy/
-define config.save_directory = "Doki_Doki_Literature_Club_With_ironmouse"
+define config.save_directory = "DDLCWITHIRONMOUSE"
 
 # This controls the window logo of your mod.
 define config.window_icon = "mod_assets/logo.png"
@@ -90,7 +90,7 @@ define config.window_icon = "mod_assets/logo.png"
 define config.allow_skipping = True
 
 # This controls whether your mod saves automatically.
-define config.has_autosave = True
+define config.has_autosave = False
 
 # This controls whether you mod saves automatically when quitting the game.
 define config.autosave_on_quit = False
