@@ -381,9 +381,7 @@ label splashscreen:
         with Dissolve(1.5)
         pause 1.0
 
-        ## This if statement checks if we are running any common streaming/recording 
-        ## software so the game can enable Let's Play Mode automatically and notify
-        ## the user about it if extra settings are enabled.
+        
       
 
     ## This python statement controls whether the Sayori Kill Early screen shows 
