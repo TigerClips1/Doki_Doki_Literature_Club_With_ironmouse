@@ -13,7 +13,7 @@ define config.name = "Doki_Doki_Literature_Club_With_ironmouse"
 define gui.show_name = True
 
 # This controls the version number of your mod.
-define config.version = "V 1.0"
+define config.version = "V1.0"
 
 # This adds information about your mod in the About screen.
 # DDLC does not have a 'About' screen so you can leave this blank.
@@ -186,7 +186,6 @@ init python:
     build.classify("game/**.chr", "scripts all")
     build.classify("game/advanced_scripts/**","scripts all") ## Backwards Compatibility
     build.classify("game/tl/**", "scripts all") ## Translation Folder
-    build.classify("game/mod_extras/**.rpyc", "scripts") ## Extra Features
 
     build.classify('**~', None)
     build.classify('**.bak', None)

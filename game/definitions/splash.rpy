@@ -342,7 +342,7 @@ label splashscreen:
 
     if not persistent.lockdown_warning:
         if config.developer:
-            call lockdown_check
+            call lockdown_check from _call_lockdown_check
         else:
             $ persistent.lockdown_warning = True
 
@@ -358,7 +358,7 @@ label splashscreen:
         if not persistent.has_chosen_language and translations:
 
             if _preferences.language is None:
-                call choose_language
+                call choose_language from _call_choose_language
         
         $ persistent.has_chosen_language = True
 
