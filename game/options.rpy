@@ -84,7 +84,7 @@ default preferences.sfx_volume = 0.75
 define config.save_directory = "DDLCWITHIRONMOUSE"
 
 # This controls the window logo of your mod.
-define config.window_icon = "mod_assets/logo.png"
+define config.window_icon = "mod_assets/gui/logo.png"
 
 # This controls whether your mod allows the player to skip dialogue.
 define config.allow_skipping = True

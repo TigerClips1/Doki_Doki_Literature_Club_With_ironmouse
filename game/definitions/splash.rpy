@@ -63,7 +63,7 @@ image splash_warning = ParameterizedText(style="splash_text", xalign=0.5, yalign
 
 # This image shows the DDLC logo in the normal DDLC position.
 image menu_logo:
-    "/mod_assets/logo.png"
+    "/mod_assets/gui/logo.png"
     # im.Composite((512, 512), (0, 0), recolorize("mod_assets/logo_bg.png"), (0, 0), "mod_assets/logo_fg.png")
     subpixel True
     xcenter 240
@@ -117,7 +117,7 @@ image menu_art_s:
 
 image menu_art_m:
     subpixel True
-    "mod_assets/menu_art_m.png"
+    "mod_assets/gui/menu_art_m.png"
     xcenter 1000
     ycenter 640
     zoom 1.00
@@ -252,7 +252,7 @@ image intro:
     truecenter
     "white"
     0.5
-    "mod_assets/splash.png" with Dissolve(0.5, alpha=True)
+    "mod_assets/images/bg/splash.png" with Dissolve(0.5, alpha=True)
     2.5
     "white" with Dissolve(0.5, alpha=True)
     0.5

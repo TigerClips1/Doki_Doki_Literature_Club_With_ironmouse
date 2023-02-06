@@ -10,7 +10,7 @@
 # Images are defined after the main poem game loop.
 
 init python: # This whole block runs when DDLC is started (as opposed to when the poem minigame is called)
-    poem_txt = "mod_assets/poemwords.txt"
+    poem_txt = "mod_assets/poemgame/poemwords.txt"
 
     # This class holds a word, and point values for each of the four heroines
     class PoemWord:
@@ -480,7 +480,7 @@ image m_sticker:
             function randomMoveMonika
         repeat
 image i_sticker:
-    "mod_assets/i_sticker_1.png"
+    "mod_assets/gui/poemgame/i_sticker_1.png"
     xoffset ironmouseOffset xzoom ironmouseZoom
     block:
         function randomPauseIronmouse
@@ -532,7 +532,7 @@ image m_sticker hop:
     xoffset 0 xzoom 1
     "m_sticker"
 image i_sticker hop:
-    "mod_assets/i_sticker_2.png"
+    "mod_assets/gui/poemgame/i_sticker_2.png"
     xoffset ironmouseOffset xzoom ironmouseZoom
     sticker_hop
     xoffset 0 xzoom 1

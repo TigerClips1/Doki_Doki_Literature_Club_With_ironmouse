@@ -28,8 +28,6 @@ init python:
 default translations = scan_translations()
 
 # Enables the ability to add more settings in the game such as uncensored mode.
-default extra_settings = True
-default enable_extras_menu = True
 default enable_languages = True
 
 ## Color Styles
@@ -425,6 +423,7 @@ screen quick_menu():
             #textbutton _("Q.Save") action QuickSave()
             #textbutton _("Q.Load") action QuickLoad()
             textbutton _("Settings") action ShowMenu('preferences')
+            textbutton _("About") action ShowMenu('About')
 
 
 ## This code ensures that the quick_menu screen is displayed in-game, whenever
@@ -491,9 +490,7 @@ screen navigation():
 
             textbutton _("Load Game") action [ShowMenu("load"), SensitiveIf(renpy.get_screen("load") == None)]
 
-            if enable_extras_menu:
-                textbutton _("Extras") action [ShowMenu("extras"), SensitiveIf(renpy.get_screen("extras") == None)]
-
+            
             if _in_replay:
 
                 textbutton _("End Replay") action EndReplay(confirm=True)
@@ -505,16 +502,17 @@ screen navigation():
                     textbutton _("Main Menu") action NullAction()
 
             textbutton _("Settings") action [ShowMenu("preferences"), SensitiveIf(renpy.get_screen("preferences") == None)]
+            textbutton _("About") action ShowMenu("about")
 
-            if not enable_extras_menu:
-                textbutton _("Credits") action ShowMenu("about")
-
+            
             if renpy.variant("pc"):
 
                 
 
                 ## The quit button is banned on iOS and unnecessary on Android.
                 textbutton _("Quit") action Quit(confirm=not main_menu)
+                
+
         else:
             timer 1.75 action Start("autoload_yurikill")
 
@@ -781,7 +779,7 @@ screen about():
     ## This use statement includes the game_menu screen inside this one. The
     ## vbox child is then included inside the viewport inside the game_menu
     ## screen.
-    use game_menu(_("Credits"), scroll="viewport"):
+    use game_menu(_("About"), scroll="viewport"):
 
         style_prefix "about"
 
@@ -801,6 +799,7 @@ screen about():
                 ## Do not touch/remove these unless the © or – symbol isn't available in your font.
                 ## You may add things above or below it.
                 ## If you are not going with a splashscreen option, this first line MUST stay in the mod.
+                text "Copyright © TigerClips1 2023 {a=https://github.com/TigerClips1} TCgithub "
                 text " made useing ironmouse model {a=https://youtube.com/@IronMouseParty/}ironmouse Youtube Channel{/a}\nCopyright © 2017-" + str(datetime.date.today().year) + " ironmouse model (ironmouse). All rights reserved.\n"
                 text "Doki Doki Literature Club. Copyright © 2017 Team Salvato. All rights reserved.\n"
                 text _("Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n[renpy.license!t]")
@@ -1287,6 +1286,7 @@ screen preferences():
                             textbutton _("Text") action Show("text_options")
                             textbutton _("Audio") action Show("audio_options")
                             textbutton _("Extras") action Show("extra_options")
+                            
 
                 if enable_languages and translations:
                     vbox:
