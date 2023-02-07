@@ -799,8 +799,8 @@ screen about():
                 ## Do not touch/remove these unless the © or – symbol isn't available in your font.
                 ## You may add things above or below it.
                 ## If you are not going with a splashscreen option, this first line MUST stay in the mod.
-                text "Copyright © TigerClips1 2023 All rights reserved {a=https://github.com/TigerClips1} TCgithub "
-                text " made useing ironmouse model {a=https://youtube.com/@IronMouseParty/}ironmouse Youtube Channel{/a}\nCopyright © 2017-"  + str(datetime.date.today().year) + " ironmouse model (ironmouse). All rights reserved.\n"
+                text "Copyright © TigerClips1 2023 All rights reserved {a=https://github.com/TigerClips1}TCgithub "
+                text " made useing ironmouse model {a=https://youtube.com/@IronMouseParty/}ironmouse Youtube Channel{/a}\nCopyright © 2017-" + str(datetime.date.today().year) + " ironmouse model (ironmouse). All rights reserved.\n"
                 text "Doki Doki Literature Club. Copyright © 2017 Team Salvato. All rights reserved.\n"
                 text _("Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n[renpy.license!t]")
 
