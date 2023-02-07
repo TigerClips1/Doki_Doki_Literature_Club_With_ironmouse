@@ -47,8 +47,22 @@ label start:
     # This is where your script code is called!
     # 'persistent.playthrough' controls the playthrough number the player is on i.e (Act 1, 2, 3, 4)
     
-    # REMOVE THIS LINE WHEN YOU HAVE MADE A STORY SCRIPT FILE AND CALLED IT HERE
-    call story from _call_story
+    if persistent.playthrough == 0:
+        #Day 1 ##
+        $ chapter = 1
+        call storych1
+        call poem
+        #Day 2 ##
+        $ chapter = 2
+        call storych2
+        call poem
+        ## Day 3 ##
+        $ chapter = 3
+        call storych3
+        call poem
+    #jump credits
+
+
 
     ## Example on calling scripts from DDLC.
     # if persistent.playthrough == 0:

@@ -118,13 +118,27 @@ Ghosts are blue-green. My heart is amber."""
 
     poem_i1 = Poem(
     author = "ironmouse",
-    title = "test",
+    title = "how i love this club",
     text = """\
 hey i'm ironmouse and i love to be a youtuber/anmie girl \
-and i want to say i'm happy to be in this club."""
+and i want to say i'm happy to be in this club.""" # this one will be change
     )
 
-    poem_y22 = Poem(
+    poem_i2 = Poem(
+    author = "ironmouse",
+    title = "how the vtuber become famous",
+    text = """\
+    """ #don't know what to put in the poem
+    )
+    
+    poem_i3 = Poem(
+        author = "ironmouse",
+        title = "How much i think connor is funny",
+        text = """\
+        """ #don't knw this one yet
+    )
+    
+    poem_y22 = Poem( #todo add custom poem for ironmouse and custom music
     author = "yuri",
     yuri_2 = True,
     title = "Wheel",
