@@ -1363,6 +1363,9 @@ image monika 4r = im.Composite((960, 960), (0, 0), "monika/2l.png", (0, 0), "mon
 
 image monika 5a = im.Composite((960, 960), (0, 0), "monika/3a.png")
 image monika 5b = im.Composite((960, 960), (0, 0), "monika/3b.png")
+image ironmouse 1 = im.Composite((960, 960), (0, 0), "mod_assets/images/ironmouse/1l.png", (0, 0), "mod_assets/images/ironmouse/1r.png", (0, 0), "mod_assets/images/ironmouse/n.png")
+image ironmouse 1 = im.Composite((960, 960), (0, 0), "mod_assets/images/ironmouse/girl4.png", (0, 0), "mod_assets/images/ironmouse/girl4.png", (0, 0), "mod_assets/images/ironmouse/girl4.png")
+
 #ToDo  add ironmouse sprint to definitions.rpy add ore anmieation orgnaze the folder and add 3 Chapter
 
 # This image transform shows a glitched Monika during a special poem.
@@ -1423,7 +1426,7 @@ define s = DynamicCharacter('s_name', image='sayori', what_prefix='"', what_suff
 define m = DynamicCharacter('m_name', image='monika', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed", window_background=Image("mod_assets/gui/textbox/textbox.png", xalign=0.5, yalign=1.0), who_outlines=[ (3, "#686362") ])
 define n = DynamicCharacter('n_name', image='natsuki', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed", window_background=Image("mod_assets/gui/textbox/textbox.png", xalign=0.5, yalign=1.0), who_outlines=[ (3, "#686362") ])
 define y = DynamicCharacter('y_name', image='yuri', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed", window_background=Image("mod_assets/gui/textbox/textbox.png", xalign=0.5, yalign=1.0), who_outlines=[ (3, "#686362") ])
-define i = Character('i_name', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed", window_background=Image("mod_assets/gui/textbox/textbox.png", xalign=0.5, yalign=1.0), who_outlines=[ (3, "#686362") ])
+define i = DynamicCharacter('i_name', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed", window_background=Image("mod_assets/gui/textbox/textbox.png", xalign=0.5, yalign=1.0), who_outlines=[ (3, "#686362") ])
 
 # This variable determines whether to allow the player to dismiss pauses.
 # By default this is set by config.developer which is normally set to false
@@ -1498,7 +1501,7 @@ default s_name = "Sayori"
 default m_name = "Monika"
 default n_name = "Natsuki"
 default y_name = "Yuri"
-default i_name = "ironmouse"
+default i_name = "Ironmouse"
 
 # Poem Variables
 # This section records how much each character likes your poem in-game.

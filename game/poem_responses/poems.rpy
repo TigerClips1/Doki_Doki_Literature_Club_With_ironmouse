@@ -116,6 +116,14 @@ I touch his hand. The flickering stops.
 Ghosts are blue-green. My heart is amber."""
     )
 
+    poem_i1 = Poem(
+    author = "ironmouse",
+    title = "test",
+    text = """\
+hey i'm ironmouse and i love to be a youtuber/anmie girl \
+and i want to say i'm happy to be in this club."""
+    )
+
     poem_y22 = Poem(
     author = "yuri",
     yuri_2 = True,
@@ -664,6 +672,9 @@ screen poem(currentpoem, paper="paper"):
         elif currentpoem.author == "monika":
             text "[currentpoem.title]\n\n[currentpoem.text]" style "monika_text"
 
+        elif currentpoem.author == "ironmouse":
+            text "[currentpoem.title]\n\n[currentpoem.text]" style "ironmouse_text"
+
         null height 100
 
     vbar value YScrollValue(viewport="vp") style "poem_vbar"
@@ -725,6 +736,11 @@ style monika_text:
     size 34
     color "#000"
     outlines []
+style ironmouse_text:
+    font "mod_assets/font/ironmouse.ttf"
+    size 34
+    color "#000"
+    outlines []
 
 # This label shows the poem to the player during the poem sharing mini-game.
 label showpoem(poem=None, music=True, track=None, revert_music=True, img=None, where=i11, paper=None):
@@ -741,7 +757,7 @@ label showpoem(poem=None, music=True, track=None, revert_music=True, img=None, w
         if track:
             $ audio.t5b = "<from " + str(currentpos) + " loop 4.444>" + track
         else:
-            $ audio.t5b = "<from " + str(currentpos) + " loop 4.444>bgm/5_" + poem.author + ".ogg"
+            $ audio.t5b = "<from " + str(currentpos) + " loop 4.444>mod_assets/audio/5_" + poem.author + ".ogg"
 
         # These variables stop the normal Okay Everyone track and plays the characters'
         # version of the track instead.
@@ -785,7 +801,7 @@ label showpoem(poem=None, music=True, track=None, revert_music=True, img=None, w
     # This if statement reverts the music back to normal if declared.
     if music and revert_music:
         $ currentpos = get_pos(channel="music_poem")
-        $ audio.t5c = "<from " + str(currentpos) + " loop 4.444>bgm/5.ogg"
+        $ audio.t5c = "<from " + str(currentpos) + " loop 4.444>mod_assets/audio/5.ogg"
         stop music_poem fadeout 2.0
         $ renpy.music.play(audio.t5c, fadein=2.0)
     return

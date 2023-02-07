@@ -423,7 +423,7 @@ screen quick_menu():
             #textbutton _("Q.Save") action QuickSave()
             #textbutton _("Q.Load") action QuickLoad()
             textbutton _("Settings") action ShowMenu('preferences')
-            textbutton _("About") action ShowMenu('About')
+            #textbutton _("About") action ShowMenu('About')
 
 
 ## This code ensures that the quick_menu screen is displayed in-game, whenever
