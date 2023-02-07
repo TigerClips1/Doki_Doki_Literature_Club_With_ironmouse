@@ -1,0 +1,15 @@
+//  Copyright © TigerClipsInc  2023 All rights reserved
+//  Copyright © GHOSTSA 2017-2023 for the mod template All rights reserved
+ 
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+// Change the line below to reflect where your Ren'Py install is!
+RENPY_TOOL=/some/renpy/location/renpy.sh
+
+BUILD_ACTION=$(SRCROOT)/game lint
+RUN_ACTION=$(SRCROOT)/game
+
+
+//what this do is add support for apple ios devices
+// wanana  thnaks for GHOSTSA for all his work he put for this mod template  to make it support ios andorid windows linux mac hes the best
