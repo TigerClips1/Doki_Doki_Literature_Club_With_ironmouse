@@ -96,7 +96,7 @@ init python:
         elif persistent.playthrough == 3:
             restore_character(["monika"])
         else:
-            restore_character(["sayori", "natsuki", "yuri"])
+            restore_character(["sayori", "natsuki", "yuri", "ironmouse"])
     
     # This function is obsolete as all characters now restores only
     # relevant characters to the characters folder.

@@ -106,6 +106,7 @@ label poemresponse_start:
     $ n_readpoem = False
     $ y_readpoem = False
     $ m_readpoem = False
+    $ i_readpoem = False
     $ poemsread = 0
     return
 

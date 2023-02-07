@@ -1,0 +1,33 @@
+Mon Feb  6 21:35:08 2023
+Linux-6.1.9-1-MANJARO-x86_64-with-glibc2.36
+Ren'Py 8.0.3.22090809
+ 
+
+Bootstrap to the start of init.init took 0.09s
+Early init took 0.00s
+Loader init took 0.01s
+Loading error handling took 0.17s
+Loading script took 5.29s
+Loading save slot metadata. took 0.00s
+Loading persistent took 0.00s
+Faled to initialize steam: OSError('/home/linux/Downloads/renpy-8.0.3-sdk/lib/py3-linux-x86_64/libsteam_api.so: cannot open shared object file: No such file or directory')
+Running init code took 0.27s
+Loading analysis data took 0.00s
+Analyze and compile ATL took 0.18s
+Index archives took 0.00s
+Backing up script files to '/home/linux/.renpy/backups/Doki_Doki_Literature_Club_With_ironmouse':
+Dump and make backups. took 0.08s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc. took 0.06s
+DPI scale factor: 1.000000
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.09s
+Build styles took 0.01s
+Load screen analysis took 0.00s
+Analyze screens took 0.06s
+Save screen analysis took 0.04s
+Prepare screens took 0.25s
+Save pyanalysis. took 0.04s
+Save bytecode. took 0.09s
