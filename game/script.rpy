@@ -22,11 +22,11 @@ label start:
     # To add a character, use the following example below: 
     #   $ mi_name = "Mike". 
     # Don't forget to add the character to 'definitions.rpy'!
-    $ s_name = "???"
-    $ m_name = "Girl 3"
-    $ n_name = "Girl 2"
-    $ y_name = "Girl 1"
-    $ i_name = "Girl 4"
+    $ s_name = "Sayori"
+    $ m_name = "Monika"
+    $ n_name = "Nutsuki"
+    $ y_name = "Yuri"
+    $ i_name = "Ironmouse"
 
     # This variable controls whether the quick menu in the textbox is enabled.
     $ quick_menu = True
@@ -48,17 +48,20 @@ label start:
     # 'persistent.playthrough' controls the playthrough number the player is on i.e (Act 1, 2, 3, 4)
     
     if persistent.playthrough == 0:
+        
         #Day 1 ##
         $ chapter = 1
-        call storych1 from _call_storych1
+        call chapter1 
         call poem from _call_poem
+        
         #Day 2 ##
         $ chapter = 2
-        call storych2 from _call_storych2
+        call chapter2
         call poem from _call_poem_1
+        
         ## Day 3 ##
         $ chapter = 3
-        call storych3 from _call_storych3
+        call chapter3 
         call poem from _call_poem_2
     #jump credits
 
