@@ -415,7 +415,7 @@ label splashscreen:
             a = list(range(1,12))
 
             # This for loop loops 3 times (array number of special_poems) and
-            # assigns a random number to the array.
+            # assigns a rro0m number to the array.
             for i in range(3):
                 b = renpy.random.choice(a)
                 persistent.special_poems[i] = b

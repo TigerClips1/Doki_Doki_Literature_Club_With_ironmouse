@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXFileReference section */
+		8097AD2229623613008CC82F /* CREDIT.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CREDIT.md; sourceTree = "<group>"; };
+		8097AD2429623614008CC82F /* requirements.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = requirements.txt; sourceTree = "<group>"; };
 		8097AD2A29623614008CC82F /* game */ = {isa = PBXFileReference; lastKnownFileType = folder; path = game; sourceTree = "<group>"; };
 		8097AD2B29623614008CC82F /* characters */ = {isa = PBXFileReference; lastKnownFileType = folder; path = characters; sourceTree = "<group>"; };
 		BF7B5EA622AD8ACC007BEAD8 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };

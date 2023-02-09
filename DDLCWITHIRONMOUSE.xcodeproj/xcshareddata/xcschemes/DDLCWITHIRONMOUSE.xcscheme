@@ -17,7 +17,7 @@
                BlueprintIdentifier = "BF7B5E7622AD8AA2007BEAD8"
                BuildableName = "DDLCWITHIRONMOUSE"
                BlueprintName = "DDLCWITHIRONMOUSE"
-               ReferencedContainer = "container:DDLCModTemplate.xcodeproj">
+               ReferencedContainer = "container:DDLCWITHIRONMOUSE.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -46,9 +46,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BF7B5E7622AD8AA2007BEAD8"
-            BuildableName = "DDLCModTemplate"
-            BlueprintName = "DDLCModTemplate"
-            ReferencedContainer = "container:DDLCModTemplate.xcodeproj">
+            BuildableName = "DDLCWITHIRONMOUSE"
+            BlueprintName = "DDLCWITHIRONMOUSE"
+            ReferencedContainer = "container:DDLCWITHIRONMOUSE.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <CommandLineArguments>

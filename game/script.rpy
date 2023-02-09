@@ -50,16 +50,16 @@ label start:
     if persistent.playthrough == 0:
         #Day 1 ##
         $ chapter = 1
-        call storych1
-        call poem
+        call storych1 from _call_storych1
+        call poem from _call_poem
         #Day 2 ##
         $ chapter = 2
-        call storych2
-        call poem
+        call storych2 from _call_storych2
+        call poem from _call_poem_1
         ## Day 3 ##
         $ chapter = 3
-        call storych3
-        call poem
+        call storych3 from _call_storych3
+        call poem from _call_poem_2
     #jump credits
 
 

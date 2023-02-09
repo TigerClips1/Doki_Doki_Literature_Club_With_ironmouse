@@ -81,16 +81,27 @@
          location = "group:mod_assets"
          name = "mod_assets">
          <FileRef
-            location = "Logo.png">
-            location = 5.ogg
-            location = 5_ironmouse.ogg
-            location =  5_monika.ogg
-            location = 5_natsuki.ogg
-            location = 5_sayori.ogg
-            location = 5_yuri.ogg
-            location = ironmouse.ttf
-            <!--ddlc with ironmouse comeing soon for ios just need to add the file here-->
-            <!--TOdo add all the stuff from the mod assets folder to this .xml file to get it working for ios-->
+            location = "logo_bg.png"
+            location = "logo_fg.png"
+            location = "Logo.png"
+            location = "5.ogg"
+            location = "5_ironmouse.ogg"
+            location =  "5_monika.ogg"
+            location = "5_natsuki.ogg"
+            location = "5_sayori.ogg"
+            location = "5_yuri.ogg"
+            location = "ironmouse.ttf"
+            location = "poemwords.txt"
+            location = "i_sticker_1.png"
+            location = "i_sticker_2.png"
+            location = "Textbox.png"
+            location = "menu_art_m.png"
+            location = "splash.png"
+            location = "1l.png"
+            location = "1r.png"
+            location = "girl4.png"
+            location = "n.png">
+            <!--DONE-->
          </FileRef>
       </Group>
       <FileRef
