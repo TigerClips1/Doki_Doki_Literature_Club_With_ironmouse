@@ -152,7 +152,7 @@ init python:
     # These variables declare the packages to build your mod that is Team Salvato
     # IPG compliant. Do not mess with these variables whatsoever.
     build.package("Renpy8-DDLCMod", 'zip', 'windows linux mac renpy mod',
-        description="Ren'Py 8 DDLC Compliant Mod")
+        description="DDLC MOD BULDER")
 
     # These variables declare the archives that will be made to your packaged mod.
     # To add another archive, make a build.archive variable like in this example:

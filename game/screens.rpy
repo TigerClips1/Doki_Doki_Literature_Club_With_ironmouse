@@ -578,6 +578,7 @@ screen main_menu():
             add "menu_art_s"
         add "menu_particles"
         if persistent.playthrough != 4:
+            add "menu_art_i"
             add "menu_art_m"
         add "menu_fade"
 
@@ -1218,10 +1219,24 @@ screen extra_options():
                     yes_action=[Hide("confirm"), ToggleField(persistent, "uncensored_mode")],
                     no_action=Hide("confirm")
                 ))
-           
-                
-
+        label _("Dark")
+        hbox:
+                textbutton _("dark") action If(persistent.dark_mode, 
+                ToggleField(persistent, "dark_mode"), 
+                Show("confirm", message="Are you sure you want to turn on Dark mode?",
+                yes_action=[Hide("confirm"), ToggleField(persistent, "dark_mode")],
+                no_action=Hide("confirm"),
+            ))
+        label _("Light")      
+        hbox:
         
+            textbutton _("light") action If(persistent.light_mode,
+            ToggleField(persistent, "light_mode"),
+            Show("confirm", message="Are you sure you want to turn on light mode?",
+            yes_action=[Hide("confirm"), ToggleField(persistent, "light_mode")],
+            no_action=Hide("confirm"),
+        ))
+        #only way i know for now for dark and light mode this will improve in the feture     
 
         label _("Player Name")
         vbox:

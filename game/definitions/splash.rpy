@@ -115,13 +115,22 @@ image menu_art_s:
     zoom 0.68
     menu_art_move(0.68, 510, 0.68)
 
+image menu_art_i:
+    subpixel True
+    "mod_assets/gui/menu_art_i.png"
+    xcenter 950
+    ycenter 300
+    zoom 0.68
+    menu_art_move(0.64, 850, 0.68)
+
 image menu_art_m:
     subpixel True
-    "mod_assets/gui/menu_art_m.png"
+    "gui/menu_art_m.png"
     xcenter 1000
     ycenter 640
     zoom 1.00
     menu_art_move(1.00, 1000, 1.00)
+
 
 # These images are the same as above but ghost themed for the secret ghost menu
 # that appears rarely in-game .
