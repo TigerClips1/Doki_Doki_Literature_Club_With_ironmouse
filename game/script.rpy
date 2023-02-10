@@ -24,7 +24,7 @@ label start:
     # Don't forget to add the character to 'definitions.rpy'!
     $ s_name = "Sayori"
     $ m_name = "Monika"
-    $ n_name = "Nutsuki"
+    $ n_name = "Natsuki"
     $ y_name = "Yuri"
     $ i_name = "Ironmouse"
 
