@@ -51,17 +51,17 @@ label start:
         
         #Day 1 ##
         $ chapter = 1
-        call chapter1 
+        call chapter1 from _call_chapter1 
         call poem from _call_poem
         
         #Day 2 ##
         $ chapter = 2
-        call chapter2
+        call chapter2 from _call_chapter2
         call poem from _call_poem_1
         
         ## Day 3 ##
         $ chapter = 3
-        call chapter3 
+        call chapter3 from _call_chapter3 
         call poem from _call_poem_2
     #jump credits
 

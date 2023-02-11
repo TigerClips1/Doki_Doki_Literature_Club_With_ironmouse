@@ -74,14 +74,14 @@ image menu_logo:
 # This image shows the main menu polka-dot image.
 image menu_bg:
     topleft
-    "gui/menu_bg.png"
+    "mod_assets/gui/menu_bg_d.png"
     # recolorize("gui/menu_bg.png", "#ffdbf0", "#fff", 1)
     menu_bg_move
 
 # This image shows the pause menu polka-dot image.
 image game_menu_bg:
     topleft
-    "gui/menu_bg.png"
+    "mod_assets/gui/menu_bg_d.png"
     # recolorize("gui/menu_bg.png", "#ffdbf0", "#fff", 1)
     menu_bg_loop
 
@@ -177,7 +177,7 @@ image menu_art_s_glitch:
 
 # This image shows the main menu screen in the main/pause menu.
 image menu_nav:
-    "gui/overlay/main_menu.png"
+    "mod_assets/gui/overlay/main_menu_d.png"
     #recolorize("gui/overlay/main_menu.png", "#ffbde1")
     menu_nav_move
 

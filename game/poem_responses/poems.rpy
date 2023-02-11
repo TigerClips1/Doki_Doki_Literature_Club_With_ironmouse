@@ -794,7 +794,7 @@ label showpoem(poem=None, music=True, track=None, revert_music=True, img=None, w
     if not persistent.first_poem:
         $ persistent.first_poem = True
         $ renpy.save_persistent()
-        show expression "gui/poem_dismiss.png" as poem_dismiss:
+        show expression "mod_assets/gui/poem_dismiss.png" as poem_dismiss:
             xpos 1050 ypos 590
     with Dissolve(1)
 

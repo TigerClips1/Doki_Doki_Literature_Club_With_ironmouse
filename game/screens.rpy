@@ -150,7 +150,7 @@ style vslider:
 
 style frame:
     padding gui.frame_borders.padding
-    background Frame("gui/frame.png", gui.frame_borders, tile=gui.frame_tile)
+    background Frame("mod_assets/gui/frame_d.png", gui.frame_borders, tile=gui.frame_tile)
     # background Frame(recolorize("gui/frame.png"), gui.frame_borders, tile=gui.frame_tile)
 
 ################################################################################
@@ -220,7 +220,7 @@ style namebox:
     ypos gui.name_ypos
     ysize gui.namebox_height
 
-    background Frame("gui/namebox.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
+    background Frame("/mod_assets/gui/namebox_d.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
     padding gui.namebox_borders.padding
 
 style say_label:
@@ -333,9 +333,9 @@ screen choice(items):
                     $ arg2 = kwarg[-1]
                     
                     textbutton caption:
-                        idle_background Frame(im.MatrixColor(im.MatrixColor("gui/button/choice_idle_background.png", im.matrix.desaturate() * im.matrix.contrast(1.29) * im.matrix.colorize("#00f", "#fff") * im.matrix.saturation(120)), 
+                        idle_background Frame(im.MatrixColor(im.MatrixColor("mod_assets/gui/button/choice_idle_background_d.png", im.matrix.desaturate() * im.matrix.contrast(1.29) * im.matrix.colorize("#00f", "#fff") * im.matrix.saturation(120)), 
                             im.matrix.desaturate() * im.matrix.colorize(arg1, arg2)), gui.choice_button_borders)
-                        hover_background Frame(im.MatrixColor(im.MatrixColor("gui/button/choice_hover_background.png", im.matrix.desaturate() * im.matrix.contrast(1.29) * im.matrix.colorize("#00f", "#fff") * im.matrix.saturation(120)), 
+                        hover_background Frame(im.MatrixColor(im.MatrixColor("mod_assets/gui/button/choice_hover_background_d.png", im.matrix.desaturate() * im.matrix.contrast(1.29) * im.matrix.colorize("#00f", "#fff") * im.matrix.saturation(120)), 
                             im.matrix.desaturate() * im.matrix.colorize(arg1, "#fff")), gui.choice_button_borders)
                         action i.action
 
@@ -370,8 +370,8 @@ style choice_button is default:
     properties gui.button_properties("choice_button")
     hover_sound gui.hover_sound
     activate_sound gui.activate_sound
-    idle_background Frame("gui/button/choice_idle_background.png", gui.choice_button_borders)
-    hover_background Frame("gui/button/choice_hover_background.png", gui.choice_button_borders)
+    idle_background Frame("mod_assets/gui/button/choice_idle_background_d.png", gui.choice_button_borders)
+    hover_background Frame("mod_assets/gui/button/choice_hover_background_d.png", gui.choice_button_borders)
 
 style choice_button_text is default:
     properties gui.button_text_properties("choice_button")
@@ -598,7 +598,7 @@ style main_menu_vbox is vbox
 style main_menu_text is gui_text
 style main_menu_title is main_menu_text
 style main_menu_version is main_menu_text:
-    color "#000000"
+    color "#ffffff"
     size 16
     outlines []
 
@@ -727,7 +727,7 @@ style game_menu_outer_frame:
     bottom_padding 30
     top_padding 120
 
-    background "gui/overlay/game_menu.png"
+    background "mod_assets/gui/overlay/game_menu_d.png"
     # background recolorize("gui/overlay/game_menu.png")
 
 style game_menu_navigation_frame:
@@ -815,13 +815,13 @@ style about_label_text is gui_label_text
 style about_text is gui_text
 
 style about_label_text:
-    color "#000"
+    color "#fffbfb"
     outlines []
     text_align 0.5
     size gui.label_text_size
 
 style about_text:
-    color "#000"
+    color "#f8f8f8"
     outlines []
     size gui.text_size
     text_align 0.5
@@ -983,7 +983,7 @@ screen viewframe_options(title):
 
     style_prefix "viewframe"
 
-    add "gui/overlay/confirm.png"
+    add "mod_assets/gui/overlay/confirm_d.png"
 
     frame:
 
@@ -1020,7 +1020,7 @@ style viewframe_text is confirm_prompt_text:
 
 #     style_prefix "confirm"
 
-#     add "gui/overlay/confirm.png"
+#     add "mod_assets/gui/overlay/confirm_d.png"
 
 #     frame:
 
@@ -1347,7 +1347,7 @@ style radio_vbox:
 
 style radio_button:
     properties gui.button_properties("radio_button")
-    foreground "gui/button/check_[prefix_]foreground.png"
+    foreground "mod_assets/gui/button/check_[prefix_]foreground_d.png"
 
 style radio_button_text:
     properties gui.button_text_properties("radio_button")
@@ -1359,7 +1359,7 @@ style check_vbox:
 
 style check_button:
     properties gui.button_properties("check_button")
-    foreground "gui/button/check_[prefix_]foreground.png"
+    foreground "mod_assets/gui/button/check_[prefix_]foreground_d.png"
 
 style check_button_text:
     properties gui.button_text_properties("check_button")
@@ -1639,7 +1639,7 @@ screen name_input(message, ok_action):
 
     style_prefix "confirm"
 
-    add "gui/overlay/confirm.png"
+    add "mod_assets/gui/overlay/confirm_d.png"
     key "K_RETURN" action [Play("sound", gui.activate_sound), ok_action]
 
     frame:
@@ -1671,7 +1671,7 @@ screen dialog(message, ok_action):
 
     style_prefix "confirm"
 
-    add "gui/overlay/confirm.png"
+    add "mod_assets/gui/overlay/confirm_d.png"
 
     frame:
 
@@ -1712,7 +1712,7 @@ screen confirm(message, yes_action, no_action):
 
     style_prefix "confirm"
 
-    add "gui/overlay/confirm.png"
+    add "mod_assets/gui/overlay/confirm_d.png"
 
     frame:
 
@@ -1755,8 +1755,8 @@ style confirm_button is gui_medium_button
 style confirm_button_text is gui_medium_button_text
 
 style confirm_frame:
-    background Frame("gui/frame.png", gui.confirm_frame_borders, tile=gui.frame_tile)
-    # background Frame(recolorize("gui/frame.png"), gui.confirm_frame_borders, tile=gui.frame_tile)
+    background Frame("mod_assets/gui/frame_d.png", gui.confirm_frame_borders, tile=gui.frame_tile)
+    # background Frame(recolorize("mod_assets/gui/frame_d.png"), gui.confirm_frame_borders, tile=gui.frame_tile)
     padding gui.confirm_frame_borders.padding
     xalign .5
     yalign .5
@@ -1946,7 +1946,7 @@ style nvl_window:
     xfill True
     yfill True
 
-    background "gui/nvl.png"
+    background "mod_assets/gui/overlay/nvl_d.png"
     padding gui.nvl_borders.padding
 
 style nvl_entry:
@@ -1995,7 +1995,7 @@ screen choose_language():
     modal True
     style_prefix "radio"
 
-    add "gui/overlay/confirm.png"
+    add "mod_assets/gui/overlay/confirm_d.png"
 
     frame:
         style "confirm_frame"
