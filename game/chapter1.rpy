@@ -18,27 +18,85 @@ s "yes really." #sayori say yes really
 mc "cool what her name" # mc talking
 s "just wait and you will see" #sayori talking
 "So we go to the club" #mc talking in his head
-with wipeleft_scene #wipe the screen to the left to let the player know there done with that line of text
-hide bg residential_day # hide the scen background
+with wiperight_scene
 hide sayori  # hide sayori sprite
+hide bg residential_day # hide the scen background
+stop music fadeout 2.0 
 show bg club_day # show the club room day
-s "Hey" # sayori speak
-#show sayori sprite to 2b becuse i don't know what pose to give to her model t11 mean tranlation then where you see the charctor appear
+play music t3
 show sayori 2b zorder 2 at t11 
-m "Hey sayori" # monika say hi to sayori
+
+s "Hey" # sayori speak
 hide sayori  # hideing sayori sprite
-#show monika at 3b and zoom 2times at translation 11
+#show sayori sprite to 2b becuse i don't know what pose to give to her model t11 mean tranlation then where you see the charctor appear
 show monika 3b zorder 2 at t11 
-y "hey sayori" #yuri say hi to sayori
+m "Hey sayori" # monika say hi to sayori
+#show monika at 3b and zoom 2times at translation 11
 hide monika # hide monika sprite
-#show yuri at 1b zoom 2 rtimes at translaton 11
 show yuri 1b zorder 2 at t11 
-n "hey sayori" #natsuki say hi
+y "hey sayori" #yuri say hi to sayori
+#show yuri at 1b zoom 2 rtimes at translaton 11
 hide yuri  # hide yuri sprite
-#show natsuki at 1b zom 2 at translation 11
 show natsuki 1b zorder 2 at t11
+n "hey sayori" #natsuki say hi
+#show natsuki at 1b zom 2 at translation 11
 hide natsuki  #hide Natsuki sprite
 mc "hello everyone i here we have a new kid in the club" # Main Charctor say hi to every girl in the club
+show monika 1b zorder 2 at t11
+m "Hello [player] how is your day"
+mc "monika i'm haveing a good day Thanks for asking"
+mc ":)"
+m "that good to here"
+m "yes there a new student in the club"
+hide monika
+show natsuki 1b zorder 2 at t11
+n "there a new student i should make some cupcakes"
+hide natsuki
+show yuri 1b zorder 2 at t11 
+y "i will get the tea"
+hide yuri
+show sayori 1b zorder 2 at t11
+s "i will help natsuki with the cup cakes"
+hide sayori
+"Wow all my friends in club do all of this for the new kid"
+menu: #let the player controll the story
+    mc "who should i help" # mc talking to him self asking who he will help
+    "i chose to help yuri with the Tea":
+        $ options =  True # bool varable 
+    "Cupcakes": #name of the menu options
+        $ options = False
+        "I'm so happy to help"
+
+if  options: #if satement
+        "i will help yuri with the tea" #i will comeplate yuri line tomorrow                    #Todo comeplate natsuki sprite for all the lines for the cupcake/ add yuri sprite fix spelling error and add yuri tea lines tomorrow
+        show yuri 1l zorder 2 at t11
+        play music t6
+        scene bg club_day
+        
+else:  #else this will happening when you click the 2 options 
+        "I will help Natsuki with the cupcakes"
+        show natsuki 1l zorder 2 at t11
+        play music t5
+        scene bg club_day
+        mc "natsuki can i help you with the cupcaks"
+        n "sure but you have to fellow everything "
+        "Time to Have fun"
+        n "allright we need to make  cake flour, eggs, sugar, salt, milk or water will work, oil "
+        mc "i will get that "
+        n "ok thank you"
+        n "and i need a pan that square"
+        n "tempurture need to be 350 degress"
+        n "To bake this cake for  the new student"
+        mc "ok done"
+        "and we wait and natsuki add some extra stuff to make it look good"
+        mc "cake look so good and Natsuki added cat ears as the icing"
+        n "allright we done with the cake thanks to [player] for helping" # i will add sprite for these line later
+stop music fadeout 2.0
+scene bg club_day
+play music t3
+y "tea is done thanks to sayori"
+m "good job to all"
+"new club member is here"
 return # exit
 #todo add menu and all the 4chr say hi to mc  and add music for TigerClips1
 

@@ -6,7 +6,7 @@
 # This file customizes what your mod is and and how it starts and builds!
 
 # This controls what your mod is called.
-define config.name = "Doki_Doki_Literature_Club_With_ironmouse"
+define config.name = "Doki_Doki_Literature_Club_With_ironmouse "
 
 # This controls whether you want your mod name to show in the main menu.
 # If your mod name is big, it is suggested to turn this off.
