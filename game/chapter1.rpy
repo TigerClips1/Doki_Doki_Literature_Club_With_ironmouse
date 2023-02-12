@@ -72,7 +72,22 @@ if  options: #if satement
         show yuri 1l zorder 2 at t11
         play music t6
         scene bg club_day
-        
+        mc "Hey yuri can i help you with the tea"
+        y "yes sure [player] this tea will got done when more people help out" #yuri text will change in the feture to be like the Og yuri for ddlc
+        "That great can't wait to help" #i will fix these spelling error and gramor error and change the sprite need to do research about that of all sprite poss and tranlation
+        y "i need you to use the school auto tea maker 3.000"
+        y "..."
+        y "haha"
+        mc "tea maker what "
+        y "it's just a joke [player]"
+        mc "oh "
+        mc "..."
+        "and we wait to until the tea is done"
+        "now we put the tea in the glass cup"
+        y "tea small good ahaha"
+        mc "what so funny "
+        y "nothing [player]"
+        "yuri act wired remind of something happen long time ago when yuri did something that was gross cant remaber what that is."
 else:  #else this will happening when you click the 2 options 
         "I will help Natsuki with the cupcakes"
         show natsuki 1l zorder 2 at t11
@@ -94,7 +109,7 @@ else:  #else this will happening when you click the 2 options
 stop music fadeout 2.0
 scene bg club_day
 play music t3
-y "tea is done thanks to sayori"
+y "tea is done "
 m "good job to all"
 "new club member is here"
 return # exit
