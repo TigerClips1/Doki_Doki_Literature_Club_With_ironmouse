@@ -37,7 +37,7 @@ define config.has_voice = False
 
 # This configures what music will play when you launch your mod and in the 
 # main menu.
-define config.main_menu_music = audio.t1
+define config.main_menu_music = audio.t1r
 
 # These variables control the transition effects of DDLC when entering and exiting
 # a menu.

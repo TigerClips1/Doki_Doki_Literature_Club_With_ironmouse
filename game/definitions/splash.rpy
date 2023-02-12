@@ -517,7 +517,7 @@ label splashscreen:
     show white
     $ persistent.ghost_menu = False
     $ splash_message = splash_message_default
-    $ config.main_menu_music = audio.t1
+    $ config.main_menu_music = audio.t1r
     $ renpy.music.play(config.main_menu_music)
     show intro with Dissolve(0.5, alpha=True)
     $ pause(2.5)
@@ -671,7 +671,7 @@ label autoload:
 ## This label sets the main menu music to Doki Doki Literature Club before the
 ## menu starts.
 label before_main_menu:
-    $ config.main_menu_music = audio.t1
+    $ config.main_menu_music = audio.t1r
     return
 
 ## This label is a left-over from DDLC's development that quits the game but shows
