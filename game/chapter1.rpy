@@ -41,7 +41,7 @@ show natsuki 1b zorder 2 at t11
 n "hey sayori" #natsuki say hi
 #show natsuki at 1b zom 2 at translation 11
 hide natsuki  #hide Natsuki sprite
-mc "hello everyone i here we have a new kid in the club" # Main Charctor say hi to every girl in the club
+mc "hello everyone i hear we have a new kid in the club" # Main Charctor say hi to every girl in the club
 show monika 1b zorder 2 at t11
 m "Hello [player] how is your day"
 mc "monika i'm haveing a good day Thanks for asking"
