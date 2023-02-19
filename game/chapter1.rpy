@@ -46,7 +46,7 @@ show monika 1b zorder 2 at t11
 m "Hello [player] how is your day"
 mc "monika i'm haveing a good day Thanks for asking"
 mc ":)"
-m "that good to here"
+m "that good to hear"
 m "yes there a new student in the club"
 hide monika
 show natsuki 1b zorder 2 at t11
@@ -84,7 +84,7 @@ if  options: #if satement
         mc "..."
         "and we wait to until the tea is done"
         "now we put the tea in the glass cup"
-        y "tea small good ahaha"
+        y "tea smell good ahaha"
         mc "what so funny "
         y "nothing [player]"
         "yuri act wired remind of something happen long time ago when yuri did something that was gross cant remaber what that is."
