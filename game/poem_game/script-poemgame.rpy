@@ -20,7 +20,7 @@ init python: # This whole block runs when DDLC is started (as opposed to when th
             self.nPoint = nPoint
             self.yPoint = yPoint
             self.iPoint = iPoint
-            #self# #glitch# = glitch whatever you see glitch just do that and say not requrie the by the mod
+            self.glitch = glitch
             
 
     # Static variables for characters' poem appeal: Dislike, Neutral, Like
