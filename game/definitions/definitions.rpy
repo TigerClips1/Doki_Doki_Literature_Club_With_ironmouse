@@ -128,7 +128,7 @@ init python:
 # Example: 
 #   define audio.t2 = "bgm/2.ogg"
 
-define audio.t1 = "<loop 22.073>bgm/1.ogg" # Doki Doki Literature Club! - Main Theme
+define audio.t1 = "<loop 22.073>/mod_assets/audio/1.ogg" # Doki Doki Literature Club! - Main Theme remix
 define audio.t2 = "<loop 4.499>bgm/2.ogg" # Ohayou Sayori! - Sayori Theme
 define audio.t2g = "bgm/2g.ogg"
 define audio.t2g2 = "<from 4.499 loop 4.499>bgm/2.ogg"
@@ -141,7 +141,6 @@ define audio.t3m = "<loop 4.618>bgm/3.ogg"
 define audio.t4 = "<loop 19.451>bgm/4.ogg" # Dreams of Love and Literature - Poem Game Theme
 define audio.t4g = "<loop 1.000>bgm/4g.ogg"
 define audio.t5 = "<loop 4.444>bgm/5.ogg" # Okay Everyone! - Sharing Poems Theme
-define audio.t1r = "<loop 4.100>mod_assets/audio/1.ogg" # need to fix this audio isuse tommorw 
 
 define audio.tmonika = "<loop 4.444>bgm/5_monika.ogg" # Okay Everyone! (Monika)
 define audio.tsayori = "<loop 4.444>bgm/5_sayori.ogg" # Okay Everyone! (Sayori)

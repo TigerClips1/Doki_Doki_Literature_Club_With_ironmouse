@@ -11,34 +11,34 @@
     #"images/menu/notfound.png"
 
 #image credits_cg2:
-    "images/cg/credits/2.png"
-    size (640, 360)
-    8.6
-    "images/menu/notfound.png"
+    #"images/cg/credits/2.png"
+    #size (640, 360)
+    #8.6
+    #"images/menu/notfound.png"
 
 #image credits_cg3:
-    "images/cg/credits/3.png"
-    size (640, 360)
-    8.6
-    "images/menu/notfound.png"
+    #"#images/cg/credits/3.png"
+    #size (640, 360)
+    #8.6
+    #"images/menu/notfound.png"
 
 #image credits_cg4:
-    "images/cg/credits/4.png"
-    size (640, 360)
-    8.6
-    "images/menu/notfound.png"
+    #"images/cg/credits/4.png"
+    #size (640, 360)
+    #8.6
+    #"images/menu/notfound.png"
 
 #image credits_cg5:
-    "images/cg/credits/5.png"
-    size (640, 360)
-    8.6
-    "images/menu/notfound.png"
+    #"images/cg/credits/5.png"
+    #size (640, 360)
+    #8.6
+    #"images/menu/notfound.png"
 
 #image credits_cg6:
-    "images/cg/credits/6.png"
-    size (640, 360)
-    8.6
-    "images/menu/notfound.png"
+    #"images/cg/credits/6.png"
+    #size (640, 360)
+    #8.6
+    #"images/menu/notfound.png"
 
 image credits_cg7:
     "images/cg/credits/7.png"
@@ -447,24 +447,24 @@ label credits:
     # This play statement starts Monika's spoken dialogue in the credits.
     play music "bgm/end-voice.ogg" noloop
 
-    show noise zorder 9:
-        alpha 0.0
-        linear 1.5 alpha 1.0
-        time 2.0
-        parallel:
-            0.05
-            choice:
-                alpha 0.5
-            choice:
-                alpha 0.75
-            choice:
-                alpha 1.0
-            repeat
-        parallel:
-            linear 0.375 alpha 0.7
-            linear 0.375 alpha 1.0
-        time 2.75
-        alpha 0.95
+    #show noise zorder 9:
+        #alpha 0.0
+        #linear 1.5 alpha 1.0
+        #time 2.0
+        #parallel:
+            #0.05
+            #choice:
+                #alpha 0.5
+            #choice:
+                #alpha 0.75
+            #choice:
+                #alpha 1.0
+            #repeat
+        #parallel:
+            #linear 0.375 alpha 0.7
+            #linear 0.375 alpha 1.0
+        #time 2.75
+        #alpha 0.95
         #time 6.45 #TODO add credits latter
         #alpha 0.3
         #time 6.95
@@ -487,7 +487,7 @@ label credits:
             #alpha 0.75
             #repeat
         #parallel:
-            0.49
+            #0.49
             #alpha 0.7
             #repeat
     #show end_glitch1 zorder 2
@@ -704,8 +704,8 @@ label credits:
     #show credits_text "made with love by":
         #zoom 0.75 xalign 0.5 yalign 0.25 alpha 0 subpixel True
         #linear 2.0 alpha 1
-        4.5
-        l#inear 2.0 alpha 0
+        #4.5
+        #l#inear 2.0 alpha 0
     #pause 9.3
     #play sound page_turn
     #show poem_end with Dissolve(1)
