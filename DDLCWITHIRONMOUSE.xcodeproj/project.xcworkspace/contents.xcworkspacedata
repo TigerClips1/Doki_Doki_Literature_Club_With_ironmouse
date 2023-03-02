@@ -16,12 +16,8 @@
       <FileRef
          location = "group:monika.chr">
       </FileRef>
-   </FileRef
-         location = "group:ironmouse.chr">
-      </FileRef>
-   </FileRef>
+   
 
-   </Group>
    <Group
       location = "group:../game"
       name = "game">
@@ -77,32 +73,71 @@
       <FileRef
          location = "group:transforms.rpy">
       </FileRef>
+      </Group>
       <Group
          location = "group:mod_assets"
          name = "mod_assets">
          <FileRef
-            location = "logo_bg.png"
-            location = "logo_fg.png"
-            location = "Logo.png"
-            location = "5.ogg"
-            location = "5_ironmouse.ogg"
-            location =  "5_monika.ogg"
-            location = "5_natsuki.ogg"
-            location = "5_sayori.ogg"
-            location = "5_yuri.ogg"
-            location = "ironmouse.ttf"
-            location = "poemwords.txt"
-            location = "i_sticker_1.png"
-            location = "i_sticker_2.png"
-            location = "Textbox.png"
-            location = "menu_art_m.png"
-            location = "splash.png"
-            location = "1l.png"
-            location = "1r.png"
-            location = "girl4.png"
+            location = "logo_bg.png">
+         </FileRef>
+         <FileRef
+            location = "logo_fg.png">
+         </FileRef>
+         <FileRef
+            location = "Logo.png">
+         </FileRef>
+         <FileRef
+            location = "5.ogg">
+         </FileRef>
+         <FileRef
+            location = "5_ironmouse.ogg">
+         </FileRef>
+         <FileRef
+            location =  "5_monika.ogg">
+         </FileRef>
+         <FileRef
+            location = "5_natsuki.ogg">
+         </FileRef>
+         <FileRef
+            location = "5_sayori.ogg">
+         </FileRef>
+         <FileRef
+            location = "5_yuri.ogg">
+         </FileRef>
+         <FileRef
+            location = "ironmouse.ttf">
+         </FileRef>
+         <FileRef
+            location = "poemwords.txt">
+         </FileRef>
+         <FileRef
+            location = "i_sticker_1.png">
+         </FileRef>
+         <FileRef
+            location = "i_sticker_2.png">
+         </FileRef>
+         <FileRef
+            location = "Textbox.png">
+         </FileRef>
+         <FileRef
+            location = "menu_art_m.png">
+         </FileRef>
+         <FileRef
+            location = "splash.png">
+         </FileRef>
+         <FileRef
+            location = "1l.png">
+         </FileRef>
+         <FileRef
+            location = "1r.png">
+         </FileRef>
+         <FileRef
+            location = "girl4.png">
+         </FileRef>
+         <FileRef
             location = "n.png">
             <!--DONE-->
-         </FileRef>
+      </FileRef>
       </Group>
       <FileRef
          location = "group:screens.rpy">
@@ -128,4 +163,5 @@
    <FileRef
       location = "self:">
    </FileRef>
+   </Group>
 </Workspace>
