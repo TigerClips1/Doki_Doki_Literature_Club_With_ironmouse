@@ -18,3 +18,5 @@
 
 9.  main menu music by Video Game Remixes 
 
+10. Kwhitehead07 (helping with the codeing/story) 
+

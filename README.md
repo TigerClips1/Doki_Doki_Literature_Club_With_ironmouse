@@ -29,4 +29,6 @@ Specal Thanks to LyllyNotFound for helping with the codeing/story for this mod  
 
 Specal Thanks for Ray for the help of the art for mod
 
-Specal Thanks to blacklight5h for helping with the codeing/story
+Specal Thanks to blacklight5h for helping with the codeing/story check out his github https://github.com/blackdeath5h
+
+Specal Thanks to Kwhitehead07 for helping with the coding/story check out his github https://github.com/Kwhitehead07
