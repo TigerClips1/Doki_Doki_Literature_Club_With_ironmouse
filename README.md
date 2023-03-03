@@ -1,3 +1,4 @@
+support me and my team on kofi
 [![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/tigerclips1)
 
 This new DDLC Mod By TigerClips for the original Doki Doki Literature Club that adheres to Team Salvato's IP Guidelines for fan mod on Ren'Py 8
