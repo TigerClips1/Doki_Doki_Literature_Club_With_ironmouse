@@ -147,12 +147,15 @@ else:  #else this will happening when you click the 2 options
         
 if options == True: #if the player click to help yuri with the tea
     y "Tea's done thanks to [player]" #it will say this at the end
+    mc "I'm happy to help"
+
 else:
     y "Tea is done thanks to Sayori" #if the player did not help yuri with the tea then she will say this
     s "It was fun"
 if options == False:
     show natsuki 1b zorder 3 at t11
     n "Cupcakes are done thanks to [player]"
+    mc "I'm happy to help"
     hide natsuki
 else:
     show natsuki 1b  zorder 2 at t11
@@ -167,7 +170,8 @@ play music t3
 show monika 3a zorder 3 at t11
 m "Good job everyone!"
 hide monika
-"The new club member is here (To be continued)"
+"The new club member is here "
+"(To be continued)"
 return # exit
 
 #Todo for Kwhitehead07 add  40 line for the story
