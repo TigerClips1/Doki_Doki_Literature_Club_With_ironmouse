@@ -341,6 +341,7 @@ define audio.closet_open = "sfx/closet-open.ogg"
 define audio.closet_close = "sfx/closet-close.ogg"
 define audio.page_turn = "sfx/pageflip.ogg"
 define audio.fall = "sfx/fall.ogg"
+define audio.g5 = "sfx/giggle.ogg"
 
 ## Backgrounds
 # This section declares the backgrounds available to be shown in the mod.

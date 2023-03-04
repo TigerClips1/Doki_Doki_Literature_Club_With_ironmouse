@@ -12,13 +12,13 @@ $ n_name = "Natsuki"#changeN_name to Natsuki
 $ restore_all_characters()
 #show sayori sprite at 2b in zoom order 2 at pose 11 
 show sayori 1b zorder 2 at t11 
-s "Hey [player]! There is a new kid in the club" #sayori saying hey to the player name
-mc "There's Sayori again" #mc talking
-"I didn't know we had a new student" #mc talking in his head
-s "Yes we do" #sayori say yes really
-mc "Cool what's her name?" # mc talking
-s "Just wait and you'll see" #sayori talking
-"Then let's go head to the club" #mc talking in his head
+s "Hey [player] there's a new kid in the club." #sayori saying hey to the player name
+mc "There is sayori." #mc talking
+"I didn't not know we had a new student." #mc talking in his head
+s "yes really." #sayori say yes really
+mc "cool what's her name?" # mc talking
+s "just wait and you will see" #sayori talking
+"Then we go to the club" #mc talking in his head
 show bg club_day  # show the club room day
 with wipeleft_scene
 stop music fadeout 2.0 
@@ -27,26 +27,26 @@ show sayori 2b zorder 2 at t11
 
 s "Hey Monika, hey Yuri, and hey Natsuki" # sayori speak
 hide sayori  # hideing sayori sprite
-#show sayori sprite to 2b because i don't know what pose to give to her model t11 mean tranlation then where you see the charctor appear
+#show sayori sprite to 2b becuse i don't know what pose to give to her model t11 mean tranlation then where you see the charctor appear
 show monika 3b zorder 2 at t11 
-m "Hello Sayori" # monika say hi to sayori
+m "Hey Sayori" # monika say hi to sayori
 #show monika at 3b and zoom 2times at translation 11
 hide monika # hide monika sprite
 show yuri 1b zorder 2 at t11 
-y "Hi Sayori" #yuri say hi to sayori
+y "Hey Sayori" #yuri say hi to sayori
 #show yuri at 1b zoom 2 rtimes at translaton 11
 hide yuri  # hide yuri sprite
 show natsuki 1b zorder 2 at t11
-n "Hey Sayori" #natsuki say hi
+n "Hello Sayori" #natsuki say hi
 #show natsuki at 1b zom 2 at translation 11
 hide natsuki  #hide Natsuki sprite
 mc "Hi everyone I heard we have a new student in the club" # Main Charctor say hi to every girl in the club
 show monika 1b zorder 2 at t11
-m "Hey there [player] how's your day?"
+m "Hello [player] how is your day"
 mc "I'm having a good day today Monika, Thanks for asking"
 mc ":)"
 m "That's good to hear"
-m "So, there is a new student in the club"
+m "Yes there's a new student in the club"
 hide monika
 show natsuki 1b zorder 2 at t11
 n "I should make some cupcakes for the new student then"
@@ -58,58 +58,73 @@ scene bg club_day
 with wipeleft_scene
 menu: #let the player control the story
     mc "Who should I help?" # mc talking to him self asking who he will help
-    "Make Tea":
+    "I choose to help yuri with the Tea":
         $ options =  True # bool varable 
-    "Make Cupcakes": #name of the menu options
+    "Cupcakes": #name of the menu options
         $ options = False
         "I'm happy to help"
 
 if  options: #if statement
-        "I'll go help Yuri with the tea" #TODO for TigerClips1 add yuri sprite where match with the story so yay for me AAAAAAAAAAAAAAAAAA                  #Todo comeplate natsuki sprite for all the lines for the cupcake/ add yuri sprite fix spelling error and add yuri tea lines tomorrow
+        "I will help yuri with the tea" #TODO for TigerClips1 add yuri sprite where match with the story so yay for me AAAAAAAAAAAAAAAAAA                  #Todo comeplate natsuki sprite for all the lines for the cupcake/ add yuri sprite fix spelling error and add yuri tea lines tomorrow
         play music t6
         scene bg club_day
-        mc "Hey Yuri can I help you with the tea?"
+        mc "Hey yuri can I help you with the tea?"
         show yuri 1e zorder 2 at t11
-        y "Sure [player] this tea will get done faster if more people help out" #Yuri's text will change in the future to be like the Original Yuri for ddlc
+        y "Sure [player] this tea will get done faster when more people help out" #Yuri's text will change in the future to be like the Original Yuri for ddlc
         hide yuri
-        "Great! can't wait to help" #i will fix these spelling error and gramor error and change the sprite need to do research about that of all sprite poss and tranlation
+        "That great can't wait to help" #i will fix these spelling error and gramor error and change the sprite need to do research about that of all sprite poss and tranlation
         show yuri 1b zorder 2 at t11
-        y "I need you to use the school's auto tea maker 3,000"
+        y "I will need you to use the school's auto tea maker 3,000"
         hide yuri
         show yuri 1b zorder 2 at f32
         y "..."
         hide yuri
         show yuri 1b zorder 2 at t11
         
-        y "hehe"
+        y "haha"
         hide yuri
-        mc "Tea maker what now?"
+        mc "tea maker what now?"
         show yuri 1b zorder 2 at t11
-        y "Just a joke [player]"
+        y "it's just a joke [player]"
         hide yuri
-        mc "Oh"
+        mc "Oh "
         mc "..."
-        "Well now we just gotta wait until the tea is done"
+        "And now we wait to until the tea is done"
         "Then we put the tea in the glass cup"
         show yuri 1b zorder 2 at t11
         y "Tea smells good ahaha"
         hide yuri
-        mc "What's so funny?"
+        mc "What's so funny "
         show yuri 2b zorder 4 at t11
         y "Nothing [player]"
+        stop music 
         hide yuri
-        "Yuri acting weird reminds you when something happened a long time ago when yuri did something that was gross and horrifying that happened but you can't remember what it was."
+        "yuri acting weird reminds you when something happened a long time ago when yuri did something that was gross but you can't remember what it was."
+        play music t6
+        show yuri 1b zorder 2 at t11
+        y "hehehehe"
+        hide yuri
+        show yuri glitch2 zorder 2 at t11
+        play music t6g
+        play sound g5
+        y '¡¢£¤¥¦§¨©ª«¬®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéê'
+        stop sound
+
+        stop music 
+        play music t6
+
+        hide yuri
         mc "Okay yuri"
         show yuri 1b zorder 2 at t11
-        y "That's it thank you for helping [player]"
+        y "that's it thank you for helping [player]"
         hide yuri
-        mc "No problem Yuri" 
+        mc "No problem" 
         scene bg club_day
         with wipeleft_scene
         
         #yuri lines are done just need add few fixes then it will look good
 else:  #else this will happening when you click the 2 options 
-        "I'll go help Natsuki with the cupcakes"
+        "I will help Natsuki with the cupcakes"
         show natsuki 1l zorder 2 at t11
         play music t5
         scene bg club_day
@@ -131,17 +146,17 @@ else:  #else this will happening when you click the 2 options
         
         
 if options == True: #if the player click to help yuri with the tea
-    y "Tea's done thanks to [player]" #it will say this at the end
+    y "tea's done thanks to [player]" #it will say this at the end
 else:
-    y "Tea is done thanks to Sayori" #if the player did not help yuri with the tea then she will say this
+    y "tea is done thanks to Sayori" #if the player did not help yuri with the tea then she will say this
     s "It was fun"
 if options == False:
     show natsuki 1b zorder 3 at t11
-    n "Cupcakes are done thanks to [player]"
+    n "cupcakes are done thanks to [player]"
     hide natsuki
 else:
     show natsuki 1b  zorder 2 at t11
-    n "Cupcakes are done thanks to Sayori"
+    n "cupcakes are done thanks to Sayori"
     hide natsuki 
     show sayori 1b zorder 2 at t11
     s "I've learned so much about baking thanks for letting me help out"
@@ -150,9 +165,9 @@ else:
 stop music fadeout 2.0
 play music t3
 show monika 3a zorder 3 at t11
-m "Good job everyone!"
+m "Good job everyone"
 hide monika
-"The new club member is here!"
+"The new club member is here"
 return # exit
 
 #Todo for Kwhitehead07 add  40 line for the story
