@@ -157,120 +157,66 @@ init python:
     image_load_log = [ 'K_F4' ],
     profile_once = [ 'K_F8' ],
     memory_profile = [ 'K_F7' ],
+)    #TODO trying to get gamepad to work
+    config.keymap = {
+    "pad_leftshoulder_press" : [ "rollback", ],
+    "pad_lefttrigger_pos" : [ "rollback", ],
+    "pad_back_press" : [ "rollback", ],
 
-)
-# TODO add controller support for the mod using this link to help https://www.renpy.org/doc/html/keymap.html##
-#config.pad_bindings = (
-    #"pad_leftshoulder_press" : [ "rollback", ],
-    #"pad_lefttrigger_pos" : [ "rollback", ],
-    #"pad_back_press" : [ "rollback", ],
+    "repeat_pad_leftshoulder_press" : [ "rollback", ],
+    "repeat_pad_lefttrigger_pos" : [ "rollback", ],
+    "repeat_pad_back_press" : [ "rollback", ],
 
-    #"repeat_pad_leftshoulder_press" : [ "rollback", ],
-    #"repeat_pad_lefttrigger_pos" : [ "rollback", ],
-    #"repeat_pad_back_press" : [ "rollback", ],
+    "pad_guide_press" : [ "game_menu", ],
+    "pad_start_press" : [ "game_menu", ],
 
-    #"pad_guide_press" : [ "game_menu", ],
-    #"pad_start_press" : [ "game_menu", ],
+    "pad_y_press" : [ "hide_windows", ],
 
-    #"pad_y_press" : [ "hide_windows", ],
+    "pad_rightshoulder_press" : [ "rollforward", ],
+    "repeat_pad_rightshoulder_press" : [ "rollforward", ],
 
-    #"pad_rightshoulder_press" : [ "rollforward", ],
-    #"repeat_pad_rightshoulder_press" : [ "rollforward", ],
+    "pad_righttrigger_pos" : [ "dismiss", "button_select", "bar_activate", "bar_deactivate" ],
+    "pad_a_press" : [ "dismiss", "button_select", "bar_activate", "bar_deactivate"],
+    "pad_b_press" : [ "button_alternate" ],
 
-    #"pad_righttrigger_pos" : [ "dismiss", "button_select", "bar_activate", "bar_deactivate" ],
-    #"pad_a_press" : [ "dismiss", "button_select", "bar_activate", "bar_deactivate"],
-    #"pad_b_press" : [ "button_alternate" ],
+    "pad_dpleft_press" : [ "focus_left", "bar_left", "viewport_leftarrow" ],
+    "pad_leftx_neg" : [ "focus_left", "bar_left", "viewport_leftarrow" ],
+    "pad_rightx_neg" : [ "focus_left", "bar_left", "viewport_leftarrow" ],
 
-    #"pad_dpleft_press" 
-    #"pad_leftx_neg" 
-    #"pad_rightx_neg" 
+    "pad_dpright_press" : [ "focus_right", "bar_right", "viewport_rightarrow" ],
+    "pad_leftx_pos" : [ "focus_right", "bar_right", "viewport_rightarrow" ],
+    "pad_rightx_pos" : [ "focus_right", "bar_right", "viewport_rightarrow" ],
 
-    #"pad_dpright_press"
-    #"pad_leftx_pos" 
-    #"pad_rightx_pos" 
+    "pad_dpup_press" : [ "focus_up", "bar_up", "viewport_uparrow" ],
+    "pad_lefty_neg" : [ "focus_up", "bar_up", "viewport_uparrow" ],
+    "pad_righty_neg" : [ "focus_up", "bar_up", "viewport_uparrow" ],
 
-    #"pad_dpup_press" 
-    #"pad_lefty_neg" 
-    #"pad_righty_neg"
+    "pad_dpdown_press" : [ "focus_down", "bar_down", "viewport_downarrow" ],
+    "pad_lefty_pos" : [ "focus_down", "bar_down", "viewport_downarrow" ],
+    "pad_righty_pos" : [ "focus_down", "bar_down", "viewport_downarrow" ],
 
-    #"pad_dpdown_press" 
-    #"pad_lefty_pos"
-    #"pad_righty_pos" 
+    "repeat_pad_dpleft_press" : [ "focus_left", "bar_left", "viewport_leftarrow" ],
+    "repeat_pad_leftx_neg" : [ "focus_left", "bar_left", "viewport_leftarrow" ],
+    "repeat_pad_rightx_neg" : [ "focus_left", "bar_left", "viewport_leftarrow" ],
 
-    #"repeat_pad_dpleft_press" 
-    #"repeat_pad_leftx_neg" 
-    #"repeat_pad_rightx_neg" 
+    "repeat_pad_dpright_press" : [ "focus_right", "bar_right", "viewport_rightarrow" ],
+    "repeat_pad_leftx_pos" : [ "focus_right", "bar_right", "viewport_rightarrow" ],
+    "repeat_pad_rightx_pos" : [ "focus_right", "bar_right", "viewport_rightarrow" ],
 
-    #"repeat_pad_dpright_press" 
-    #"repeat_pad_leftx_pos" 
-    #"repeat_pad_rightx_pos" 
+    "repeat_pad_dpup_press" : [ "focus_up", "bar_up", "viewport_uparrow" ],
+    "repeat_pad_lefty_neg" : [ "focus_up", "bar_up", "viewport_uparrow" ],
+    "repeat_pad_righty_neg" : [ "focus_up", "bar_up", "viewport_uparrow" ],
 
-    #"repeat_pad_dpup_press" 
-    #"repeat_pad_lefty_neg"
-    #"repeat_pad_righty_neg" 
+    "repeat_pad_dpdown_press" : [ "focus_down", "bar_down", "viewport_downarrow" ],
+    "repeat_pad_lefty_pos" : [ "focus_down", "bar_down", "viewport_downarrow" ],
+    "repeat_pad_righty_pos" : [ "focus_down", "bar_down", "viewport_downarrow" ],
+}
+   
 
-    #"repeat_pad_dpdown_press"
-    #"repeat_pad_lefty_pos" 
-    #"repeat_pad_righty_pos" 
+    # TODO add controller support for the mod using this link to help https://www.renpy.org/doc/html/keymap.html##
     
-    #bar_activate = [ 'mousedown_1', 'K_RETURN', 'K_KP_ENTER', 'K_SELECT' ],
-    #bar_deactivate = [ 'mouseup_1', 'K_RETURN', 'K_KP_ENTER', 'K_SELECT' ],
-    #bar_left = [ 'K_LEFT', 'repeat_K_LEFT' ],
-    #bar_right = [ 'K_RIGHT', 'repeat_K_RIGHT' ],
-    #bar_up = [ 'K_UP', 'repeat_K_UP' ],
-    #bar_down = [ 'K_DOWN', 'repeat_K_DOWN' ],
-
-    #bar_activate = [ 'mousedown_1', 'K_RETURN', 'K_KP_ENTER', 'K_SELECT' ],
-    #bar_deactivate = [ 'mouseup_1', 'K_RETURN', 'K_KP_ENTER', 'K_SELECT' ],
-    #bar_left = [ 'K_LEFT', 'repeat_K_LEFT' ],
-    #bar_right = [ 'K_RIGHT', 'repeat_K_RIGHT' ],
-    #bar_up = [ 'K_UP', 'repeat_K_UP' ],
-    #bar_down = [ 'K_DOWN', 'repeat_K_DOWN' ],
-    
-    #bar_activate = [ 'mousedown_1', 'K_RETURN', 'K_KP_ENTER', 'K_SELECT' ],
-    #bar_deactivate = [ 'mouseup_1', 'K_RETURN', 'K_KP_ENTER', 'K_SELECT' ],
-    #bar_left = [ 'K_LEFT', 'repeat_K_LEFT' ],
-    #bar_right = [ 'K_RIGHT', 'repeat_K_RIGHT' ],
-    #bar_up = [ 'K_UP', 'repeat_K_UP' ],
-    #bar_down = [ 'K_DOWN', 'repeat_K_DOWN' ],
-
-    #bar_activate = [ 'mousedown_1', 'K_RETURN', 'K_KP_ENTER', 'K_SELECT' ],
-    #bar_deactivate = [ 'mouseup_1', 'K_RETURN', 'K_KP_ENTER', 'K_SELECT' ],
-    #bar_left = [ 'K_LEFT', 'repeat_K_LEFT' ],
-    #bar_right = [ 'K_RIGHT', 'repeat_K_RIGHT' ],
-    #bar_up = [ 'K_UP', 'repeat_K_UP' ],
-    #bar_down = [ 'K_DOWN', 'repeat_K_DOWN' ],
-
-    #bar_activate = [ 'mousedown_1', 'K_RETURN', 'K_KP_ENTER', 'K_SELECT' ],
-    #bar_deactivate = [ 'mouseup_1', 'K_RETURN', 'K_KP_ENTER', 'K_SELECT' ],
-    #bar_left = [ 'K_LEFT', 'repeat_K_LEFT' ],
-    #bar_right = [ 'K_RIGHT', 'repeat_K_RIGHT' ],
-    #bar_up = [ 'K_UP', 'repeat_K_UP' ],
-    #bar_down = [ 'K_DOWN', 'repeat_K_DOWN' ],
-
-    #bar_activate = [ 'mousedown_1', 'K_RETURN', 'K_KP_ENTER', 'K_SELECT' ],
-    #bar_deactivate = [ 'mouseup_1', 'K_RETURN', 'K_KP_ENTER', 'K_SELECT' ],
-    #bar_left = [ 'K_LEFT', 'repeat_K_LEFT' ],
-    #bar_right = [ 'K_RIGHT', 'repeat_K_RIGHT' ],
-    #bar_up = [ 'K_UP', 'repeat_K_UP' ],
-    #bar_down = [ 'K_DOWN', 'repeat_K_DOWN' ],
-
-    #bar_activate = [ 'mousedown_1', 'K_RETURN', 'K_KP_ENTER', 'K_SELECT' ],
-    #bar_deactivate = [ 'mouseup_1', 'K_RETURN', 'K_KP_ENTER', 'K_SELECT' ],
-    #bar_left = [ 'K_LEFT', 'repeat_K_LEFT' ],
-    #bar_right = [ 'K_RIGHT', 'repeat_K_RIGHT' ],
-    #bar_up = [ 'K_UP', 'repeat_K_UP' ],
-    #bar_down = [ 'K_DOWN', 'repeat_K_DOWN' ],
-
-    #bar_activate = [ 'mousedown_1', 'K_RETURN', 'K_KP_ENTER', 'K_SELECT' ],
-    #bar_deactivate = [ 'mouseup_1', 'K_RETURN', 'K_KP_ENTER', 'K_SELECT' ],
-    #bar_left = [ 'K_LEFT', 'repeat_K_LEFT' ],
-    #bar_right = [ 'K_RIGHT', 'repeat_K_RIGHT' ],
-    #bar_up = [ 'K_UP', 'repeat_K_UP' ],
-    #bar_down = [ 'K_DOWN', 'repeat_K_DOWN' ],
 
 
-#)
     # This variable declaration registers the music poem channel for the poem sharing music.
     renpy.music.register_channel("music_poem", mixer="music", tight=True)
     
