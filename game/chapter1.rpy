@@ -155,7 +155,7 @@ hide monika
 "new club member is here"
 return # exit
 
-#Todo for LyllyBotFound add  40 line for the stroy
+#Todo for Kwhitehead07 add  40 line for the stroy
 label chapter1_page2:
 
 
@@ -187,7 +187,7 @@ label chapter1_page2:
 
 
 
-#end here for LyllyNotFound part of the story
+#end here for Kwhitehead07 part of the story
 return
 
 #Todo for  blackdeath5h  add story line for ironmouse Please Keep it PG 13 make it connect the story lines LyllyNotFound put and TigerClips1 Put
@@ -266,15 +266,14 @@ label chapter1_page4:
 
 
 
+#END of lines for TigerClips1
+return
+
+#TODO for lylly not found
+label chapter1_page4_part_2
 
 
 
-
-
-
-
-
-#todo Kwhitehead07
 
 
 
