@@ -2,7 +2,7 @@
 
 #Sayori's winning words
 happiness,3,2,1,1
-mc,3,3,3,2
+mc,3,3,3,3
 death,3,1,2,1,1
 tragedy,3,1,2,1
 alone,3,1,2,1
@@ -74,7 +74,7 @@ sunset,3,2,1,1
 fireflies,3,2,1,1
 Querxes,3,2,1,2
 
-#ironmouse words
+#ironmouse wining words
 youtube,1,2,1,3
 gamer,2,1,2,3
 Twtich,1,1,1,3
@@ -91,9 +91,15 @@ scared, 2,1,2,3
 Nyanners, 2,1,2,3
 sing, 2,1,2,3
 cutes, 2,1,2,3
-
-
-
+gamer_girl, 2,1,2,3
+iron lung, 2,1,2,3
+horror_gamer, 2,1,2,3
+blush, 1,2,1,3
+anmie club, 1,2,1,3
+TigerClips1, 3,3,3,3
+PInk, 2,1,2,3
+Scrubpai, 3,3,3,3
+nerd, 2,1,2,3
 
 #Natsuki's words
 cute,2,3,1,1
