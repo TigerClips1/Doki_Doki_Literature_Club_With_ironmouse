@@ -41,7 +41,7 @@ n "Hello Sayori" #natsuki say hi
 #show natsuki at 1b zom 2 at translation 11
 hide natsuki  #hide Natsuki sprite
 mc "Hi everyone, I heard we have a new student in the club?" # Main Charactor say hi to every girl in the club
-show monika 1b zorde0r 2 at t11
+show monika 1b zorder 2 at t11
 m "Hey [player] how's your day going?"
 mc "I'm having a good day today Monika, Thanks for asking"
 mc ":)"
@@ -56,13 +56,13 @@ y "I'll go get the tea"
 hide yuri
 scene bg club_day
 with wipeleft_scene
+
 menu: #let the player control the story
     mc "Who should I help?" # mc talking to him self asking who he will help
     "Make Tea":
-        $ options =  True # bool varable 
-    "Make Cupcakes": #name of the menu options
-    $ options = False
-        "I'm happy to help"
+        $ options = True
+    "Make Cupcakes":
+        $ options = False
 
 if  options: #if statement
         "I will help Yuri with the tea" #TODO for TigerClips1 add yuri sprite where match with the story so yay for me AAAAAAAAAAAAAAAAAA                  #Todo comeplate natsuki sprite for all the lines for the cupcake/ add yuri sprite fix spelling error and add yuri tea lines tomorrow
