@@ -176,7 +176,14 @@ return # exit
 
 #Todo for Kwhitehead07 add  40 line for the story
 label chapter1_page2:
-
+m "the new student is here"
+m "prepare"
+mc "ok"
+s "ok"
+y "ok"
+n "ok"
+"it cool how all the girls in the club did this for the new student"
+i "ummm he hello "
 
 
 
