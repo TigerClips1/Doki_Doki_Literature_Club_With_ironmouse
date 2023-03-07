@@ -290,7 +290,6 @@ define audio.closet_close = "sfx/closet-close.ogg"
 define audio.page_turn = "sfx/pageflip.ogg"
 define audio.fall = "sfx/fall.ogg"
 define audio.g5 = "sfx/giggle.ogg"
-define video.v1 = "mod_assets/video/1.ogx"
 ## Backgrounds
 # This section declares the backgrounds available to be shown in the mod.
 # To define a new color background, declare a new image statement like in this example:

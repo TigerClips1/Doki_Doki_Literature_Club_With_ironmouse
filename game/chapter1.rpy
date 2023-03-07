@@ -223,7 +223,7 @@ m "All you need to do is write a unique poem, read books for ideas and such"
 m "We bake cupcakes, make tea, mostly basic stuff"
 m "Speaking of which, its about time we write a poem, so if you don't know what to do today we'll run you through it"
 i "Okay"
-#TODO add video from spongebob few min later
+$ renpy.movie_cutscene("mod_assets/video/1.ogx")
 
 
 
