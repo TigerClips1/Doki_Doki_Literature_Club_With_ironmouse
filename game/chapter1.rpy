@@ -121,6 +121,11 @@ if  options: #if statement
         mc "No problem" 
         scene bg club_day
         with wipeleft_scene
+        stop music fadeout 2.0
+        play music t5
+
+
+
         
         #yuri lines are done just need add few fixes then it will look good
 else:  #else this will happening when you click the 2 options 
@@ -148,7 +153,6 @@ else:  #else this will happening when you click the 2 options
 if options == True: #if the player click to help yuri with the tea
     y "Tea's done thanks to [player]" #it will say this at the end
     mc "I'm happy to help"
-
 else:
     y "Tea is done thanks to Sayori" #if the player did not help yuri with the tea then she will say this
     s "It was fun"
@@ -171,11 +175,15 @@ show monika 3a zorder 3 at t11
 m "Good job everyone!"
 hide monika
 "The new club member is here "
-"(To be continued)"
+
+with wipeleft_scene
 return # exit
 
 #Todo for Kwhitehead07 add  40 line for the story
 label chapter1_page2:
+scene bg club_day
+play music  t3
+
 m "The new student is here guys"
 m "Get ready guys"
 mc "Okay"
@@ -215,6 +223,7 @@ m "All you need to do is write a unique poem, read books for ideas and such"
 m "We bake cupcakes, make tea, mostly basic stuff"
 m "Speaking of which, its about time we write a poem, so if you don't know what to do today we'll run you through it"
 i "Okay"
+#TODO add video from spongebob few min later
 
 
 
