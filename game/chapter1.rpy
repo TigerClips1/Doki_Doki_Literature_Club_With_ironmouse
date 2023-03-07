@@ -225,24 +225,6 @@ m "Speaking of which, its about time we write a poem, so if you don't know what 
 i "Okay"
 $ renpy.movie_cutscene("mod_assets/video/1.ogx")
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#end here for Kwhitehead07 part of the story
 return
 
 #Todo for  blackdeath5h  add story line for ironmouse Please Keep it PG 13 make it connect the story lines LyllyNotFound put and TigerClips1 Put
