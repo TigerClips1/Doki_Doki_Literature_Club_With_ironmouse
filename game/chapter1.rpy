@@ -176,25 +176,45 @@ return # exit
 
 #Todo for Kwhitehead07 add  40 line for the story
 label chapter1_page2:
-m "the new student is here"
-m "prepare"
-mc "ok"
-s "ok"
-y "ok"
-n "ok"
-"it cool how all the girls in the club did this for the new student"
-i "ummm he hello "
-
-
-
-
-
-
-
-
-
-
-
+m "The new student is here guys"
+m "Get ready guys"
+mc "Okay"
+s "Let's go"
+y "Ok"
+n "Alright"
+"Its cool how all the girls in the club did this just for the new student"
+i "Ummm he-hello?"
+s "Hey there new kid!"
+s "Welcome to the literature club! My name is Sayori!"
+n "I hope this girl isn't a manga hater."
+y "Uhm, hi there"
+m "I hope you enjoy it here, my name is monika, let me introduce everyone"
+m "so that right there is [player]"
+mc "Hello there"
+m "And that there is yuri"
+y "H-hello"
+m "And here is natsuki, try not to anger her though."
+n "You like manga?"
+i "Yeah I do actually, I like this one called Dragon Ball Volume 1"
+m "But manga isn't even literature"
+n "But manga is liturature!"
+i "Yeah I agree"
+m "Fine, if you say so"
+m "Anyways, what's your name?"
+i "My name is Ironmouse"
+$ i_name = "Ironmouse"
+m "Strange name, but hello there Ironmouse!"
+s "Hey Ironmouse! Nice to know you name finally!"
+y "Hi Ironmouse"
+n "Hello there Ironmouse, don't get into trouble around here!"
+mc "Nice to meet you Ironmouse"
+i "Hello everyone, nice to know you guys!"
+m "Alright so, let me explain what we do daily"
+m "All you need to do is write a unique poem, read books for ideas and such"
+"Very lovely day we are having right [player]?"
+m "We bake cupcakes, make tea, mostly basic stuff"
+m "Speaking of which, its about time we write a poem, so if you don't know what to do today we'll run you through it"
+i "Okay"
 
 
 
@@ -238,23 +258,6 @@ return
 
 #To Do for TIgerClips1 add the menu and add the story line for the all 6 charactor
 label chapter1_page4:
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
