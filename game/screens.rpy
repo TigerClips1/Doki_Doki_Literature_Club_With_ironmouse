@@ -1213,13 +1213,8 @@ screen extra_options():
         style_prefix "radio"
 
         label _("Game Modes")
-        hbox:
-            textbutton _("Uncensored Mode") action If(persistent.uncensored_mode, 
-                ToggleField(persistent, "uncensored_mode"), 
-                Show("confirm", message="Are you sure you want to turn on Uncensored Mode?\nDoing so will enable more adult/sensitive\ncontent in your playthrough.\n\nThis setting will be dependent on the modder if\nthey programmed these checks in their story.", 
-                    yes_action=[Hide("confirm"), ToggleField(persistent, "uncensored_mode")],
-                    no_action=Hide("confirm")
-                ))
+        
+        
         label _("Player Name")
         vbox:
             style_prefix "confirm"

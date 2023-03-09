@@ -27,7 +27,10 @@ Mod still in DEV
 
 ### Youtuber that this mod bulid on ###
 
-[ironmouse](https://www.youtube.com/@IronMouseParty/videos) - Copyright © 2017-2023
+[ironmouse](https://www.youtube.com/@IronMouseParty/videos) - check out ironmouse  
+
+
+ironmouse model Copyright © 2017-2023 All rights reserved
 
 and this mod is FOSS so you can do anything to it just give me and ironmouse and TeamSalvato and GanstaKingofSA credit
 
@@ -46,7 +49,7 @@ Ray - helping with the art
 [blacklight5h](https://github.com/blackdeath5h) - helping with the codeing/story
 
 [Kwhitehead07](https://github.com/Kwhitehead07) - helping with the codeing/story
-
+[Video Game Remixes](https://www.youtube.com/@VideoGameRemixes) - main menu remix music
 nex - helping with the art
 
 Just_jam - with the art 

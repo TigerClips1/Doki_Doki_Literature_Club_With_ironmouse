@@ -88,8 +88,8 @@ if  options: #if statement
         hide yuri #hide yuri sprite
         mc "Oh " #MC being stupid
         mc "..." #MC doing a stright face
-        "And now we wait to until the tea is done" #Mc talking
-        "Then we put the tea in the glass cup" #MC being born lol jk
+        "And now we wait  until the tea get's done." #Mc talking
+        "Then we put the tea in the glass cup." #MC being born lol jk
         show yuri 1b zorder 2 at t11 #show yuri
         y "Tea smells good ahaha" #yuri acting wired like she was in DDLC OG game
         hide yuri #hide yuri sprite

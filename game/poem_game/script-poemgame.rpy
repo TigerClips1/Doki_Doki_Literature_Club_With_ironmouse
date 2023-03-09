@@ -240,7 +240,7 @@ label poem(transition=True):
     $ config.allow_skipping = False
     $ allow_skipping = False #Not completely sure why skipping has to be explicitly disabled, but apparently it does..
     if persistent.playthrough == 0 and chapter == 0: #Shows the below dialogue the first time the minigame is played.
-        call screen dialog("It's time to write a poem!\n\nPick words you think your favorite club member\nwill like. Something good might happen with\nwhoever likes your poem the most!", ok_action=Return())
+        call screen dialog("It's time to write a poem!\n\nPick words you think your favorite club member\n", ok_action=Return())
     python: #Variable initialization here. Important to note, these initialize at the start of the mini-game.
         poemgame_glitch = False
         played_baa = False
