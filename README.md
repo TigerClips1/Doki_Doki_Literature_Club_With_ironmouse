@@ -4,31 +4,45 @@ This new DDLC Mod By TigerClips for the original Doki Doki Literature Club that 
 
 Disclaimers
 
-Team Salvato
+### Dan salvato
 
-The mod code/files are designed for original DDLC With ironmouse that use DDLC assets with Ren'Py. This DDLC Mod  is not afilliated in anyway with Team Salvato.
+[Dan Salvato](https://twitter.com/dansalvato/) - check out Dan salvato the man who made ddlc
+
+The mod code/files are designed for original DDLC  that use DDLC assets with Ren'Py. This DDLC Mod  is not afilliated in anyway with Team Salvato.
 
 Copyright © By TigerClips1 All rights reserved
 
-also the mod template i use to bulid this mod is by  GanstaKingofSA check out his github for some awsome stuff https://github.com/GanstaKingofSA
+## DDLC MOD Template i use 
+[GanstaKingofSA](https://github.com/GanstaKingofSA) - mod template
 
-DDLC need to be install to play this mod you can get it for free heres the link https://teamsalvato.itch.io/ddlc
+### DDLC the OG game ###
+
+[Team Salvato](https://teamsalvato.itch.io/ddlc) - DDLC OG game
+
 move all Rpa file accept for script.Rpa or the mod will not work
 
 Doki Doki Literature Club, the Doki Doki Literature Club code, is the property of Team Salvato (Dan Salvato LLC). Copyright © 2017 Team Salvato. All rights reserved.
 
 Mod still in DEV 
 
-ironmouse Copyright © 2017-2023 for her model check out her youtube channel she  make good content  https://www.youtube.com/@IronMouseParty/videos 
+### Youtuber that this mod bulid on ###
 
-and this mod is FOSS so you can do anything to it just give me and ironmouse and teamsalvato and GanstaKingofSA credit
+[ironmouse](https://www.youtube.com/@IronMouseParty/videos) - Copyright © 2017-2023
+
+and this mod is FOSS so you can do anything to it just give me and ironmouse and TeamSalvato and GanstaKingofSA credit
 
 This mod only have 3 Chapter for now 
 
-Specal Thanks to LyllyNotFound for helping with the codeing/story for this mod  https://github.com/LyllyNotFound
+### DDLC WITH IRONMOUSE TEAM ###
 
-Specal Thanks for Ray for the help of the art for mod
+[LyllyNotFound](https://github.com/LyllyNotFound) - helping with the codeing/story
 
-Specal Thanks to blacklight5h for helping with the codeing/story check out his github https://github.com/blackdeath5h
+[Ray] - helping with the art
 
-Specal Thanks to Kwhitehead07 for helping with the coding/story check out his github https://github.com/Kwhitehead07
+[blacklight5h](https://github.com/blackdeath5h) - helping with the codeing/story
+
+[Kwhitehead07](https://github.com/Kwhitehead07) - helping with the codeing/story
+
+[nex] - helping with the art
+
+[Just_jam] - with the art 
