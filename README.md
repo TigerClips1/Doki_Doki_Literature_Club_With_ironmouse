@@ -40,6 +40,10 @@ This mod only have 3 Chapter for now
 
 [renpytom](https://github.com/renpy/renpy) - without him ddlc will not be made
 
+### DDLC Menu remix
+
+[Video Game Remixes](https://www.youtube.com/@VideoGameRemixes) - main menu remix music
+
 ### DDLC WITH IRONMOUSE TEAM ###
 
 [LyllyNotFound](https://github.com/LyllyNotFound) - helping with the codeing/story
@@ -49,7 +53,6 @@ Ray - helping with the art
 [blacklight5h](https://github.com/blackdeath5h) - helping with the codeing/story
 
 [Kwhitehead07](https://github.com/Kwhitehead07) - helping with the codeing/story
-[Video Game Remixes](https://www.youtube.com/@VideoGameRemixes) - main menu remix music
 nex - helping with the art
 
 Just_jam - with the art 
