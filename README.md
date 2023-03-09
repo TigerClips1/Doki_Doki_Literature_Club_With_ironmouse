@@ -33,16 +33,20 @@ and this mod is FOSS so you can do anything to it just give me and ironmouse and
 
 This mod only have 3 Chapter for now 
 
+## game engine i use to bulid this mod
+
+[renpytom](https://github.com/renpy/renpy) - without him ddlc will not be made
+
 ### DDLC WITH IRONMOUSE TEAM ###
 
 [LyllyNotFound](https://github.com/LyllyNotFound) - helping with the codeing/story
 
-[Ray] - helping with the art
+Ray - helping with the art
 
 [blacklight5h](https://github.com/blackdeath5h) - helping with the codeing/story
 
 [Kwhitehead07](https://github.com/Kwhitehead07) - helping with the codeing/story
 
-[nex] - helping with the art
+nex - helping with the art
 
-[Just_jam] - with the art 
+Just_jam - with the art 
