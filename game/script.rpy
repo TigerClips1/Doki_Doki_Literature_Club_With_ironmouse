@@ -52,10 +52,10 @@ label start:
         #Day 1 ##
         $ chapter = 1
         call chapter1 from _call_chapter1 
-        call chapter1_page2
-        call chapter1_page3
-        call chapter1_page4
-        call chapter1_page4_part_2
+        call chapter1_page2 from _call_chapter1_page2
+        call chapter1_page3 from _call_chapter1_page3
+        call chapter1_page4 from _call_chapter1_page4
+        call chapter1_page4_part_2 from _call_chapter1_page4_part_2
         call poem from _call_poem
 
         #jump credits
