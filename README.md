@@ -53,6 +53,7 @@ Ray - helping with the art
 [blacklight5h](https://github.com/blackdeath5h) - helping with the codeing/story
 
 [Kwhitehead07](https://github.com/Kwhitehead07) - helping with the codeing/story
-nex - helping with the art
+
+Nexus - helping with the art
 
 Just_jam - with the art 

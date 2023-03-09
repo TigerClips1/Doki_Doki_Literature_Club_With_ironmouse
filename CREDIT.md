@@ -20,7 +20,7 @@
 
 10. Kwhitehead07 (helping with the codeing/story) 
 
-11. nex (helping with the art)
+11. Nexus (helping with the art)
 
 12. just_jam (helping with the art)
 
