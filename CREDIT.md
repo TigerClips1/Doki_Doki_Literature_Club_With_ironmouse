@@ -1,4 +1,4 @@
-    Criedit
+    Credits
 
 1. Dan Salvato (DDLC)
 
@@ -6,21 +6,21 @@
 
 3. GHOSTKingoSA (DDLC new mod template)
 
-4. LyllyNotFound (helping with the codeing/story)
+4. LyllyNotFound (helping with the coding/story)
 
-5. Ray (for helping with the art)
+5. Ray (helping with the art)
 
 6. ironmouse (for the model idea/ mod idea)
 
-7. and huge thanks to (GHOSTKingoSA for this mod template) without his mod template this mod will not be made for andriod and ios and mac
+7. and huge thanks to (GHOSTKingoSA for this mod template) without his mod template this mod will not be made for android and ios and mac
 
-8. blacklight5h (helping with the codeing/story)
+8. blacklight5h (helping with the coding/story)
 
 9.  main menu music by Video Game Remixes 
 
-10. Kwhitehead07 (helping with the codeing/story) 
+10. Kwhitehead07 (helping with the coding/story) 
 
-11. Nexus (helping with the art)
+11. Nexus (helping with the art)0
 
 12. just_jam (helping with the art)
 

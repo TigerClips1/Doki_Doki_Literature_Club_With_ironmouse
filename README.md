@@ -12,7 +12,7 @@ The mod code/files are designed for original DDLC  that use DDLC assets with Ren
 
 Copyright © By TigerClips1 All rights reserved
 
-## DDLC MOD Template i use 
+## DDLC MOD Template I use 
 [GanstaKingofSA](https://github.com/GanstaKingofSA) - mod template
 
 ### DDLC the OG game ###
@@ -25,7 +25,7 @@ Doki Doki Literature Club, the Doki Doki Literature Club code, is the property o
 
 Mod still in DEV 
 
-### Youtuber that this mod bulid on ###
+### Youtuber that this mod bulit on ###
 
 [ironmouse](https://www.youtube.com/@IronMouseParty/videos) - check out ironmouse  
 
@@ -36,9 +36,9 @@ and this mod is FOSS so you can do anything to it just give me and ironmouse and
 
 This mod only have 3 Chapter for now 
 
-## game engine i use to bulid this mod
+## Game engine's I used to bulid this mod
 
-[renpytom](https://github.com/renpy/renpy) - without him ddlc will not be made
+[renpytom](https://github.com/renpy/renpy) - Game engine maker for Ren'py
 
 ### DDLC Menu remix
 
@@ -46,14 +46,14 @@ This mod only have 3 Chapter for now
 
 ### DDLC WITH IRONMOUSE TEAM ###
 
-[LyllyNotFound](https://github.com/LyllyNotFound) - helping with the codeing/story
+[LyllyNotFound](https://github.com/LyllyNotFound) - Coder 1/story writer
 
-Ray - helping with the art
+Ray - Artist .1
 
-[blacklight5h](https://github.com/blackdeath5h) - helping with the codeing/story
+[blacklight5h](https://github.com/blackdeath5h) - Coder 2/story writer
 
-[Kwhitehead07](https://github.com/Kwhitehead07) - helping with the codeing/story
+[Kwhitehead07](https://github.com/Kwhitehead07) - Coder 3/story writer
 
-Nexus - helping with the art
+Nexus - Artist .2
 
-Just_jam - with the art 
+Just_jam - Artist .3 

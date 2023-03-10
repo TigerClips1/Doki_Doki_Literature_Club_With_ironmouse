@@ -1,7 +1,7 @@
 label chapter1: #label this .rpy file to it can be easy to call it in the script.rpa
-# let say i'm done with this code  have to hit ctral s to save it
+# When done with coding you have to hit ctral s to save it
 stop music fadeout 2.0 #stop the music when loading to the game
-play music t2 #ply sayori thame
+play music t2 #play sayori theme
 scene bg residential_day #set the scene to house
 with dissolve_scene_full #black the screen slowlly
 
@@ -72,7 +72,7 @@ if  options: #if statement
         show yuri 1e zorder 2 at t11 # show yuri sprite
         y "Sure [player] this tea will get done faster if more people help out" #Yuri's text will change in the future to be like the Original Yuri for ddlc
         hide yuri # hide yuri
-        "great can't wait to help" #spelling error fix thanks to Kwhitehead07/Blackdeath
+        "Great can't wait to help" #spelling error fix thanks to Kwhitehead07/Blackdeath
         show yuri 1b zorder 2 at t11 #show yuri
         y "I will need you to use the school's auto tea maker 3,000"
         hide yuri # hide yuri
@@ -80,7 +80,7 @@ if  options: #if statement
         y "..." #stright face
         hide yuri #hide yuri sprite
         show yuri 1b zorder 2 at t11 # show yuri
-        y "Hehe" #yuri acting wired
+        y "Hehe" #yuri acting weird
         hide yuri #hide yuri sprite
         mc "Tea maker what now?" #MC being a boomer
         show yuri 1b zorder 2 at t11 #show yuri
@@ -101,19 +101,19 @@ if  options: #if statement
         "Yuri acting odd reminds you when something happened a long time ago when Yuri did something that was gross and terrifying but you can't remember what it was." #MC being reminded of something that happen in act 2 of ddlc
         play music t6 #Play the music
         show yuri 1b zorder 2 at t11 #show yuri
-        y "Hehehehe" #yuri being wired
+        y "Hehehehe" #yuri being weird
         hide yuri #hide yuri sprite
-        show yuri glitch2 zorder 2 at t11 #show yuri glitch form to spook the player
+        show yuri glitch2 zorder 2 at t11 #show yuri glitch from to spook the player
         play music t6g #play glitch music
         play sound g5 #play glitch sound breaking the 4th wall
-        y '¡¢£¤¥¦§¨©ª«¬®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéê'#Monika hack yuri lol
+        y '¡¢£¤¥¦§¨©ª«¬®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéê'#Monika hack yuri lol (this is reminding of og ddlc but there will only be one encounter like this till later)
         stop sound #stop the scary sound
 
         stop music  #stop the glitch music
         play music t6 #play normal music
 
         hide yuri #hide yuri sprite
-        mc "Okay Yuri" #mc being not wired
+        mc "Okay Yuri" #mc not being weird
         show yuri 1b zorder 2 at t11 #show yuri
         y "That's all thank's for helping [player]" #yuri being nice
         hide yuri #hide yuri sprite
@@ -133,7 +133,7 @@ else:  #else this will happening when you click the 2 options
         n "Sure but you have to follow my instructions" #change this later to make natsuki bit mad
         show natsuki 1l zorder 2 at t11 #show natsuki sprite
         hide natsuki #hide natsuki sprite
-        "Time to Have some fun" # MC talking to the player 
+        "Time to Have some fun" # MC talking to the player 4th wall breaking
         show natsuki 1b zorder 2 at t11 #show natsuki sprite
         n "Alright we need to make some cake, flour, eggs, sugar, salt, milk or water works, and some oil too"#i google this
         hide natsuki#hide natsuki sprite
@@ -197,7 +197,7 @@ return # exit
 label chapter1_page2: #enable chapter1_page2
 scene bg club_day #set the scene to club room day
 play music  t3 #play music
-#TODO wait until the artist comepleate ironmouse art then add her art to the definitions.rpy 
+#TODO wait until the artist complete ironmouse art then add her art to the definitions.rpy 
 m "The new student is here guys"
 m "Get ready guys"
 mc "Okay"
@@ -233,11 +233,11 @@ mc "Nice to meet you Ironmouse"
 i "Hello everyone, nice to know you guys!"
 m "Alright so, let me explain what we do daily"
 m "All you need to do is write a unique poem, read books for ideas and such"
-"Very lovely day we are having right [player]?"
+"Very lovely day we are having right [player]?" #random 4th wall break
 m "We bake cupcakes, make tea, mostly basic stuff"
 m "Speaking of which, its about time we write a poem, so if you don't know what to do today we'll run you through it"
 i "Okay"
-$ renpy.movie_cutscene("mod_assets/video/1.ogx") #set a movie scene  from spongebob few momnet later
+$ renpy.movie_cutscene("mod_assets/video/1.ogx") #set a movie scene from spongebob a few moments later
 return #exit
 
 #Todo for  blackdeath5h  add story line for ironmouse Please Keep it PG 13 make it connect the story lines Kwhitehead07 put and TigerClips1 Put
