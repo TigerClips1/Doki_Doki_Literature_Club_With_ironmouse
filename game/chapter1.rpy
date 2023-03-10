@@ -1,5 +1,4 @@
 label chapter1: #label this .rpy file to it can be easy to call it in the script.rpa
-# When done with coding you have to hit ctral s to save it
 stop music fadeout 2.0 #stop the music when loading to the game
 play music t2 #play sayori theme
 scene bg residential_day #set the scene to house
