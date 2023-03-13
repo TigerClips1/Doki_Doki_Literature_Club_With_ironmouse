@@ -241,20 +241,20 @@ return #exit
 
 #Todo for  blackdeath5h  add story line for ironmouse Please Keep it PG 13 make it connect the story lines Kwhitehead07 put and TigerClips1 Put
 label chapter1_page3:
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+i "now i know how to wirte a poem"
+mc "so do you need any help with anything guys"
+s "no"
+m "no"
+i "no"
+n "hmph no"
+y "n-no"
+mc "alright"
+mc "let me know if you need help with anything"
+i "ok"
+s "alright"
+m "ok"
+n "will do"
+y "ok"
 
 #end of Blackdeath5h story lines
 return
