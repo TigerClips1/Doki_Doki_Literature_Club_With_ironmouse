@@ -10,7 +10,7 @@ Disclaimers
 
 The mod code/files are designed for original DDLC  that use DDLC assets with Ren'Py. This DDLC Mod  is not afilliated in anyway with Team Salvato.
 
-Copyright © By TigerClips1 All rights reserved
+Copyright © By TigerClips1inc All rights reserved
 
 ## DDLC MOD Template I use 
 [GanstaKingofSA](https://github.com/GanstaKingofSA) - mod template
