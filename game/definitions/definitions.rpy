@@ -4,8 +4,7 @@
 
 # This variable declares if the mod is a demo or not.
 # Leftover from DDLC.
-define persistent.demo = False
-
+define persistent.demo = True
 # This variable declares whether the mod is in the 'steamapps' folder.
 define persistent.steam = ("steamapps" in config.basedir.lower())
 
@@ -1475,12 +1474,32 @@ image monika 4p = im.Composite((960, 960), (0, 0), "monika/2l.png", (0, 0), "mon
 image monika 4q = im.Composite((960, 960), (0, 0), "monika/2l.png", (0, 0), "monika/2r.png", (0, 0), "monika/q.png")
 image monika 4r = im.Composite((960, 960), (0, 0), "monika/2l.png", (0, 0), "monika/2r.png", (0, 0), "monika/r.png")
 
-image monika 5a = im.Composite((960, 960), (0, 0), "monika/3a.png")
-image monika 5b = im.Composite((960, 960), (0, 0), "monika/3b.png")
-image ironmouse 1 = im.Composite((960, 960), (0, 0), "mod_assets/images/ironmouse/1l.png", (0, 0), "mod_assets/images/ironmouse/1r.png", (0, 0), "mod_assets/images/ironmouse/n.png")
-image ironmouse 1 = im.Composite((960, 960), (0, 0), "mod_assets/images/ironmouse/girl4.png", (0, 0), "mod_assets/images/ironmouse/girl4.png", (0, 0), "mod_assets/images/ironmouse/girl4.png")
+# ironmouse Character Definitions
+image ironmouse 1 = im.Composite((960, 960), (0, 0), "mod_assets/images/ironmouse/1l.png", (0, 0), "mod_assets/images/ironmouse/1r.png", (0, 0), "mod_assets/images/ironmouse/d.png")
+image ironmouse 2 = im.Composite((960, 960), (0, 0), "mod_assets/images/ironmouse/1l.png", (0, 0), "mod_assets/images,ironmouse/3r.png", (0, 0), "mod_assets/images/ironmouse/d.png")
+image ironmouse 3 = im.Composite((960, 960), (0, 0), "mod_assets/images/ironmouse/2l.png", (0, 0), "mod_assets/images/ironmouse/1r.png", (0, 0), "mod_assets/images/ironmouse/d.png")
+image ironmouse 4 = im.Composite((960, 960), (0, 0), "mod_assets/images/ironmouse/2l.png", (0, 0), "mod_assets/images/ironmouse/2r.png", (0, 0), "mod_assets/images/ironmouse/d.png")
 
-#ToDo  add ironmouse sprint to definitions.rpy add ore anmieation orgnaze the folder and add 3 Chapter
+image ironmouse 1a = im.Composite((960, 960), (0, 0), "mod_assets/images/ironmouse/1l.png", (0, 0), "mod_assets/images/ironmouse/1r.png", (0, 0), "mod_assets/images/ironmouse/a.png")
+image ironmouse 1b = im.Composite((960, 960), (0, 0), "mod_assets/images/ironmouse/1l.png", (0, 0), "mod_assets/images/ironmouse/1r.png", (0, 0), "mod_assets/images/ironmouse/b.png")
+image ironmouse 1c = im.Composite((960, 960), (0, 0), "mod_assets/images/ironmouse/1l.png", (0, 0), "mod_assets/images/ironmouse/1r.png", (0, 0), "mod_assets/images/ironmouse/c.png")
+image ironmouse 1d = im.Composite((960, 960), (0, 0), "mod_assets/images/ironmouse/1l.png", (0, 0), "mod_assets/images/ironmouse/1r.png", (0, 0), "mod_assets/images/ironmouse/d.png")
+image ironmouse 1e = im.Composite((960, 960), (0, 0), "mod_assets/images/ironmouse/1l.png", (0, 0), "mod_assets/images/ironmouse/1r.png", (0, 0), "mod_assets/images/ironmouse/e.png")
+image ironmouse 1f = im.Composite((960, 960), (0, 0), "mod_assets/images/ironmouse/1l.png", (0, 0), "mod_assets/images/ironmouse/1r.png", (0, 0), "mod_assets/images/ironmouse/f.png")
+
+image ironmouse 2a = im.Composite((960, 960), (0, 0), "mod_assets/images/ironmouse/2l.png", (0, 0), "mod_assets/images/ironmouse/2r.png", (0, 0), "mod_assets/images/ironmouse/a.png")
+image ironmouse 2b = im.Composite((960, 960), (0, 0), "mod_assets/images/ironmouse/2l.png", (0, 0), "mod_assets/images/ironmouse/2r.png", (0, 0), "mod_assets/images/ironmouse/b.png") 
+image ironmouse 2c = im.Composite((960, 960), (0, 0), "mod_assets/images/ironmouse/2l.png", (0, 0), "mod_assets/images/ironmouse/2r.png", (0, 0), "mod_assets/images/ironmouse/c.png")
+image ironmouse 2d = im.Composite((960, 960), (0, 0), "mod_assets/images/ironmouse/2l.png", (0, 0), "mod_assets/images/ironmouse/2r.png", (0, 0), "mod_assets/images/ironmouse/d.png")
+image ironmouse 2e = im.Composite((960, 960), (0, 0), "mod_assets/images/ironmouse/2l.png", (0, 0), "mod_assets/images/ironmouse/2r.png", (0, 0), "mod_assets/images/ironmouse/e.png")
+image ironmouse 2f = im.Composite((960, 960), (0, 0), "mod_assets/images/ironmouse/2l.png", (0, 0), "mod_assets/images/ironmouse/2r.png", (0, 0), "mod_assets/images/ironmouse/f.png")
+
+image ironmouse 3a = im.Composite((960, 960), (0, 0), "mod_assets/images/ironmouse/3l.png", (0, 0), "mod_assets/images/ironmouse/3r.png", (0, 0), "mod_assets/images/ironmouse/a.png")
+image ironmouse 3b = im.Composite((960, 960), (0, 0), "mod_assets/images/ironmouse/3l.png", (0, 0), "mod_assets/images/ironmouse/3r.png", (0, 0), "mod_assets/images/ironmouse/b.png") 
+image ironmouse 3c = im.Composite((960, 960), (0, 0), "mod_assets/images/ironmouse/3l.png", (0, 0), "mod_assets/images/ironmouse/3r.png", (0, 0), "mod_assets/images/ironmouse/c.png")
+image ironmouse 3d = im.Composite((960, 960), (0, 0), "mod_assets/images/ironmouse/3l.png", (0, 0), "mod_assets/images/ironmouse/3r.png", (0, 0), "mod_assets/images/ironmouse/d.png")
+image ironmouse 3e = im.Composite((960, 960), (0, 0), "mod_assets/images/ironmouse/3l.png", (0, 0), "mod_assets/images/ironmouse/3r.png", (0, 0), "mod_assets/images/ironmouse/e.png")
+image ironmouse 3f = im.Composite((960, 960), (0, 0), "mod_assets/images/ironmouse/3l.png", (0, 0), "mod_assets/images/ironmouse/3r.png", (0, 0), "mod_assets/images/ironmouse/f.png")
 
 # This image transform shows a glitched Monika during a special poem.
 image monika g1:

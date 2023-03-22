@@ -125,7 +125,6 @@ if  options: #if statement
         #yuri lines are done just need add few fixes then it will look good
 else:  #else this will happening when you click the 2 options 
         "I will help Natsuki with the cupcakes"
-        show natsuki 1l zorder 2 at t11 #show natsuki sprite
         play music t5 #play music 
         scene bg club_day # change the scene to bg day
         mc "Can I help you with the cupcakes Natsuki?" #MC being random
@@ -204,7 +203,9 @@ s "Let's go"
 y "Ok"
 n "Alright"
 "Its cool how all the girls in the club did this just for the new student"
+show ironmouse 1d zorder 2 at t11
 i "Ummm he-hello?"
+hide ironmouse
 s "Hey there new kid!"
 s "Welcome to the literature club! My name is Sayori!"
 n "I hope this girl isn't a manga hater."
@@ -216,41 +217,57 @@ m "And that there is yuri"
 y "H-hello"
 m "And here is natsuki, try not to anger her though."
 n "You like manga?"
+show ironmouse 1d zorder 2 at t11
 i "Yeah I do actually, I like this one called Dragon Ball Volume 1"
+hide ironmouse
 m "But manga isn't even literature"
 n "But manga is liturature!"
+show ironmouse 2c zorder 2 at t11
 i "Yeah I agree"
+hide ironmouse
 m "Fine, if you say so"
 m "Anyways, what's your name?"
+show ironmouse 2d zorder 2 at t11
 i "My name is Ironmouse"
+hide ironmouse
 $ i_name = "Ironmouse"
 m "Strange name, but hello there Ironmouse!"
 s "Hey Ironmouse! Nice to know you name finally!"
 y "Hi Ironmouse"
 n "Hello there Ironmouse, don't get into trouble around here!"
 mc "Nice to meet you Ironmouse"
+show ironmouse 1b zorder 2 at t11
 i "Hello everyone, nice to know you guys!"
+hide ironmouse
 m "Alright so, let me explain what we do daily"
 m "All you need to do is write a unique poem, read books for ideas and such"
 "Very lovely day we are having right [player]?" #random 4th wall break
 m "We bake cupcakes, make tea, mostly basic stuff"
 m "Speaking of which, its about time we write a poem, so if you don't know what to do today we'll run you through it"
+show ironmouse 1d zorder 2 at t11
 i "Okay"
+hide ironmouse
 $ renpy.movie_cutscene("mod_assets/video/1.ogx") #set a movie scene from spongebob a few moments later
 return #exit
 
 #Todo for  blackdeath5h  add story line for ironmouse Please Keep it PG 13 make it connect the story lines Kwhitehead07 put and TigerClips1 Put
 label chapter1_page3:
+show ironmouse 1d zorder 2 at t11
 i "now i know how to wirte a poem"
+hide ironmouse
 mc "so do you need any help with anything guys"
 s "no"
 m "no"
+show ironmouse 1d zorder 2 at t11
 i "no"
+hide ironmouse
 n "hmph no"
 y "n-no"
 mc "alright"
 mc "let me know if you need help with anything"
+show ironmouse 1d zorder 2 at t11 #TODO add natsuki and sayori and monika and yuri sprite for TigerClips1
 i "ok"
+hide ironmouse
 s "alright"
 m "ok"
 n "will do"
