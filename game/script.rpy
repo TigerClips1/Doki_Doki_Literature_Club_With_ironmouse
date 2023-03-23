@@ -57,6 +57,7 @@ label start:
         call chapter1_page4 from _call_chapter1_page4
         call chapter1_page4_part_2 from _call_chapter1_page4_part_2
         call poem from _call_poem
+        return
 
         #jump credits
 
@@ -70,7 +71,7 @@ label start:
         #call chapter3 from _call_chapter3 
         #call poem from _call_poem_2
         #jump credits
-        return
+        #return
 
 
 

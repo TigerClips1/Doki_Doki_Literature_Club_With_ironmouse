@@ -27,8 +27,11 @@ init python:
 
 default translations = scan_translations()
 
-# Enables the ability to add more settings in the game such as uncensored mode.
-default enable_languages = True
+# Enables the ability to add more settings in the game such as Uncensored Mode.
+default extra_settings = True
+
+# If you are going to use extra languages, set this to True.
+default enable_languages = False
 
 ## Color Styles
 ################################################################################
@@ -208,7 +211,7 @@ style window:
     yalign gui.textbox_yalign
     ysize gui.textbox_height
 
-    background Transform("mod_assets/gui/textbox/textbox.png", xalign=0.5, yalign=1.0)
+    background Transform("mod_assets/gui/textbox/Textbox.png", xalign=0.5, yalign=1.0)
 
 style window_monika is window:
     background Transform("gui/textbox_monika.png", xalign=0.5, yalign=1.0)
@@ -220,7 +223,7 @@ style namebox:
     ypos gui.name_ypos
     ysize gui.namebox_height
 
-    background Frame("/mod_assets/gui/namebox_d.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
+    background Frame("mod_assets/gui/namebox_d.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
     padding gui.namebox_borders.padding
 
 style say_label:
@@ -423,7 +426,6 @@ screen quick_menu():
             #textbutton _("Q.Save") action QuickSave()
             #textbutton _("Q.Load") action QuickLoad()
             textbutton _("Settings") action ShowMenu('preferences')
-            #textbutton _("About") action ShowMenu('About')
 
 
 ## This code ensures that the quick_menu screen is displayed in-game, whenever
@@ -490,7 +492,8 @@ screen navigation():
 
             textbutton _("Load Game") action [ShowMenu("load"), SensitiveIf(renpy.get_screen("load") == None)]
 
-            
+           
+
             if _in_replay:
 
                 textbutton _("End Replay") action EndReplay(confirm=True)
@@ -502,18 +505,14 @@ screen navigation():
                     textbutton _("Main Menu") action NullAction()
 
             textbutton _("Settings") action [ShowMenu("preferences"), SensitiveIf(renpy.get_screen("preferences") == None)]
-            textbutton _("About") action ShowMenu("about")
 
-            
+            textbutton _("Credits") action ShowMenu("about")
+
             if renpy.variant("pc"):
 
-                
 
                 ## The quit button is banned on iOS and unnecessary on Android.
-                textbutton _("Help") action ShowMenu("help")
                 textbutton _("Quit") action Quit(confirm=not main_menu)
-                
-
         else:
             timer 1.75 action Start("autoload_yurikill")
 
@@ -572,10 +571,13 @@ screen main_menu():
     if persistent.ghost_menu:
         add "menu_art_s_ghost"
         add "menu_art_m_ghost"
+        add "menu_art_i"
     else:
         if persistent.playthrough == 1 or persistent.playthrough == 2:
             add "menu_art_s_glitch"
+            add "menu_art_i"
         else:
+            add "menu_art_i"
             add "menu_art_s"
         add "menu_particles"
         if persistent.playthrough != 4:
@@ -599,7 +601,7 @@ style main_menu_vbox is vbox
 style main_menu_text is gui_text
 style main_menu_title is main_menu_text
 style main_menu_version is main_menu_text:
-    color "#ffffff"
+    color "#FFFFFF"
     size 16
     outlines []
 
@@ -638,7 +640,7 @@ style main_menu_title:
 
 screen game_menu_m():
     $ persistent.menu_bg_m = True
-    add "gui/menu_bg_m.png"
+    add "mod_assets/gui/menu_bg_d.png"
     timer 0.3 action Hide("game_menu_m")
 
 screen game_menu(title, scroll=None):
@@ -781,7 +783,7 @@ screen about():
     ## This use statement includes the game_menu screen inside this one. The
     ## vbox child is then included inside the viewport inside the game_menu
     ## screen.
-    use game_menu(_("About"), scroll="viewport"):
+    use game_menu(_("Credits"), scroll="viewport"):
 
         style_prefix "about"
 
@@ -791,6 +793,10 @@ screen about():
                 yfit True
 
             vbox:
+                add Transform("mod_assets/gui/logo.png", size=(200,200)) xalign .5
+
+                null height 5
+                
                 label "[config.name!t]" xalign .5
                 text _("Version [config.version!t]\n") xalign .5
 
@@ -798,14 +804,11 @@ screen about():
                 if gui.about:
                     text "[gui.about!t]\n"
 
-                ## Do not touch/remove these unless the © or – symbol isn't available in your font.
-                ## You may add things above or below it.
-                ## If you are not going with a splashscreen option, this first line MUST stay in the mod.
-                text "Copyright © TigerClips1 2023 All rights reserved {a=https://github.com/TigerClips1}TCgithub "
+                
+                text " TigerClips1  {a=https://github.com/TigerClips1}TCgithub github {/a}\nCopyright © 2023-" + str(datetime.date.today().year) + " All rights reserved.\n"
                 text " made useing ironmouse model {a=https://youtube.com/@IronMouseParty/}ironmouse Youtube Channel{/a}\nCopyright © 2017-" + str(datetime.date.today().year) + " ironmouse model (ironmouse). All rights reserved.\n"
                 text "Doki Doki Literature Club. Copyright © 2017 Team Salvato. All rights reserved.\n"
                 text _("Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n[renpy.license!t]")
-
 
 ## This is redefined in options.rpy to add text to the about screen.
 define gui.about = ""
@@ -816,13 +819,13 @@ style about_label_text is gui_label_text
 style about_text is gui_text
 
 style about_label_text:
-    color "#fffbfb"
+    color "#FFFFFF"
     outlines []
     text_align 0.5
     size gui.label_text_size
 
 style about_text:
-    color "#f8f8f8"
+    color "#FFFFFF"
     outlines []
     size gui.text_size
     text_align 0.5
@@ -957,7 +960,7 @@ style page_label:
     ypadding 3
 
 style page_label_text:
-    color "#000"
+    color "#FFFFFF"
     outlines []
     text_align 0.5
     layout "subtitle"
@@ -977,7 +980,7 @@ style slot_button:
 
 style slot_button_text:
     properties gui.button_text_properties("slot_button")
-    color "#666"
+    color "#FFFFFF"
     outlines []
 
 screen viewframe_options(title):
@@ -1021,7 +1024,7 @@ style viewframe_text is confirm_prompt_text:
 
 #     style_prefix "confirm"
 
-#     add "mod_assets/gui/overlay/confirm_d.png"
+#     add "gui/overlay/confirm.png"
 
 #     frame:
 
@@ -1052,10 +1055,10 @@ style viewframe_text is confirm_prompt_text:
 #                 #     textbutton _("Yes") action NullAction()
 #                 #     textbutton _("No") action Hide("confirm")
 #                 # else:
-#                 textbutton _("Yes") action Hide()
-#                 textbutton _("No") action [Function(renpy.set_physical_size, old_res), Hide()]
+#                 textbutton _("Yes") action Hide("confirm_res")
+#                 textbutton _("No") action [Function(renpy.set_physical_size, old_res), Hide("confirm_res")]
     
-#     timer 5.0 action [Function(renpy.set_physical_size, old_res), Hide()]
+#     timer 5.0 action [Function(renpy.set_physical_size, old_res), Hide("confirm_res")]
 
 # init python:
 #     def res_text_timer(st, at):
@@ -1069,168 +1072,188 @@ style viewframe_text is confirm_prompt_text:
 #         renpy.set_physical_size(res)
 #         renpy.show_screen("confirm_res", old_res=old_res)
 
-screen display_options():
+# screen display_options():
 
-    style_prefix "viewframe"
+#     style_prefix "viewframe"
 
-    modal True
+#     modal True
 
-    zorder 150
+#     zorder 150
 
-    use viewframe_options(_("Display Resolutions")):
+#     use viewframe_options(_("Display Resolutions")):
 
-        default scale = renpy.get_physical_size()
+#         default scale = renpy.get_physical_size()
+
+#         vbox:
+#             xmaximum 500
+#             ysize 120
+#             viewport:
+#                 style_prefix "radio"
+#                 scrollbars "vertical"
+#                 mousewheel True
+#                 draggable True
+#                 has vbox
+
+#                 textbutton "1280x720" action SetScreenVariable("scale", (1280, 720))
+#                 textbutton "1600x900" action SetScreenVariable("scale", (1600, 900))
+
+#         null height 10
+
+#         hbox:
+#             xalign 0.5
+#             spacing 100
+
+#             textbutton _("Reset") action [Hide("display_options"), Function(renpy.reset_physical_size)]
+#             textbutton _("Set") action [Hide("display_options"), Function(set_physical_resolution, scale)]
+
+screen ddlc_preferences():
+    hbox:
+        box_wrap True
+
+        if renpy.variant("pc"):
+
+            vbox:
+                style_prefix "radio"
+                label _("Display")
+                textbutton _("Windowed") action Preference("display", "window")
+                textbutton _("Fullscreen") action Preference("display", "fullscreen")
+                # textbutton _("More") action Show("display_options")
+
+        if config.developer:
+            vbox:
+                style_prefix "radio"
+                label _("Rollback Side")
+                textbutton _("Disable") action Preference("rollback side", "disable")
+                textbutton _("Left") action Preference("rollback side", "left")
+                textbutton _("Right") action Preference("rollback side", "right")
 
         vbox:
-            xmaximum 500
-            ysize 120
-            viewport:
-                style_prefix "radio"
-                scrollbars "vertical"
-                mousewheel True
-                draggable True
-                has vbox
-
-                textbutton "1280x720" action SetScreenVariable("scale", (1280, 720))
-                textbutton "1600x900" action SetScreenVariable("scale", (1600, 900))
-
-        null height 10
-
-        hbox:
-            xalign 0.5
-            spacing 100
-
-            textbutton _("Reset") action [Hide(), Function(renpy.reset_physical_size)]
-            textbutton _("Set") action [Hide(), Function(set_physical_resolution, scale)]
-
-screen text_options():
-    modal True
-
-    zorder 150
-
-    use viewframe_options(_("Text Settings")):
-        style_prefix "radio"
-        label _("Rollback Side")
-        hbox:
-            textbutton _("Disable") action Preference("rollback side", "disable")
-            textbutton _("Left") action Preference("rollback side", "left")
-            textbutton _("Right") action Preference("rollback side", "right")
-
-        label _("Skip")
-        hbox:
+            style_prefix "check"
+            label _("Skip")
             textbutton _("Unseen Text") action Preference("skip", "toggle")
             textbutton _("After Choices") action Preference("after choices", "toggle")
-            #textbutton _("Transitions") action InvertSelected(Preference("transitions", "toggle"))
+            # textbutton _("Transitions") action InvertSelected(Preference("transitions", "toggle"))
+    
+    null height (4 * gui.pref_spacing)
 
-        hbox:
-            spacing 10
-            label _("Text Speed")
-            text str(preferences.text_cps) style "viewframe_text"
-
-        bar value FieldValue(_preferences, "text_cps", range=180, max_is_zero=False, style="slider", offset=20) xsize 500
-
-        hbox:
-            spacing 10
-            label _("Auto-Forward Time")
-            text str(round(preferences.afm_time)) style "viewframe_text"
-
-        bar value Preference("auto-forward time") xsize 500
-
-        null height 10
-
-        hbox:
-            xalign 0.5
-            spacing 100
-
-            textbutton _("OK") action Hide() style "confirm_button"
-
-screen audio_options():
-    style_prefix "viewframe"
-
-    modal True
-
-    zorder 150
-
-    use viewframe_options(_("Audio Settings")):
+    hbox:
         style_prefix "slider"
-        if config.has_music:
-            hbox:
-                spacing 10
-                label _("Music Volume")
-                text str(round(preferences.music_volume * 100)) style "viewframe_text"
+        box_wrap True
 
-            hbox:
-                bar value Preference("music volume") xsize 500
-
-        if config.has_sound:
-
-            hbox:
-                spacing 10
-                label _("Sound Volume")
-                text str(round(preferences.sfx_volume * 100)) style "viewframe_text"
-
-            hbox:
-                bar value Preference("sound volume") xsize 500
-
-                if config.sample_sound:
-                    textbutton _("Test") action Play("sound", config.sample_sound)
-
-        if config.has_voice:
-            hbox:
-                spacing 10
-                label _("Voice Volume")
-                text str(round(preferences.get_volume("voice") * 100)) style "viewframe_text"
-
-            hbox:
-                bar value Preference("voice volume")
-
-                if config.sample_voice:
-                    textbutton _("Test") action Play("voice", config.sample_voice) 
-
-        if config.has_music or config.has_sound or config.has_voice:
-            null height gui.pref_spacing
-
-            textbutton _("Mute All"):
-                action Preference("all mute", "toggle")
-                style "mute_all_button"
-
-        null height 10
-
-        hbox:
-            xalign 0.5
-            spacing 100
-
-            textbutton _("OK") action Hide() style "confirm_button"
-
-screen extra_options():
-    style_prefix "viewframe"
-
-    modal True
-
-    zorder 150
-
-    use viewframe_options(_("Extra Settings")):
-        style_prefix "radio"
-
-        label _("Game Modes")
-        
-        
-        label _("Player Name")
         vbox:
-            style_prefix "confirm"
+            
+            hbox:
+                label _("Text Speed")
+                
+                null width 5
+
+                text str(preferences.text_cps) style "value_text"
+
+            #bar value Preference("text speed")
+            bar value FieldValue(_preferences, "text_cps", range=180, max_is_zero=False, style="slider", offset=20)
+
+            hbox:
+                label _("Auto-Forward Time")
+                
+                null width 5
+                
+                text str(round(preferences.afm_time)) style "value_text"
+
+            bar value Preference("auto-forward time")
+
+        vbox:
+            
+            if config.has_music:
+                hbox:
+                    label _("Music Volume")
+                    
+                    null width 5
+                
+                    text str(round(preferences.get_volume("music") * 100)) style "value_text"
+
+                hbox:
+                    bar value Preference("music volume")
+
+            if config.has_sound:
+
+                hbox:
+                    label _("Sound Volume")
+                    
+                    null width 5
+                
+                    text str(round(preferences.get_volume("sfx") * 100)) style "value_text"
+
+                hbox:
+                    bar value Preference("sound volume")
+
+                    if config.sample_sound:
+                        textbutton _("Test") action Play("sound", config.sample_sound)
+
+            if config.has_voice:
+                hbox:
+                    label _("Voice Volume")
+                    
+                    null width 5
+                
+                    text str(round(preferences.get_volume("voice") * 100)) style "value_text"
+
+                hbox:
+                    bar value Preference("voice volume")
+
+                    if config.sample_voice:
+                        textbutton _("Test") action Play("voice", config.sample_voice)
+
+            if config.has_music or config.has_sound or config.has_voice:
+                null height gui.pref_spacing
+
+                textbutton _("Mute All"):
+                    action Preference("all mute", "toggle")
+                    style "mute_all_button"
+
+screen other_preferences():
+    hbox:
+        box_wrap True
+
+       
+               
+        
+        vbox:
+            style_prefix "name"
+            label _("Player Name")
+            
+            null height 3
+            
             if player == "":
-                text "Current Name: No Name Set" style "viewframe_text"
+                text _("No Name Set") xalign 0.5
             else:
-                text "Current Name: [player]" style "viewframe_text"
-            textbutton "Change Name" action Show(screen="name_input", message="Please enter your name", ok_action=Function(FinishEnterName, launchGame=False)) xoffset 10
+                text "[player]" xalign 0.5
+            
+            textbutton _("Change Name") action Show(screen="name_input", message="Please enter your name", ok_action=Function(FinishEnterName, launchGame=False)):
+                text_style "navigation_button_text"
+        
 
-        null height 10
 
-        hbox:
-            xalign 0.5
-            spacing 100
+    null height (4 * gui.pref_spacing)
 
-            textbutton _("OK") action Hide() style "confirm_button"
+    hbox:
+        box_wrap True
+
+        if enable_languages and translations:
+            vbox:
+                style_prefix "radio"
+                label _("Language")
+                hbox:
+                    viewport:
+                        mousewheel True
+                        scrollbars "vertical"
+                        ysize 120
+                        has vbox
+
+                        for tran in translations:
+                            vbox:
+                                for tlid, tlname in tran:
+                                    textbutton tlname:
+                                        action Language(tlid)
 
 ## Preferences screen ##########################################################
 ##
@@ -1248,50 +1271,26 @@ screen preferences():
     else:
         $ cols = 4
 
+    default ddlc_settings = True
+
     use game_menu(_("Settings"), scroll="viewport"):
 
         vbox:
             xoffset 50
 
-            vbox:
+            hbox:
+                style_prefix "navigation"
+                xoffset 150
                 spacing 5
-                box_wrap True
+                textbutton _("DDLC Settings") action [SetScreenVariable("ddlc_settings", True), SensitiveIf(not ddlc_settings)]
+                textbutton _("Other Settings") action [SetScreenVariable("ddlc_settings", False), SensitiveIf(ddlc_settings)]
+            
+            null height 10
 
-                if renpy.variant("pc"):
-
-                    vbox:
-                        style_prefix "radio"
-                        label _("Display")
-                        hbox:
-                            textbutton _("Windowed") action Preference("display", "window")
-                            textbutton _("Fullscreen") action Preference("display", "fullscreen")
-                            # textbutton _("More") action Show("display_options")
-
-                    vbox:
-                        style_prefix "radio"
-                        label _("Game Settings")
-                        hbox:
-                            textbutton _("Text") action Show("text_options")
-                            textbutton _("Audio") action Show("audio_options")
-                            textbutton _("Extras") action Show("extra_options")
-                            
-
-                if enable_languages and translations:
-                    vbox:
-                        style_prefix "radio"
-                        label _("Language")
-                        hbox:
-                            viewport:
-                                mousewheel True
-                                scrollbars "vertical"
-                                ysize 100
-                                has vbox
-
-                                for tran in translations:
-                                    vbox:
-                                        for tlid, tlname in tran:
-                                            textbutton tlname:
-                                                action Language(tlid)
+            if ddlc_settings:
+                use ddlc_preferences
+            else:
+                use other_preferences
                             
     text "v[config.version]":
                 xalign 1.0 yalign 1.0
@@ -1376,6 +1375,20 @@ style slider_button_text:
 style slider_vbox:
     xsize 450
 
+style name_label is pref_label
+style name_label_text is pref_label_text
+
+style name_text:
+    font "gui/font/Halogen.ttf"
+    size 24
+    color gui.idle_color
+    outlines []
+
+style value_text:
+    size 18
+    color "#FFFFFF"
+    outlines []
+    yalign 0.65
 
 ## History screen ##############################################################
 ##
@@ -1470,155 +1483,155 @@ style history_label_text:
 ## screens (keyboard_help, mouse_help, and gamepad_help) to display the actual
 ## help.
 
-screen help():
-
-    tag menu
-
-    default device = "keyboard"
-
-    use game_menu(_("Help"), scroll="viewport"):
-
-        style_prefix "help"
-
-        vbox:
-            spacing 15
-
-            hbox:
-
-                textbutton _("Keyboard") action SetScreenVariable("device", "keyboard")
-                textbutton _("Mouse") action SetScreenVariable("device", "mouse")
-
-                if GamepadExists():
-                    textbutton _("Gamepad") action SetScreenVariable("device", "gamepad")
-
-            if device == "keyboard":
-                use keyboard_help
-            elif device == "mouse":
-                use mouse_help
-            elif device == "gamepad":
-                use gamepad_help
-
-
-screen keyboard_help():
-
-    hbox:
-        label _("Enter")
-        text _("Advances dialogue and activates the interface.")
-
-    hbox:
-        label _("Space")
-        text _("Advances dialogue without selecting choices.")
-
-    hbox:
-        label _("Arrow Keys")
-        text _("Navigate the interface.")
-
-    hbox:
-        label _("Escape")
-        text _("Accesses the game menu.")
-
-    hbox:
-        label _("Ctrl")
-        text _("Skips dialogue while held down.")
-
-    hbox:
-        label _("Tab")
-        text _("Toggles dialogue skipping.")
-
-    hbox:
-        label _("Page Up")
-        text _("Rolls back to earlier dialogue.")
-
-    hbox:
-        label _("Page Down")
-        text _("Rolls forward to later dialogue.")
-
-    hbox:
-        label "H"
-        text _("Hides the user interface.")
-
-    hbox:
-        label "S"
-        text _("Takes a screenshot.")
-
-    hbox:
-        label "V"
-        text _("Toggles assistive {a=https://www.renpy.org/l/voicing}self-voicing{/a}.")
-
-
-screen mouse_help():
-
-    hbox:
-        label _("Left Click")
-        text _("Advances dialogue and activates the interface.")
-
-    hbox:
-        label _("Middle Click")
-        text _("Hides the user interface.")
-
-    hbox:
-        label _("Right Click")
-        text _("Accesses the game menu.")
-
-    hbox:
-        label _("Mouse Wheel Up\nClick Rollback Side")
-        text _("Rolls back to earlier dialogue.")
-
-    hbox:
-        label _("Mouse Wheel Down")
-        text _("Rolls forward to later dialogue.")
-
-
-screen gamepad_help():
-
-    hbox:
-        label _("Right Trigger\nA/Bottom Button")
-        text _("Advance dialogue and activates the interface.")
-
-    hbox:
-        label ("Left Trigger\nLeft Shoulder")
-        text _("Roll back to earlier dialogue.")
-
-    hbox:
-        label _("Right Shoulder")
-        text _("Roll forward to later dialogue.")
-
-    hbox:
-        label _("D-Pad, Sticks")
-        text _("Navigate the interface.")
-
-    hbox:
-        label _("Start, Guide")
-        text _("Access the game menu.")
-
-    hbox:
-        label _("Y/Top Button")
-        text _("Hides the user interface.")
-
-    textbutton _("Calibrate") action GamepadCalibrate()
-
-
-style help_button is gui_button
-style help_button_text is gui_button_text
-style help_label is gui_label
-style help_label_text is gui_label_text
-style help_text is gui_text
-
-style help_button:
-    properties gui.button_properties("help_button")
-    xmargin 8
-
-style help_button_text:
-    properties gui.button_text_properties("help_button")
-
-style help_label:
-    xsize 250
-    right_padding 20
-
-style help_label_text:
-    size gui.text_size
-    xalign 1.0
-    text_align 1.0
+#screen help():
+#
+#    tag menu
+#
+#    default device = "keyboard"
+#
+#    use game_menu(_("Help"), scroll="viewport"):
+#
+#        style_prefix "help"
+#
+#        vbox:
+#            spacing 15
+#
+#            hbox:
+#
+#                textbutton _("Keyboard") action SetScreenVariable("device", "keyboard")
+#                textbutton _("Mouse") action SetScreenVariable("device", "mouse")
+#
+#                if GamepadExists():
+#                    textbutton _("Gamepad") action SetScreenVariable("device", "gamepad")
+#
+#            if device == "keyboard":
+#                use keyboard_help
+#            elif device == "mouse":
+#                use mouse_help
+#            elif device == "gamepad":
+#                use gamepad_help
+#
+#
+#screen keyboard_help():
+#
+#    hbox:
+#        label _("Enter")
+#        text _("Advances dialogue and activates the interface.")
+#
+#    hbox:
+#        label _("Space")
+#        text _("Advances dialogue without selecting choices.")
+#
+#    hbox:
+#        label _("Arrow Keys")
+#        text _("Navigate the interface.")
+#
+#    hbox:
+#        label _("Escape")
+#        text _("Accesses the game menu.")
+#
+#    hbox:
+#        label _("Ctrl")
+#        text _("Skips dialogue while held down.")
+#
+#    hbox:
+#        label _("Tab")
+#        text _("Toggles dialogue skipping.")
+#
+#    hbox:
+#        label _("Page Up")
+#        text _("Rolls back to earlier dialogue.")
+#
+#    hbox:
+#        label _("Page Down")
+#        text _("Rolls forward to later dialogue.")
+#
+#    hbox:
+#        label "H"
+#        text _("Hides the user interface.")
+#
+#    hbox:
+#        label "S"
+#        text _("Takes a screenshot.")
+#
+#    hbox:
+#        label "V"
+#        text _("Toggles assistive {a=https://www.renpy.org/l/voicing}self-voicing{/a}.")
+#
+#
+#screen mouse_help():
+#
+#    hbox:
+#        label _("Left Click")
+#        text _("Advances dialogue and activates the interface.")
+#
+#    hbox:
+#        label _("Middle Click")
+#        text _("Hides the user interface.")
+#
+#    hbox:
+#        label _("Right Click")
+#        text _("Accesses the game menu.")
+#
+#    hbox:
+#        label _("Mouse Wheel Up\nClick Rollback Side")
+#        text _("Rolls back to earlier dialogue.")
+#
+#    hbox:
+#        label _("Mouse Wheel Down")
+#        text _("Rolls forward to later dialogue.")
+#
+#
+#screen gamepad_help():
+#
+#    hbox:
+#        label _("Right Trigger\nA/Bottom Button")
+#        text _("Advance dialogue and activates the interface.")
+#
+#    hbox:
+#        label ("Left Trigger\nLeft Shoulder")
+#        text _("Roll back to earlier dialogue.")
+#
+#    hbox:
+#        label _("Right Shoulder")
+#        text _("Roll forward to later dialogue.")
+#
+#    hbox:
+#        label _("D-Pad, Sticks")
+#        text _("Navigate the interface.")
+#
+#    hbox:
+#        label _("Start, Guide")
+#        text _("Access the game menu.")
+#
+#    hbox:
+#        label _("Y/Top Button")
+#        text _("Hides the user interface.")
+#
+#    textbutton _("Calibrate") action GamepadCalibrate()
+#
+#
+#style help_button is gui_button
+#style help_button_text is gui_button_text
+#style help_label is gui_label
+#style help_label_text is gui_label_text
+#style help_text is gui_text
+#
+#style help_button:
+#    properties gui.button_properties("help_button")
+#    xmargin 8
+#
+#style help_button_text:
+#    properties gui.button_text_properties("help_button")
+#
+#style help_label:
+#    xsize 250
+#    right_padding 20
+#
+#style help_label_text:
+#    size gui.text_size
+#    xalign 1.0
+#    text_align 1.0
 
 
 
@@ -1752,13 +1765,13 @@ style confirm_button_text is gui_medium_button_text
 
 style confirm_frame:
     background Frame("mod_assets/gui/frame_d.png", gui.confirm_frame_borders, tile=gui.frame_tile)
-    # background Frame(recolorize("mod_assets/gui/frame_d.png"), gui.confirm_frame_borders, tile=gui.frame_tile)
+    # background Frame(recolorize("gui/frame.png"), gui.confirm_frame_borders, tile=gui.frame_tile)
     padding gui.confirm_frame_borders.padding
     xalign .5
     yalign .5
 
 style confirm_prompt_text:
-    color "#000"
+    color "#FFFFFF"
     outlines []
     text_align 0.5
     layout "subtitle"

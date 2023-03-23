@@ -21,7 +21,3 @@ python early:
     import subprocess
     import platform
 
-#init python:
-    # Achievements/Gallery
-    #from store.achievements import achievementList, Achievement, AchievementCount
-    #from store.gallery import GalleryImage, galleryList

@@ -61,7 +61,7 @@ screen console_screen(finish=False):
     # String of input to show.
     # It is put outside of the new_input variable so it doesn't
     # start over and over.
-    default new_input_code = "Delateing ironmouse.chr"
+    default new_input_code = "_"
 
     # Changes to True once a new code_text 
     default in_progress = False
@@ -69,7 +69,7 @@ screen console_screen(finish=False):
     # If text is not in the process of showing.
     if not in_progress:
 
-        $ new_input_code = "import os  delateing the room"
+        $ new_input_code = "_"
 
         # If a new_input is available, set it as code to display.
         if store.new_input:
@@ -99,7 +99,7 @@ screen console_screen(finish=False):
                     text x
 
 style console_screen_frame:
-    background Frame(Transform(Solid("#333"), alpha=0.75))
+    background Frame(Transform(Solid("#000"), alpha=0.75))
     xsize 480
     ysize 180
 

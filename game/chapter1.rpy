@@ -55,7 +55,8 @@ y "I'll go get the tea" # yuri not being wired
 hide yuri # hide yuri 
 scene bg club_day #set the scene club day 
 with wipeleft_scene #wipe the scene to the left
-
+stop music fadeout 2.0
+play music t5
 menu: #let the player control the story
     mc "Who should I help?" # mc talking to him self asking who he will help
     "Make Tea": #menu name
@@ -105,12 +106,12 @@ if  options: #if statement
         show yuri glitch2 zorder 2 at t11 #show yuri glitch from to spook the player
         play music t6g #play glitch music
         play sound g5 #play glitch sound breaking the 4th wall
-        y '¡¢£¤¥¦§¨©ª«¬®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéê'#Monika hack yuri lol (this is reminding of og ddlc but there will only be one encounter like this till later)
+        $ run_input ("renpy.file(\"characters/yuri.chr\")" , "Make yuri.chr go crazy")
+        y "¡¢£¤¥¦§¨©ª«¬®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéê{fast}"#Monika hack yuri lol (this is reminding of og ddlc but there will only be one encounter like this till later)
         stop sound #stop the scary sound
-
+        $ renpy.hide_screen("console_screen")
         stop music  #stop the glitch music
         play music t6 #play normal music
-
         hide yuri #hide yuri sprite
         mc "Okay Yuri" #mc not being weird
         show yuri 1b zorder 2 at t11 #show yuri
@@ -121,7 +122,6 @@ if  options: #if statement
         with wipeleft_scene #wipe the scene to the left
         stop music fadeout 2.0 #stop the music
         play music t5 #play okay everyone music
-        
         #yuri lines are done just need add few fixes then it will look good
 else:  #else this will happening when you click the 2 options 
         "I will help Natsuki with the cupcakes"
@@ -155,8 +155,6 @@ else:  #else this will happening when you click the 2 options
         hide natsuki  #hide natsuki sprite
         scene bg club_day #set the scene to club room day
         with wipeleft_scene #wipe the scene to the left
-        
-        
 if options == True: #if the player click to help yuri with the tea
     show yuri 1b zorder 2 at t11 #show yuri sprite
     y "Tea's done thanks to [player]" #it will say this if the player chose help yuri with tea
@@ -188,96 +186,161 @@ show monika 3a zorder 3 at t11 #show monika sprite
 m "Good job everyone!" #monika being monika
 hide monika #hide monika sprite 
 "The new club member is here " #mc see the new  club member
- 
+
 with wipeleft_scene #wipe the scene to the left
 return # exit
 
 label chapter1_page2: #enable chapter1_page2
 scene bg club_day #set the scene to club room day
 play music  t3 #play music
-#TODO wait until the artist complete ironmouse art then add her art to the definitions.rpy 
+show monika 3a zorder 2 at t11
 m "The new student is here guys"
+hide monika
+show monika 1a zorder 2 at t11
 m "Get ready guys"
+hide monika
 mc "Okay"
+show sayori 1a zorder 2 at t11
 s "Let's go"
+hide sayori
+show yuri 1b zorder 2 at t11
 y "Ok"
+hide yuri
+show natsuki1 41 zorder 2 at t11
 n "Alright"
+hide natsuki
 "Its cool how all the girls in the club did this just for the new student"
 show ironmouse 1d zorder 2 at t11
 i "Ummm he-hello?"
 hide ironmouse
+show sayori 1a zorder 2 at t11
 s "Hey there new kid!"
+hide sayori
+show sayori 1aa zorder 2 at t11
 s "Welcome to the literature club! My name is Sayori!"
+hide sayori
+show natsuki 1l zorder 2 at t11
 n "I hope this girl isn't a manga hater."
+hide natsuki 
+show yuri 4a zorder 2 at t11
 y "Uhm, hi there"
+hide yuri
+show monika 5 zorder 2 at t11
 m "I hope you enjoy it here, my name is monika, let me introduce everyone"
+hide monika
+show monika 5 zorder 2 at t11
 m "so that right there is [player]"
+hide monika
 mc "Hello there"
+show monika  2a zorder 2 at t11
 m "And that there is yuri"
+hide monika
+show yuri 1a zorder 2 at t11
 y "H-hello"
+hide yuri
+show monika 2a  zorder 2 at t11
 m "And here is natsuki, try not to anger her though."
+hide monika
+show natsuki 42 zorder 2 at t11
 n "You like manga?"
+hide natsuki
 show ironmouse 1d zorder 2 at t11
 i "Yeah I do actually, I like this one called Dragon Ball Volume 1"
 hide ironmouse
+show monika 3c zorder 2 at t11
 m "But manga isn't even literature"
+hide monika
+show natsuki 42b zorder 2 at t11
 n "But manga is liturature!"
+hide natsuki
 show ironmouse 2c zorder 2 at t11
 i "Yeah I agree"
 hide ironmouse
+show monika  1l zorder 2 at t11
 m "Fine, if you say so"
+hide monika
+show monika 1a zorder 2 at t11
 m "Anyways, what's your name?"
 show ironmouse 2d zorder 2 at t11
 i "My name is Ironmouse"
 hide ironmouse
 $ i_name = "Ironmouse"
+show  monika 1a zorder 2 at t11
 m "Strange name, but hello there Ironmouse!"
-s "Hey Ironmouse! Nice to know you name finally!"
+hide monika
+show sayori 1a zorder 2 at t11
+s "Hey Ironmouse! Nice to know your name finally!"
+hide sayori
+show yuri 4a zorder 2 at t11
 y "Hi Ironmouse"
+hide yuri
+show natsuki 41 zorder 2 at t11
 n "Hello there Ironmouse, don't get into trouble around here!"
+hide natsuki
 mc "Nice to meet you Ironmouse"
 show ironmouse 1b zorder 2 at t11
 i "Hello everyone, nice to know you guys!"
 hide ironmouse
-m "Alright so, let me explain what we do daily"
+show monika 1a zorder 2 at t11
+m "Alright so, let me explain in sempile terms what we do daily"
+hide monika
+show monika 1a zorder 2 at t11
 m "All you need to do is write a unique poem, read books for ideas and such"
+hide monika
 "Very lovely day we are having right [player]?" #random 4th wall break
+show monika 1b zorder 2 at t11
 m "We bake cupcakes, make tea, mostly basic stuff"
+hide monika
+show monika 2a zorder 2 at t11
 m "Speaking of which, its about time we write a poem, so if you don't know what to do today we'll run you through it"
+hide monika
 show ironmouse 1d zorder 2 at t11
 i "Okay"
 hide ironmouse
 $ renpy.movie_cutscene("mod_assets/video/1.ogx") #set a movie scene from spongebob a few moments later
 return #exit
 
-#Todo for  blackdeath5h  add story line for ironmouse Please Keep it PG 13 make it connect the story lines Kwhitehead07 put and TigerClips1 Put
 label chapter1_page3:
 show ironmouse 1d zorder 2 at t11
 i "now i know how to wirte a poem"
 hide ironmouse
 mc "so do you need any help with anything guys"
+show sayori  1i zorder 2 at t11
 s "no"
+hide sayori
 m "no"
 show ironmouse 1d zorder 2 at t11
 i "no"
 hide ironmouse
+show natsuki  42b zorder 2 at t11
 n "hmph no"
+hide natsuki
+show yuri 4a zorder 2 at t11
 y "n-no"
+hide yuri
 mc "alright"
 mc "let me know if you need help with anything"
-show ironmouse 1d zorder 2 at t11 #TODO add natsuki and sayori and monika and yuri sprite for TigerClips1
+show ironmouse 1d zorder 1 at t11 
 i "ok"
 hide ironmouse
+show sayori 1a zorder 2 at t11
 s "alright"
+hide sayori
+show monika 1a zorder 2 at t11
 m "ok"
+hide monika
+show natsuki 1t zorder 2 at t11
 n "will do"
+hide natsuki
+show yuri 1a zorder 2 at t11
 y "ok"
+hide yuri
 
-#end of Blackdeath5h story lines
 return
 
 #To Do for TigerClips1 add the menu and add the story line for the all 6 charactor
 label chapter1_page4:
+$ renpy.movie_cutscene("mod_assets/video/2.ogx") #set a movie scene from spongebob a few moments later
 
 
 
