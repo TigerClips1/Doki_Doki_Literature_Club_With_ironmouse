@@ -335,13 +335,9 @@ hide natsuki
 show yuri 1a zorder 2 at t11
 y "ok"
 hide yuri
-
 return
 
-#To Do for TigerClips1 add the menu and add the story line for the all 6 charactor
 label chapter1_page4:
-$ renpy.movie_cutscene("mod_assets/video/2.ogx") #set a movie scene from spongebob a few moments later
-
 
 
 

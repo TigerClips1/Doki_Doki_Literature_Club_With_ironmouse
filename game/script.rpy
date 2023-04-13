@@ -46,7 +46,7 @@ label start:
     ## The Main Part of the Script
     # This is where your script code is called!
     # 'persistent.playthrough' controls the playthrough number the player is on i.e (Act 1, 2, 3, 4)
-    
+    #TODO add an elif satement here
     if persistent.playthrough == 0:
         
         #Day 1 ##
@@ -57,9 +57,8 @@ label start:
         call chapter1_page4 from _call_chapter1_page4
         call chapter1_page4_part_2 from _call_chapter1_page4_part_2
         call poem from _call_poem
-        return
-
         #jump credits
+        return
 
         #Day 2 ##
         #$ chapter = 2
