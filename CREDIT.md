@@ -8,8 +8,6 @@
 
 4. LyllyNotFound (helping with the coding/story)
 
-5. Ray (helping with the art)
-
 6. ironmouse (for the model idea/ mod idea)
 
 7. and huge thanks to (GHOSTKingoSA for this mod template) without his mod template this mod will not be made for android and ios and mac

@@ -48,12 +48,9 @@ This mod only have 3 Chapter for now
 
 [LyllyNotFound](https://github.com/LyllyNotFound) - Coder 1/story writer
 
-Ray - Artist .1
-
 [blacklight5h](https://github.com/blackdeath5h) - Coder 2/story writer
 
 [Kwhitehead07](https://github.com/Kwhitehead07) - Coder 3/story writer
 
 Nexus - Artist .2
-
-Just_jam - Artist .3 
+ 
