@@ -20,5 +20,4 @@
 
 11. Nexus (helping with the art)0
 
-12. just_jam (helping with the art)
 

@@ -52,5 +52,5 @@ This mod only have 3 Chapter for now
 
 [Kwhitehead07](https://github.com/Kwhitehead07) - Coder 3/story writer
 
-Nexus - Artist .2
+Nexus - Artist
  
