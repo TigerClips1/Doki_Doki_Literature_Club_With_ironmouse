@@ -2,8 +2,6 @@
 
 # END
 
-#TODO  make the credits nice  
-
 # This image shows the DDLC logo with certain transforms.
 image credits_logo:
     "mod_assets/gui/logo.png"
@@ -13,21 +11,13 @@ image credits_logo:
     4.5
     linear 2.0 alpha 0
 
-# This image shows the DDLCWITHIRONmouse team logo with certain transforms.
-image credits_ts:
-    "mod_assets/images/bg/splash.png"
-    xalign 0.5 yalign 0.6
-    zoom 0.65 alpha 0 subpixel True
-    linear 2.0 alpha 1
-    4.5
-    linear 2.0 alpha 0
 
 # This style declares the text appearance of the work type credits text in the
 # credits.
 style credits_header:
     font "gui/font/RifficFree-Bold.ttf"
-    color "#ffaae6"
-    size 36
+    color "#f8f8f8"
+    size 20
     text_align 0.5
     outlines []
 
@@ -36,7 +26,7 @@ style credits_header:
 style credits_text:
     font "gui/font/Halogen.ttf"
     color "#fff"
-    size 36
+    size 20
     text_align 0.5
     outlines []
 
@@ -80,68 +70,56 @@ label credits:
     
     # These show statements shows the work-type and person-type credits in the 
     # credits.
-    show credits_header "\nOG Programmer" as credits_header_1 at credits_text_scroll_center
-    show credits_text "\nDan Salvato" as credits_text_1 at credits_text_scroll_center
+    show credits_header "OG Programmer" as credits_header_1 at credits_text_scroll_center
+    show credits_text "Dan Salvato" as credits_text_1 at credits_text_scroll_center
     
     $ pause(35.15 - (datetime.datetime.now() - starttime).total_seconds())
     
-    show credits_header "\nOG Character Art" as credits_header_2 at credits_text_scroll_center
-    show credits_text "\nSatchely" as credits_text_2 at credits_text_scroll_center
+    show credits_header "OG Character Art" as credits_header_2 at credits_text_scroll_center
+    show credits_text "Satchely" as credits_text_2 at credits_text_scroll_center
     
-    $ pause(36.15 - (datetime.datetime.now() - starttime).total_seconds())
+    $ pause(49.15 - (datetime.datetime.now() - starttime).total_seconds())
     
-    show credits_header "\nOG Background Art" as credits_header_1 at credits_text_scroll_center
-    show credits_text "\nVelinquent" as credits_text_1 at credits_text_scroll_center
+    show credits_header "OG Background Art" as credits_header_1 at credits_text_scroll_center
+    show credits_text "Velinquent" as credits_text_1 at credits_text_scroll_center
     
-    $ pause(37.15 - (datetime.datetime.now() - starttime).total_seconds())
+    $ pause(59.15 - (datetime.datetime.now() - starttime).total_seconds())
     
-    show credits_header "\nOG Writing" as credits_header_2 at credits_text_scroll_center
-    show credits_text "\nDan Salvato" as credits_text_2 at credits_text_scroll_center
+    show credits_header "OG Writing" as credits_header_2 at credits_text_scroll_center
+    show credits_text "Dan Salvato" as credits_text_2 at credits_text_scroll_center
     
-    $ pause(38.15 - (datetime.datetime.now() - starttime).total_seconds())
+    $ pause(69.15 - (datetime.datetime.now() - starttime).total_seconds())
 
-    show credits_header "\nOG Music" as credits_header_1 at credits_text_scroll_center
-    show credits_text "\nDan Salvato" as credits_text_1 at credits_text_scroll_center
+    show credits_header "OG Music" as credits_header_1 at credits_text_scroll_center
+    show credits_text "Dan Salvato" as credits_text_1 at credits_text_scroll_center
     
-    $ pause(39.15 - (datetime.datetime.now() - starttime).total_seconds())
+    $ pause(79.15 - (datetime.datetime.now() - starttime).total_seconds())
     
-    show credits_header "\nOG Vocals" as credits_header_2 at credits_text_scroll_center
-    show credits_text "\nJillian Ashcraft" as credits_text_2 at credits_text_scroll_center
+    show credits_header "OG Vocals" as credits_header_2 at credits_text_scroll_center
+    show credits_text "Jillian Ashcraft" as credits_text_2 at credits_text_scroll_center
     
-    $ pause(40.15 - (datetime.datetime.now() - starttime).total_seconds())
+    $ pause(99.15 - (datetime.datetime.now() - starttime).total_seconds())
        
-    show credits_header "\nProgramming/Story" as credits_header_1 at credits_text_scroll_center
-    show credits_text "\nBlackwolf5h" as credits_text_1 at credits_text_scroll_center
-    show credits_text "\nKwhitehead07" as credits_text_1 at credits_text_scroll_center
-    show credits_text "\nLyllyNotFound" as credits_text_1 at credits_text_scroll_center
-    show credits_text "\nTigerClips1" as credits_text_1 at credits_text_scroll_center
+    show credits_header "Programming/Story" as credits_header_1 at credits_text_scroll_center
+    show credits_text "TigerClips1\nLyllyNotFound\nKwhitehead07\nBlackWolf5h" as credits_text_1 at credits_text_scroll_center
 
-    $ pause(44.15 - (datetime.datetime.now() - starttime).total_seconds())
+    $ pause(129.15 - (datetime.datetime.now() - starttime).total_seconds())
     
-    show credits_header "\nBackgrund Art/Sticker art/Character Art" as credits_header_1 at credits_text_scroll_center
-    show credits_text "\nJustjam" as  credits_text_1 at credits_text_scroll_center
-    show credits_text "\nNexus" as  credits_text_1 at credits_text_scroll_center
-    $ pause(47.15 - (datetime.datetime.now() - starttime).total_seconds())
-    #TDO fix the Credits
-    show credits_header "\nMain Menu music" as credits_header_2 at credits_text_scroll_center
-    show credits_text "\nVideoGameRemixes" as credits_text_2 at credits_text_scroll_center
+    show credits_header "Background Art/Sticker art/Character Art" as credits_header_1 at credits_text_scroll_center
+    show credits_text "Nexus" as  credits_text_1 at credits_text_scroll_center
+    $ pause(139.15 - (datetime.datetime.now() - starttime).total_seconds())
     
-    $ pause(48.15 - (datetime.datetime.now() - starttime).total_seconds())
+    show credits_header "Main Menu music" as credits_header_2 at credits_text_scroll_center
+    show credits_text "VideoGameRemixes" as credits_text_2 at credits_text_scroll_center
     
-    show credits_header "\nSpecial Thanks" as credits_header_1 at credits_text_scroll_center
-    show credits_text "\nGhostNight SA\n[player]\nBijuuMike\nIronMouse" as credits_text_1 at credits_text_scroll_center
+    $ pause(159.15 - (datetime.datetime.now() - starttime).total_seconds())
+    
+    show credits_header "Special Thanks" as credits_header_1 at credits_text_scroll_center
+    show credits_text "GhostNight SA\n[player]\nBijuuMike\nIronMouse" as credits_text_1 at credits_text_scroll_center
 
-    $ pause(90.10 - (datetime.datetime.now() - starttime).total_seconds())
+    $ pause(199.95 - (datetime.datetime.now() - starttime).total_seconds())
     
-    stop music fadeout 2.0
-    show credits_ts
-    show credits_text "made with love by":
-        zoom 0.75 xalign 0.5 yalign 0.25 alpha 0 subpixel True
-        linear 2.0 alpha 1
-        4.5
-        linear 2.0 alpha 0
-
-    pause 9.3
+    stop music
 
     # This label starts the end of the game loop with the ending poem or Dan's 
     label postcredits_loop:
@@ -153,11 +131,11 @@ label credits:
         $ quick_menu = False
         $ config.skipping = False
         $ config.allow_skipping = False
-
-        scene black
+        $ renpy.movie_cutscene("mod_assets/video/helpme.ogx")
         python:
             delete_all_saves()
             renpy.loadsave.location.unlink_persistent()
             renpy.persistent.should_save_persistent = False
             renpy.quit()
     return
+    #credits are done 
