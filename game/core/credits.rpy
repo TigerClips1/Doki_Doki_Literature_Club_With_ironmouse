@@ -70,55 +70,30 @@ label credits:
     
     # These show statements shows the work-type and person-type credits in the 
     # credits.
-    show credits_header "OG Programmer" as credits_header_1 at credits_text_scroll_center
-    show credits_text "Dan Salvato" as credits_text_1 at credits_text_scroll_center
+    show credits_header "OG Team/Art/coder/music/vocal/EFX" as credits_header_1 at credits_text_scroll_center
+    show credits_text "Dan Salvato\nSatchely\nVelinquent\nDan Salvato\nDan Salvato\n" as credits_text_1 at credits_text_scroll_center
     
     $ pause(35.15 - (datetime.datetime.now() - starttime).total_seconds())
     
-    show credits_header "OG Character Art" as credits_header_2 at credits_text_scroll_center
-    show credits_text "Satchely" as credits_text_2 at credits_text_scroll_center
-    
-    $ pause(49.15 - (datetime.datetime.now() - starttime).total_seconds())
-    
-    show credits_header "OG Background Art" as credits_header_1 at credits_text_scroll_center
-    show credits_text "Velinquent" as credits_text_1 at credits_text_scroll_center
-    
-    $ pause(59.15 - (datetime.datetime.now() - starttime).total_seconds())
-    
-    show credits_header "OG Writing" as credits_header_2 at credits_text_scroll_center
-    show credits_text "Dan Salvato" as credits_text_2 at credits_text_scroll_center
-    
-    $ pause(69.15 - (datetime.datetime.now() - starttime).total_seconds())
-
-    show credits_header "OG Music" as credits_header_1 at credits_text_scroll_center
-    show credits_text "Dan Salvato" as credits_text_1 at credits_text_scroll_center
-    
-    $ pause(79.15 - (datetime.datetime.now() - starttime).total_seconds())
-    
-    show credits_header "OG Vocals" as credits_header_2 at credits_text_scroll_center
-    show credits_text "Jillian Ashcraft" as credits_text_2 at credits_text_scroll_center
-    
-    $ pause(99.15 - (datetime.datetime.now() - starttime).total_seconds())
-       
     show credits_header "Programming/Story" as credits_header_1 at credits_text_scroll_center
     show credits_text "TigerClips1\nLyllyNotFound\nKwhitehead07\nBlackWolf5h" as credits_text_1 at credits_text_scroll_center
 
-    $ pause(129.15 - (datetime.datetime.now() - starttime).total_seconds())
+    $ pause(55.20 - (datetime.datetime.now() - starttime).total_seconds())
     
     show credits_header "Background Art/Sticker art/Character Art" as credits_header_1 at credits_text_scroll_center
     show credits_text "Nexus" as  credits_text_1 at credits_text_scroll_center
-    $ pause(139.15 - (datetime.datetime.now() - starttime).total_seconds())
+    $ pause(70.15 - (datetime.datetime.now() - starttime).total_seconds())
     
     show credits_header "Main Menu music" as credits_header_2 at credits_text_scroll_center
     show credits_text "VideoGameRemixes" as credits_text_2 at credits_text_scroll_center
     
-    $ pause(159.15 - (datetime.datetime.now() - starttime).total_seconds())
+    $ pause(80.15 - (datetime.datetime.now() - starttime).total_seconds())
     
     show credits_header "Special Thanks" as credits_header_1 at credits_text_scroll_center
     show credits_text "GhostNight SA\n[player]\nBijuuMike\nIronMouse" as credits_text_1 at credits_text_scroll_center
 
-    $ pause(199.95 - (datetime.datetime.now() - starttime).total_seconds())
-    
+    $ pause(99.20 - (datetime.datetime.now() - starttime).total_seconds())
+
     stop music
 
     # This label starts the end of the game loop with the ending poem or Dan's 

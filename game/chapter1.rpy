@@ -206,7 +206,7 @@ hide sayori
 show yuri 1b zorder 2 at t11
 y "Ok"
 hide yuri
-show natsuki1 41 zorder 2 at t11
+show natsuki 41 zorder 2 at t11
 n "Alright"
 hide natsuki
 "Its cool how all the girls in the club did this just for the new student"
@@ -216,7 +216,7 @@ hide ironmouse
 show sayori 1a zorder 2 at t11
 s "Hey there new kid!"
 hide sayori
-show sayori 1aa zorder 2 at t11
+show sayori 1a zorder 2 at t11
 s "Welcome to the literature club! My name is Sayori!"
 hide sayori
 show natsuki 1l zorder 2 at t11
@@ -261,6 +261,7 @@ m "Fine, if you say so"
 hide monika
 show monika 1a zorder 2 at t11
 m "Anyways, what's your name?"
+hide monika
 show ironmouse 2d zorder 2 at t11
 i "My name is Ironmouse"
 hide ironmouse

@@ -106,6 +106,6 @@ style console_screen_frame:
 # This style declares the text appearance of the text shown in the console in-game.
 style console_screen_text:
     font "gui/font/F25_Bank_Printer.ttf"
-    color "#fff"
+    color "#00ff22"
     size 18
     outlines []
