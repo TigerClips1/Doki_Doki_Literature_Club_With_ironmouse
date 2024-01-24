@@ -378,7 +378,7 @@ label chapter1_page4:
 #END of lines for TigerClips1
 return
 
-#TODO for lylly not found
+#TODO for TigerClips1
 label chapter1_page4_part_2:
 
 

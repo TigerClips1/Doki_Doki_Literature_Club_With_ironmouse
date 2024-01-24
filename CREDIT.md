@@ -12,7 +12,6 @@
 
 7. and huge thanks to (GHOSTKingoSA for this mod template) without his mod template this mod will not be made for android and ios and mac
 
-8. blacklight5h (helping with the coding/story)
 
 9.  main menu music by Video Game Remixes 
 

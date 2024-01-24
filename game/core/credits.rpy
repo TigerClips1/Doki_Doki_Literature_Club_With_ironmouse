@@ -76,7 +76,7 @@ label credits:
     $ pause(35.15 - (datetime.datetime.now() - starttime).total_seconds())
     
     show credits_header "Programming/Story" as credits_header_1 at credits_text_scroll_center
-    show credits_text "TigerClips1\nLyllyNotFound\nKwhitehead07\nBlackWolf5h" as credits_text_1 at credits_text_scroll_center
+    show credits_text "TigerClips1\nLyllyNotFound\nKwhitehead07" as credits_text_1 at credits_text_scroll_center
 
     $ pause(55.20 - (datetime.datetime.now() - starttime).total_seconds())
     
